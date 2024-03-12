@@ -61,11 +61,11 @@ dependencies {
     implementation(project(":data:courses"))
     implementation(project(":data:menu"))
     implementation(project(":data:my-courses"))
-    implementation(project(":data:login"))
+    implementation(project(":data:auth"))
 
     // Features
     implementation(project(":features:courses"))
     implementation(project(":features:menu"))
     implementation(project(":features:my-courses"))
-    implementation(project(":features:login"))
+    implementation(project(":features:auth"))
 }
