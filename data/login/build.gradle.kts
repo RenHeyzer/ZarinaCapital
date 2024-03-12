@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ren.signin"
+    namespace = "com.ren.login"
     compileSdk = 34
 
     defaultConfig {
