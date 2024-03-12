@@ -5,4 +5,33 @@
         <item name="android:color">@color/white</item>
     </style>
 
+    <style name="TextAppearance.AppCompat.Inter.VerySmall" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/text_size_very_small</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Inter.Small" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Inter.PreMedium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/text_size_pre_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Inter.Regular.Medium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Inter.Bold.Medium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Inter.Title" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
 </resources>
