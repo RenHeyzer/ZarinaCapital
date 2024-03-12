@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".internal.presentation.ui.fragments.schedule.ScheduleFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_20"
+        app:cardCornerRadius="@dimen/margin_10"
+        app:cardBackgroundColor="@color/light_grey_3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_5">
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounder_button_white"
+                android:textAllCaps="false"
+                android:text="Уроки"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_pre_medium"
+                android:fontFamily="@font/inter_medium" />
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:text="Посещения"
+                android:background="@drawable/rounder_button"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_pre_medium"
+                android:fontFamily="@font/inter_medium"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_lessons"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_15"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>
