@@ -3,4 +3,18 @@
     <string name="courses">Курсы</string>
     <string name="my_courses">Мои курсы</string>
     <string name="menu">Меню</string>
+    <string name="myProfile">Мой профиль</string>
+    <string name="paymenHistory">История оплаты</string>
+    <string name="schedule">Расписание</string>
+    <string name="changePassword">Сменить пароль</string>
+    <string name="setting">Настройки</string>
+    <string name="news">Новости</string>
+    <string name="rules">Правила и соглашения</string>
+    <string name="username">Имя пользователя</string>
+    <string name="phoneNumber">Номер телефона</string>
+    <string name="email">Почта</string>
+    <string name="hint_username">Введите имя</string>
+    <string name="hint_number">Введите номер</string>
+    <string name="hint_email">Введите почту</string>
+    <string name="save_changes">Сохранить изменения</string>
 </resources>
