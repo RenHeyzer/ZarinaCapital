@@ -1,6 +1,7 @@
 package com.ren.zarinacapital.navigation
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -32,11 +33,20 @@ class MainActivity : AppCompatActivity() {
                 R.id.courses,
                 R.id.my_courses,
                 R.id.menu,
+                com.ren.auth.R.id.auth
             )
         )
 
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         binding.bottomNavigation.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                com.ren.auth.R.id.sign_up -> {
+                    binding.bottomNavigation.visibility = View.GONE
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
