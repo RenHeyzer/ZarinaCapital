@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".api.presentation.ui.fragments.CoursesFragment">
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10"
+        android:background="@drawable/rounder_search_view"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="@dimen/margin_10"
+        android:fontFamily="@font/inter_regular"
+        android:hint="@string/searchCourses"
+        android:padding="@dimen/margin_10"
+        android:textColorHint="@color/grey"
+        android:textSize="@dimen/text_size_medium" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_my_courses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_courses" />
+
+</LinearLayout>
