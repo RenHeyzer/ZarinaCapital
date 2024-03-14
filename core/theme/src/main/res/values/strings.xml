@@ -20,4 +20,10 @@
     <string name="lesson">Уроки</string>
     <string name="visit">Посещения</string>
     <string name="searchCourses">Поиск курсов</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="old_password">Старый пароль</string>
+    <string name="password">Пароль</string>
+    <string name="save_new_password">Сохранить новый пароль</string>
+    <string name="delete_account">Удалить аккаунт</string>
 </resources>
