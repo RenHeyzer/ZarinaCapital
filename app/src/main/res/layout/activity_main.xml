@@ -16,9 +16,11 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             style="@style/Widget.MaterialComponents.Toolbar"
-            android:background="?android:colorBackground"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="?android:colorBackground"
+            app:titleMarginStart="@dimen/margin_8"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Inter.Title" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
