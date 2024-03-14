@@ -1,6 +1,6 @@
 [versions]
 android-gradle-plugin = "8.2.2"
-dagger = "2.48"
+dagger = "2.51"
 kotlin-android = "1.9.22"
 lifecycle = "2.7.0"
 navigation = "2.7.7"
