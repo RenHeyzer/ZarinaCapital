@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".internal.presentation.ui.fragments.setting.SettingFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/сhoose_language"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/text_size_medium" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        android:background="@drawable/rounder_button"
+        android:backgroundTint="@color/light_grey_3">
+
+        <RadioButton
+            android:id="@+id/rb_russian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableEnd="@drawable/btn_radio_custom"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_10"
+            android:text="@string/russian"
+            android:textSize="@dimen/text_size_pre_medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_size_1dp"
+            android:background="@color/grey" />
+
+        <RadioButton
+            android:id="@+id/rb_kazak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableEnd="@drawable/btn_radio_custom"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_10"
+            android:text="@string/kazak"
+            android:textSize="@dimen/text_size_pre_medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_size_1dp"
+            android:background="@color/grey" />
+
+        <RadioButton
+            android:id="@+id/rb_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableEnd="@drawable/btn_radio_custom"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_10"
+            android:text="@string/english"
+            android:textSize="@dimen/text_size_pre_medium" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_30" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        android:background="@drawable/rounder_button"
+        android:backgroundTint="@color/light_grey_3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/margin_10"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_10"
+            android:text="@string/notifications"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_pre_medium" />
+
+        <Switch
+            android:id="@+id/sw_notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingTop="@dimen/margin_15"
+            android:paddingBottom="@dimen/margin_15"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_30"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        android:background="@drawable/rounder_button"
+        android:layout_marginTop="@dimen/margin_20"
+        android:fontFamily="@font/inter_medium"
+        android:backgroundTint="@color/red"
+        android:text="@string/delete_account"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_pre_medium" />
+
+</LinearLayout>
