@@ -99,8 +99,9 @@
                 android:text="@string/paymenHistory"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                app:drawableEndCompat="@drawable/arrow_left"
-                app:drawableStartCompat="@drawable/bi_wallet" />
+                android:drawableEnd="@drawable/arrow_left"
+                android:drawableStart="@drawable/bi_wallet"
+                tools:ignore="UseCompatTextViewDrawableXml" />
 
             <View
                 android:layout_width="match_parent"
@@ -117,8 +118,9 @@
                 android:text="@string/schedule"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                app:drawableEndCompat="@drawable/arrow_left"
-                app:drawableStartCompat="@drawable/material" />
+                android:drawableStart="@drawable/material"
+                android:drawableEnd="@drawable/arrow_left"
+                tools:ignore="UseCompatTextViewDrawableXml" />
 
             <View
                 android:layout_width="match_parent"
@@ -135,8 +137,9 @@
                 android:text="@string/changePassword"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                app:drawableEndCompat="@drawable/arrow_left"
-                app:drawableStartCompat="@drawable/mdi_lock_outline" />
+                android:drawableEnd="@drawable/arrow_left"
+                android:drawableStart="@drawable/mdi_lock_outline"
+                tools:ignore="UseCompatTextViewDrawableXml" />
 
             <View
                 android:layout_width="match_parent"
@@ -153,8 +156,9 @@
                 android:text="@string/setting"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                app:drawableEndCompat="@drawable/arrow_left"
-                app:drawableStartCompat="@drawable/icons_setting" />
+                android:drawableEnd="@drawable/arrow_left"
+                android:drawableStart="@drawable/icons_setting"
+                tools:ignore="UseCompatTextViewDrawableXml" />
 
         </LinearLayout>
 
@@ -192,8 +196,9 @@
                 android:text="@string/news"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                app:drawableEndCompat="@drawable/arrow_left"
-                app:drawableStartCompat="@drawable/circum_view" />
+                android:drawableEnd="@drawable/arrow_left"
+                android:drawableStart="@drawable/circum_view"
+                tools:ignore="UseCompatTextViewDrawableXml" />
 
             <View
                 android:layout_width="match_parent"
@@ -210,8 +215,9 @@
                 android:text="@string/rules"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                app:drawableEndCompat="@drawable/arrow_left"
-                app:drawableStartCompat="@drawable/circum_view" />
+                android:drawableEnd="@drawable/arrow_left"
+                android:drawableStart="@drawable/circum_view"
+                tools:ignore="UseCompatTextViewDrawableXml" />
 
         </LinearLayout>
 
