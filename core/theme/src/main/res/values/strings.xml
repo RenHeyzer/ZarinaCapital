@@ -17,4 +17,6 @@
     <string name="hint_number">Введите номер</string>
     <string name="hint_email">Введите почту</string>
     <string name="save_changes">Сохранить изменения</string>
+    <string name="lesson">Уроки</string>
+    <string name="visit">Посещения</string>
 </resources>
