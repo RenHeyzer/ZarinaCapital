@@ -18,18 +18,30 @@ class MenuFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        onClickListeners()
+        setOnClickListener()
     }
 
-    private fun onClickListeners() = with(binding) {
-        binding.imChange.setOnClickListener{
+    private fun setOnClickListener() = with(binding) {
+        imChange.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment2_to_editProfileFragment)
         }
-        binding.tvHistory.setOnClickListener{
+        tvHistory.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment2_to_paymentHistoryFragment)
         }
-        binding.tvSchedule.setOnClickListener{
+        tvSchedule.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment2_to_scheduleFragment)
+        }
+        tvChangePassword.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment2_to_editPasswordFragment)
+        }
+        tvSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment2_to_settingFragment)
+        }
+        tvNews.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment2_to_newsFragment)
+        }
+        tvRules.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment2_to_rulesFragment)
         }
     }
 }

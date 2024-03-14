@@ -10,29 +10,89 @@
         android:name="com.ren.menu.internal.presentation.ui.fragments.profile.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
+
     <fragment
         android:id="@+id/scheduleFragment"
         android:name="com.ren.menu.internal.presentation.ui.fragments.schedule.ScheduleFragment"
         android:label="fragment_schedule"
         tools:layout="@layout/fragment_schedule" />
+
     <fragment
         android:id="@+id/paymentHistoryFragment"
         android:name="com.ren.menu.internal.presentation.ui.fragments.paymenthistory.PaymentHistoryFragment"
         android:label="fragment_payment_history"
         tools:layout="@layout/fragment_payment_history" />
+
     <fragment
         android:id="@+id/menuFragment2"
         android:name="com.ren.menu.api.presentation.ui.fragments.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
+        tools:layout="@layout/fragment_menu">
+
         <action
             android:id="@+id/action_menuFragment2_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
+
         <action
             android:id="@+id/action_menuFragment2_to_scheduleFragment"
             app:destination="@id/scheduleFragment" />
+
         <action
             android:id="@+id/action_menuFragment2_to_paymentHistoryFragment"
             app:destination="@id/paymentHistoryFragment" />
+
+        <action
+            android:id="@+id/action_menuFragment2_to_editPasswordFragment"
+            app:destination="@id/editPasswordFragment" />
+
+        <action
+            android:id="@+id/action_menuFragment2_to_settingFragment"
+            app:destination="@id/settingFragment" />
+
+        <action
+            android:id="@+id/action_menuFragment2_to_newsFragment"
+            app:destination="@id/newsFragment" />
+
+        <action
+            android:id="@+id/action_menuFragment2_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_settingFragment_to_deleteAccountFragment"
+            app:destination="@id/deleteAccountFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editPasswordFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.editpassword.EditPasswordFragment"
+        android:label="fragment_edit_password"
+        tools:layout="@layout/fragment_edit_password" />
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.news.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.rules.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+
+    <fragment
+        android:id="@+id/deleteAccountFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.deleteaccount.DeleteAccountFragment"
+        android:label="fragment_delete_account"
+        tools:layout="@layout/fragment_delete_account" />
+
 </navigation>
