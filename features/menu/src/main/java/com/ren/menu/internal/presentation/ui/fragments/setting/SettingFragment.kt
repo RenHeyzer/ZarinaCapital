@@ -1,15 +1,13 @@
 package com.ren.menu.internal.presentation.ui.fragments.setting
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentSettingBinding
+import com.ren.menu.internal.presentation.ui.fragments.setting.viewmodel.SettingViewModel
 import com.ren.presentation.base.BaseFragment
 
 class SettingFragment : BaseFragment<FragmentSettingBinding, SettingViewModel>(R.layout.fragment_setting) {

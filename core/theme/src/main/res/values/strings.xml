@@ -26,4 +26,12 @@
     <string name="password">Пароль</string>
     <string name="save_new_password">Сохранить новый пароль</string>
     <string name="delete_account">Удалить аккаунт</string>
+    <string name="result">Итого</string>
+    <string name="personal_data_processing_policy">Политика обработки персональных данных</string>
+    <string name="license_agreement_offer">Лицензионный договор - Оферта</string>
+    <string name="russian">Русский</string>
+    <string name="kazak">Казакша</string>
+    <string name="english">English</string>
+    <string name="notifications">Уведомления о действиях</string>
+    <string name="сhoose_language">Выберите язык</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.ren.menu.internal.presentation.ui.fragments.setting
+package com.ren.menu.internal.presentation.ui.fragments.setting.viewmodel
 
 import com.ren.presentation.base.BaseViewModel
 
