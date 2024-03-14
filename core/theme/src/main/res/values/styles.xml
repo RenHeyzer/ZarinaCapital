@@ -39,4 +39,45 @@
         <item name="fontFamily">@font/inter_bold</item>
         <item name="android:textSize">@dimen/text_size_title</item>
     </style>
+
+    <style name="Widget.TextInputLayout.FilledBox.Overlay" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxCornerRadiusTopStart">@dimen/box_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/box_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/box_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/box_corner_radius</item>
+        <item name="boxBackgroundColor">@color/light_grey_5</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="errorTextAppearance">@style/TextAppearance.AppCompat.Inter.VerySmall</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="cursorColor">@color/black</item>
+        <item name="cursorErrorColor">@color/red</item>
+        <item name="hintTextAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>
+        <item name="hintTextColor">@color/dark_grey</item>
+        <item name="boxStrokeWidth">@dimen/box_stroke_width</item>
+        <item name="boxStrokeWidthFocused">@dimen/box_stroke_width</item>
+        <item name="android:textColorHint">@color/dark_grey</item>
+        <item name="placeholderTextAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>
+        <item name="placeholderTextColor">@color/dark_grey</item>
+    </style>
+
+    <style name="Widget.TextInputEditText.FilledBox.Overlay" parent="ThemeOverlay.Material3.TextInputEditText.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHighlight">@android:color/transparent</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>
+    </style>
+
+    <style name="Widget.MaterialButton.Primary" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Inter.Bold.PreMedium
+        </item>
+        <item name="elevation">@dimen/button_elevation</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetTop">@dimen/button_inset</item>
+        <item name="android:insetBottom">@dimen/button_inset</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
 </resources>
