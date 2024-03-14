@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -48,6 +49,8 @@ dependencies {
     implementation(libs.view.binding.property.delegate.noreflection)
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
