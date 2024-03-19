@@ -29,7 +29,7 @@ class MenuFragment :
             findNavController().navigate(R.id.action_menuFragment2_to_paymentHistoryFragment)
         }
         tvSchedule.setOnClickListener{
-            findNavController().navigate(R.id.action_menuFragment2_to_scheduleFragment)
+            findNavController().navigate(R.id.action_menuFragment2_to_lessonsFragment)
         }
         tvChangePassword.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment2_to_editPasswordFragment)

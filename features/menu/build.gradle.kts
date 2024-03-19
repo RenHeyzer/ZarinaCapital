@@ -51,4 +51,5 @@ dependencies {
 
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
+    implementation(libs.legacy.support.v4)
 }

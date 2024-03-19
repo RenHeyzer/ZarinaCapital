@@ -22,7 +22,6 @@
             android:id="@+id/rb_lessons"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounder_button_white"
             android:button="@null"
             android:fontFamily="@font/inter_medium"
             android:gravity="center"
@@ -38,6 +37,7 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:fontFamily="@font/inter_medium"
+            android:background="@drawable/rounder_button_white"
             android:gravity="center"
             android:padding="@dimen/margin_10"
             android:text="@string/visit"
@@ -47,29 +47,10 @@
 
     </RadioGroup>
 
-    <CalendarView
-        android:id="@+id/cl_schedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_20"
-        android:layout_marginTop="@dimen/margin_15"
-        android:background="@drawable/rounder_button"
-        android:backgroundTint="@color/light_grey_3" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rec_schedule"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/margin_5"
-        android:layout_marginTop="@dimen/margin_15"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_lessons" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_marginHorizontal="@dimen/margin_20"
         android:layout_marginTop="@dimen/margin_10"
         android:backgroundTint="@color/light_grey_3"

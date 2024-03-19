@@ -15,7 +15,13 @@
         android:id="@+id/scheduleFragment"
         android:name="com.ren.menu.internal.presentation.ui.fragments.schedule.ScheduleFragment"
         android:label="fragment_schedule"
-        tools:layout="@layout/fragment_schedule" />
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_scheduleFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment"
+            app:popUpTo="@id/menuFragment2"
+            app:popUpToInclusive="false"/>
+    </fragment>
 
     <fragment
         android:id="@+id/paymentHistoryFragment"
@@ -33,9 +39,7 @@
             android:id="@+id/action_menuFragment2_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
 
-        <action
-            android:id="@+id/action_menuFragment2_to_scheduleFragment"
-            app:destination="@id/scheduleFragment" />
+
 
         <action
             android:id="@+id/action_menuFragment2_to_paymentHistoryFragment"
@@ -56,6 +60,9 @@
         <action
             android:id="@+id/action_menuFragment2_to_rulesFragment"
             app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_menuFragment2_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
 
     </fragment>
 
@@ -81,7 +88,11 @@
         android:id="@+id/newsFragment"
         android:name="com.ren.menu.internal.presentation.ui.fragments.news.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_detailNewsFragment"
+            app:destination="@id/detailNewsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/rulesFragment"
@@ -94,5 +105,21 @@
         android:name="com.ren.menu.internal.presentation.ui.fragments.deleteaccount.DeleteAccountFragment"
         android:label="fragment_delete_account"
         tools:layout="@layout/fragment_delete_account" />
+    <fragment
+        android:id="@+id/lessonsFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.lessons.LessonsFragment"
+        android:label="fragment_lessons"
+        tools:layout="@layout/fragment_lessons" >
+        <action
+            android:id="@+id/action_lessonsFragment_to_scheduleFragment"
+            app:destination="@id/scheduleFragment"
+            app:popUpTo="@id/menuFragment2"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailNewsFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.news.detail.DetailNewsFragment"
+        android:label="fragment_detail_news"
+        tools:layout="@layout/fragment_detail_news" />
 
 </navigation>

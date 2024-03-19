@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentScheduleBinding
@@ -25,19 +26,8 @@ internal class ScheduleFragment : BaseFragment<FragmentScheduleBinding,ScheduleV
     }
 
     private fun setOnClickListeners() = with(binding){
-        rbVisit.setOnClickListener {
-            rbVisit.setBackgroundResource(R.drawable.rounder_button_white)
-            rbLessons.setBackgroundResource(R.drawable.rounder_button)
-            clSchedule.visibility = View.GONE
-            recSchedule.visibility = View.GONE
-            cardView.visibility = View.VISIBLE
-        }
         rbLessons.setOnClickListener {
-            rbLessons.setBackgroundResource(R.drawable.rounder_button_white)
-            rbVisit.setBackgroundResource(R.drawable.rounder_button)
-            clSchedule.visibility = View.VISIBLE
-            recSchedule.visibility = View.VISIBLE
-            cardView.visibility = View.GONE
+            findNavController().navigate(R.id.action_scheduleFragment_to_lessonsFragment)
         }
     }
 }
