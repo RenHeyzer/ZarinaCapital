@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.view.binding.property.delegate.noreflection)
+    implementation(libs.bundles.navigation)
 
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))

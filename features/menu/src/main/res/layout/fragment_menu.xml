@@ -85,23 +85,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:backgroundTint="@color/light_grey_3"
+            android:orientation="vertical"
             android:padding="@dimen/margin_5">
 
             <TextView
                 android:id="@+id/tv_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/bi_wallet"
+                android:drawableEnd="@drawable/arrow_left"
                 android:drawablePadding="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:padding="@dimen/margin_10"
                 android:text="@string/paymenHistory"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawableStart="@drawable/bi_wallet"
-                tools:ignore="UseCompatTextViewDrawableXml" />
+                android:textSize="@dimen/text_size_medium" />
 
             <View
                 android:layout_width="match_parent"
@@ -112,15 +111,15 @@
                 android:id="@+id/tv_schedule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/material"
+                android:drawableEnd="@drawable/arrow_left"
                 android:drawablePadding="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:padding="@dimen/margin_10"
                 android:text="@string/schedule"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                android:drawableStart="@drawable/material"
-                android:drawableEnd="@drawable/arrow_left"
-                tools:ignore="UseCompatTextViewDrawableXml" />
+                 />
 
             <View
                 android:layout_width="match_parent"
@@ -131,15 +130,15 @@
                 android:id="@+id/tv_changePassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/mdi_lock_outline"
+                android:drawableEnd="@drawable/arrow_left"
                 android:drawablePadding="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:padding="10dp"
                 android:text="@string/changePassword"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawableStart="@drawable/mdi_lock_outline"
-                tools:ignore="UseCompatTextViewDrawableXml" />
+                />
 
             <View
                 android:layout_width="match_parent"
@@ -150,15 +149,15 @@
                 android:id="@+id/tv_settings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icons_setting"
+                android:drawableEnd="@drawable/arrow_left"
                 android:drawablePadding="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:padding="10dp"
                 android:text="@string/setting"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawableStart="@drawable/icons_setting"
-                tools:ignore="UseCompatTextViewDrawableXml" />
+                 />
 
         </LinearLayout>
 
@@ -190,15 +189,14 @@
                 android:id="@+id/tv_news"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/circum_view"
+                android:drawableEnd="@drawable/arrow_left"
                 android:drawablePadding="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:padding="@dimen/margin_10"
                 android:text="@string/news"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawableStart="@drawable/circum_view"
-                tools:ignore="UseCompatTextViewDrawableXml" />
+                android:textSize="@dimen/text_size_medium" />
 
             <View
                 android:layout_width="match_parent"
@@ -209,15 +207,15 @@
                 android:id="@+id/tv_rules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/circum_view"
+                android:drawableEnd="@drawable/arrow_left"
                 android:drawablePadding="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:padding="@dimen/margin_10"
                 android:text="@string/rules"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawableStart="@drawable/circum_view"
-                tools:ignore="UseCompatTextViewDrawableXml" />
+                />
 
         </LinearLayout>
 

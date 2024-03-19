@@ -10,6 +10,7 @@
     <dimen name="margin_20">20dp</dimen>
     <dimen name="margin_25">25dp</dimen>
     <dimen name="space_155">155dp</dimen>
+    <dimen name="space_100">100dp</dimen>
     <dimen name="margin_30">30dp</dimen>
     <dimen name="margin_5">5dp</dimen>
     <dimen name="view_size_1dp">1dp</dimen>

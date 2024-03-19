@@ -3,6 +3,7 @@ package com.ren.mycourses.api.presentation.ui.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.mycourses.R
 import com.ren.mycourses.api.presentation.ui.viewmodels.MyCoursesViewModel
