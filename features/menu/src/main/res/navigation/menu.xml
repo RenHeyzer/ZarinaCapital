@@ -115,11 +115,28 @@
             app:destination="@id/scheduleFragment"
             app:popUpTo="@id/menuFragment2"
             app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_lessonsFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailNewsFragment"
         android:name="com.ren.menu.internal.presentation.ui.fragments.news.detail.DetailNewsFragment"
         android:label="fragment_detail_news"
         tools:layout="@layout/fragment_detail_news" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.video.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" >
+        <action
+            android:id="@+id/action_videoFragment_to_videoDetailFragment"
+            app:destination="@id/videoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDetailFragment"
+        android:name="com.ren.menu.internal.presentation.ui.fragments.video.detail.VideoDetailFragment"
+        android:label="fragment_video_detail"
+        tools:layout="@layout/fragment_video_detail" />
 
 </navigation>

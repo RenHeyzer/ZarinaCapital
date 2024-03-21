@@ -15,4 +15,5 @@
     <dimen name="margin_5">5dp</dimen>
     <dimen name="view_size_1dp">1dp</dimen>
     <dimen name="space_80">80dp</dimen>
+    <dimen name="dp50">50dp</dimen>
 </resources>
