@@ -2,11 +2,10 @@ package com.ren.zarinacapital.di
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.ren.zarinacapital.App
-import com.ren.zarinacapital.navigation.MainActivity
+import com.ren.zarinacapital.ZarinaApp
 
 val FragmentActivity.appComponent: AppComponent
-    get() = (application as App).appComponent
+    get() = (application as ZarinaApp).appComponent
 
 val Fragment.appComponent: AppComponent
-    get() = (requireActivity().application as App).appComponent
+    get() = (requireActivity().application as ZarinaApp).appComponent
