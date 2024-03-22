@@ -3,10 +3,9 @@ package com.ren.auth.internal.presentation.ui.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.geeks.di.dependencies.findComponentDependencies
-import com.geeks.di.getComponent
+import com.ren.di.dependencies.findComponentDependencies
+import com.ren.di.getComponent
 import com.ren.auth.R
 import com.ren.auth.databinding.FragmentSignUpBinding
 import com.ren.auth.entities.SignUpField

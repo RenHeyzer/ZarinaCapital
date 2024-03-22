@@ -3,7 +3,7 @@ package com.ren.auth.internal.presentation.ui.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.geeks.di.scopes.ScreenScope
+import com.ren.di.scopes.ScreenScope
 import com.ren.auth.entities.SignUpParams
 import com.ren.auth.exceptions.EmptyFieldException
 import com.ren.auth.exceptions.PasswordMismatchException

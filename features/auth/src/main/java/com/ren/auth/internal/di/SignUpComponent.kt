@@ -1,8 +1,8 @@
 package com.ren.auth.internal.di
 
 import androidx.lifecycle.ViewModel
-import com.geeks.di.keys.ViewModelKey
-import com.geeks.di.scopes.ScreenScope
+import com.ren.di.keys.ViewModelKey
+import com.ren.di.scopes.ScreenScope
 import com.ren.auth.internal.presentation.ui.viewmodels.SignUpViewModel
 import com.ren.presentation.base.ViewModelFactory
 import dagger.Binds

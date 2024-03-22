@@ -1,6 +1,6 @@
 package com.ren.auth.api.dependencies
 
-import com.geeks.di.dependencies.FeatureDependencies
+import com.ren.di.dependencies.FeatureDependencies
 import com.ren.auth.repositories.AuthRepository
 import com.ren.presentation.utils.ExceptionMessages
 

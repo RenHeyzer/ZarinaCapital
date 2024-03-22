@@ -1,4 +1,4 @@
-package com.geeks.di.dependencies
+package com.ren.di.dependencies
 
 import androidx.fragment.app.Fragment
 

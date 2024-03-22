@@ -1,4 +1,4 @@
-package com.geeks.di.keys
+package com.ren.di.keys
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

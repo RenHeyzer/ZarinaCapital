@@ -1,4 +1,4 @@
-package com.geeks.di
+package com.ren.di
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment

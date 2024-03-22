@@ -1,8 +1,8 @@
 package com.ren.zarinacapital
 
 import android.app.Application
-import com.geeks.di.dependencies.FeatureDependenciesProvider
-import com.geeks.di.dependencies.HasFeatureDependencies
+import com.ren.di.dependencies.FeatureDependenciesProvider
+import com.ren.di.dependencies.HasFeatureDependencies
 import com.ren.zarinacapital.di.AppComponent
 import com.ren.zarinacapital.di.DaggerAppComponent
 

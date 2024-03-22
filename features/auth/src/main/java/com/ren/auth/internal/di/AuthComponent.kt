@@ -1,6 +1,6 @@
 package com.ren.auth.internal.di
 
-import com.geeks.di.scopes.FeatureScope
+import com.ren.di.scopes.FeatureScope
 import com.ren.auth.api.dependencies.AuthDeps
 import dagger.Component
 import dagger.Module

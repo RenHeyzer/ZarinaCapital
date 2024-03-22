@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.geeks.di"
+    namespace = "com.ren.di"
     compileSdk = 34
 
     defaultConfig {

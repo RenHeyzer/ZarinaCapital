@@ -1,7 +1,7 @@
 package com.ren.zarinacapital.di
 
 import android.content.Context
-import com.geeks.di.dependencies.HasFeatureDependencies
+import com.ren.di.dependencies.HasFeatureDependencies
 import com.ren.presentation.utils.ExceptionMessages
 import dagger.BindsInstance
 import dagger.Component

@@ -1,6 +1,6 @@
-package com.geeks.di.keys
+package com.ren.di.keys
 
-import com.geeks.di.dependencies.FeatureDependencies
+import com.ren.di.dependencies.FeatureDependencies
 import dagger.MapKey
 import kotlin.reflect.KClass
 
