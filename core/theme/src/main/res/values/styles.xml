@@ -40,7 +40,7 @@
         <item name="android:textSize">@dimen/text_size_title</item>
     </style>
 
-    <style name="Widget.TextInputLayout.FilledBox.Overlay" parent="Widget.Material3.TextInputLayout.FilledBox">
+    <style name="Widget.TextInputLayout.OutlinedBox.Overlay" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="boxCornerRadiusTopStart">@dimen/box_corner_radius</item>
@@ -48,7 +48,7 @@
         <item name="boxCornerRadiusBottomStart">@dimen/box_corner_radius</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/box_corner_radius</item>
         <item name="boxBackgroundColor">@color/light_grey_5</item>
-        <item name="boxBackgroundMode">filled</item>
+        <item name="boxBackgroundMode">outline</item>
         <item name="errorTextAppearance">@style/TextAppearance.AppCompat.Inter.VerySmall</item>
         <item name="errorTextColor">@color/red</item>
         <item name="cursorColor">@color/black</item>
@@ -56,13 +56,14 @@
         <item name="hintTextAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>
         <item name="hintTextColor">@color/dark_grey</item>
         <item name="boxStrokeWidth">@dimen/box_stroke_width</item>
-        <item name="boxStrokeWidthFocused">@dimen/box_stroke_width</item>
+        <item name="boxStrokeColor">@color/light_grey_5</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
         <item name="android:textColorHint">@color/dark_grey</item>
         <item name="placeholderTextAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>
         <item name="placeholderTextColor">@color/dark_grey</item>
     </style>
 
-    <style name="Widget.TextInputEditText.FilledBox.Overlay" parent="ThemeOverlay.Material3.TextInputEditText.FilledBox">
+    <style name="Widget.TextInputEditText.OutlinedBox.Overlay" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColorHighlight">@android:color/transparent</item>

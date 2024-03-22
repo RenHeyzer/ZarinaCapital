@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ren.presentation"
+    namespace = "com.ren.forexapi"
     compileSdk = 34
 
     defaultConfig {
@@ -25,27 +25,21 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "17"
-    }
-    buildFeatures {
-        viewBinding = true
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
 
     implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.fragment.ktx)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.kotlin.coroutines.android)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.convertor.gson)
+    implementation(platform(libs.okhttp3.bom))
+    implementation(libs.bundles.okhttp3)
     implementation(libs.javax.inject)
-
-    api(project(":core:common"))
-    implementation(project(":core:theme"))
+    implementation(project(":core:common"))
 }

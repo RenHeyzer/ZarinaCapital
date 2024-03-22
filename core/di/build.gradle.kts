@@ -2,10 +2,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
-    namespace = "com.ren.presentation"
+    namespace = "com.geeks.di"
     compileSdk = 34
 
     defaultConfig {
@@ -31,21 +32,15 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
 
     implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
     implementation(libs.fragment.ktx)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.kotlin.coroutines.android)
-    implementation(libs.javax.inject)
-
-    api(project(":core:common"))
-    implementation(project(":core:theme"))
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 }

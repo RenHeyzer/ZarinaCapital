@@ -16,7 +16,7 @@ abstract class BaseViewModel : ViewModel() {
             this@collectFlowAsState.collect { result ->
                 result.onFailure {
                     it.message?.let { message ->
-                        state.value = UIState.Error(message)
+                        state.value = UIState.Error(it, message)
                     }
                 }
 
