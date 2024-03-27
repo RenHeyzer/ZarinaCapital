@@ -57,14 +57,22 @@ dependencies {
 
     implementation(libs.bundles.navigation)
 
-    // Theme
+    // Core
     implementation(project(":core:theme"))
+    implementation(project(":core:presentation"))
+    implementation(project(":core:di"))
+
+    // Api
+    implementation(project(":forex-api"))
 
     // Data
     implementation(project(":data:courses"))
     implementation(project(":data:menu"))
     implementation(project(":data:my-courses"))
     implementation(project(":data:auth"))
+
+    // Domain
+    implementation(project(":domain:auth"))
 
     // Features
     implementation(project(":features:courses"))
