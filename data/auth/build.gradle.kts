@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -36,4 +37,10 @@ android {
 dependencies {
 
     implementation(libs.core.ktx)
+    implementation(libs.javax.inject)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+    implementation(project(":core:data"))
+    implementation(project(":forex-api"))
+    implementation(project(":domain:auth"))
 }
