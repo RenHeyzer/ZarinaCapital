@@ -39,6 +39,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
         binding.bottomNavigation.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                com.ren.auth.R.id.sign_up -> {
+                    binding.bottomNavigation.visibility = View.GONE
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
