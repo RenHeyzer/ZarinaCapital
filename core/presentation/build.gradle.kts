@@ -44,6 +44,8 @@ dependencies {
     implementation(libs.fragment.ktx)
     implementation(libs.bundles.lifecycle)
     implementation(libs.kotlin.coroutines.android)
+    implementation(libs.javax.inject)
 
     api(project(":core:common"))
+    implementation(project(":core:theme"))
 }
