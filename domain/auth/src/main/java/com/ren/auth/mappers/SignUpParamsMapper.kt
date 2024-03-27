@@ -7,18 +7,18 @@ import javax.inject.Inject
 
 class SignUpParamsMapper @Inject constructor() : Mapper<SignUpParams, User> {
     override fun to(model: SignUpParams) = User(
-        username = model.username,
-        email = model.email,
-        phone = model.phone,
-        password = model.password,
+        username = model.username.first,
+        email = model.email.first,
+        phone = model.phone.first,
+        password = model.password.first,
     )
 
 
     override fun from(model: User) = SignUpParams(
-        username = model.username,
-        email = model.email,
-        phone = model.phone,
-        password = model.password,
-        confirmPassword = model.password
+        username = model.username to null,
+        email = model.email to null,
+        phone = model.phone to null,
+        password = model.password to null,
+        confirmPassword = model.password to null
     )
 }

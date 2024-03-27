@@ -1,10 +1,10 @@
 package com.ren.presentation.utils
 
-sealed class UIState<T> {
+sealed class UIState<out T> {
 
-    class Loading<T> : UIState<T>()
+    data object Loading : UIState<Nothing>()
 
-    class Error<T>(val throwable: Throwable, val message: String? = null) : UIState<T>()
+    data class Error(val throwable: Throwable, val message: String? = null) : UIState<Nothing>()
 
-    class Success<T>(val data: T? = null) : UIState<T>()
+    data class Success<T>(val data: T? = null) : UIState<T>()
 }

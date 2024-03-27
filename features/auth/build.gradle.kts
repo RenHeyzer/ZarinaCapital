@@ -54,4 +54,5 @@ dependencies {
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
     implementation(project(":domain:auth"))
+    implementation(project(":forex-api"))
 }

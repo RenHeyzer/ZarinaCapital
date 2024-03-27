@@ -1,6 +1,7 @@
 package com.ren.zarinacapital.di
 
 import android.content.Context
+import com.ren.common.AppDispatchers
 import com.ren.di.dependencies.HasFeatureDependencies
 import com.ren.presentation.utils.ExceptionMessages
 import dagger.BindsInstance
@@ -38,4 +39,8 @@ class AppModule {
     @Provides
     @Singleton
     fun provideExceptionMessages(context: Context) = ExceptionMessages(context)
+
+    @Provides
+    @Singleton
+    fun provideAppDispatchers() = AppDispatchers()
 }

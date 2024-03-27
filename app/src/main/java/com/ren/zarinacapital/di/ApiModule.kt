@@ -18,7 +18,7 @@ object ApiModule {
     @Provides
     @Singleton
     fun provideRegisterApiService(retrofitClient: RetrofitClient) =
-        retrofitClient.registerApiService
+        retrofitClient.authApiService
 }
 
 @Qualifier

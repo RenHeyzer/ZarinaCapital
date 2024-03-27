@@ -40,6 +40,61 @@
         <item name="android:textSize">@dimen/text_size_title</item>
     </style>
 
+    <style name="TextAppearance.AppCompat.Roboto.VerySmall" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_very_small</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Regular.Small" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Bold.Small" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Regular.PreMedium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_pre_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Bold.PreMedium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/text_size_pre_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Regular.Medium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Bold.Medium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Title" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Roboto.Code" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/text_size_very_large</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Widget.AppCompat.CodeEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:hint">@string/code_hint</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:digits">1234567890</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Roboto.Code</item>
+    </style>
+
     <style name="Widget.TextInputLayout.OutlinedBox.Overlay" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -47,7 +102,7 @@
         <item name="boxCornerRadiusTopEnd">@dimen/box_corner_radius</item>
         <item name="boxCornerRadiusBottomStart">@dimen/box_corner_radius</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/box_corner_radius</item>
-        <item name="boxBackgroundColor">@color/light_grey_5</item>
+        <item name="boxBackgroundColor">@color/light_grey_f5</item>
         <item name="boxBackgroundMode">outline</item>
         <item name="errorTextAppearance">@style/TextAppearance.AppCompat.Inter.VerySmall</item>
         <item name="errorTextColor">@color/red</item>
@@ -56,7 +111,7 @@
         <item name="hintTextAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>
         <item name="hintTextColor">@color/dark_grey</item>
         <item name="boxStrokeWidth">@dimen/box_stroke_width</item>
-        <item name="boxStrokeColor">@color/light_grey_5</item>
+        <item name="boxStrokeColor">@color/light_grey_f5</item>
         <item name="boxStrokeErrorColor">@color/red</item>
         <item name="android:textColorHint">@color/dark_grey</item>
         <item name="placeholderTextAppearance">@style/TextAppearance.AppCompat.Inter.Small</item>

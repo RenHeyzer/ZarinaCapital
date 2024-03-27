@@ -14,14 +14,7 @@ fun View.gone() {
 
 fun EditText.trimmedText() = text.toString().trim()
 
-fun TextInputLayout.enableError(message: String? = null) {
-    isErrorEnabled = true
-    message?.let {
-        error = it
-    }
-}
-
-fun TextInputLayout.disableError() {
-    isErrorEnabled = false
-    error = null
+fun TextInputLayout.isErrorEnable(isEnabled: Boolean, message: String? = null) {
+    isErrorEnabled = isEnabled
+    error = message
 }

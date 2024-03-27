@@ -10,8 +10,14 @@
     <string name="email_hint">E-mail</string>
     <string name="password_hint">Введите пароль</string>
     <string name="confirm_password_hint">Подтвердите пароль</string>
+    <string name="code_hint">0</string>
     <string name="sign_up">Зарегистрироваться</string>
-    <string name="empty_field_exception_message">Это поле обязательно!</string>
+    <string name="required_field_exception_message">Это поле обязательно!</string>
+    <string name="empty_username_field_exception_message">Не указано ФИО</string>
+    <string name="empty_phone_field_exception_message">Не указан номер телефона</string>
+    <string name="empty_email_field_exception_message">Не указана почта</string>
+    <string name="empty_password_field_exception_message">Не указан пароль</string>
+    <string name="empty_confirm_password_field_exception_message">Не указан пароль для подтверждения</string>
     <string name="password_mismatch_exception_message">Пароли не совпадают!</string>
     <string name="auth_invalid_user_exception_message">Пользователя с таким адресом электронной почты уже соуществует!</string>
     <string name="network_exception_message">Нет подключения к сети</string>
@@ -19,4 +25,5 @@
     <string name="auth_user_collision_exception_message">Такой адрес электронной почты уже существует</string>
     <string name="auth_weak_password_exception_message">Ненадежный пароль. Пожалуйста, используйте более сложный пароль</string>
     <string name="auth_invalid_credentials_exception_message">Недопустимый адрес электронной почты или пароль</string>
+    <string name="confirm_email_text">Напишите 4-значный код который мы отправили на ваш E-mail для подтверждения личности</string>
 </resources>

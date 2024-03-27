@@ -1,6 +1,6 @@
 package com.ren.forexapi
 
-import com.ren.forexapi.auth.RegisterApiService
+import com.ren.forexapi.auth.AuthApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -32,5 +32,5 @@ class RetrofitClient(
         .client(okHttpClient)
         .build()
 
-    val registerApiService: RegisterApiService = retrofit.create()
+    val authApiService: AuthApiService = retrofit.create()
 }
