@@ -1,6 +1,7 @@
 package com.ren.zarinacapital.navigation
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.courses,
                 R.id.my_courses,
                 R.id.menu,
+                com.ren.auth.R.id.auth
             )
         )
 
