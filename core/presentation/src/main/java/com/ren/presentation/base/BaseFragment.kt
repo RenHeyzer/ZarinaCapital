@@ -34,8 +34,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
     protected open fun <T> StateFlow<UIState<T>>.collectUIStateFlow(
         latest: Boolean = false,
         lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
-        onLoading: (UIState.Loading<T>) -> Unit,
-        onError: (UIState.Error<T>) -> Unit,
+        onLoading: (UIState.Loading) -> Unit,
+        onError: (UIState.Error) -> Unit,
         onSuccess: (UIState.Success<T>) -> Unit,
     ) {
         launchWithViewLifecycle(lifecycleState = lifecycleState) {
