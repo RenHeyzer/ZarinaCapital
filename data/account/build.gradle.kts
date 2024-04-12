@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ren.mycourses"
+    namespace = "com.ren.account"
     compileSdk = 34
 
     defaultConfig {
