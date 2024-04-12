@@ -48,4 +48,5 @@ dependencies {
 
     api(project(":core:common"))
     implementation(project(":core:theme"))
+    implementation(project(":core:di"))
 }

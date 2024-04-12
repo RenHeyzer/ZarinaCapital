@@ -67,12 +67,6 @@ dependencies {
 
     // Data
     implementation(project(":data:courses"))
-    implementation(project(":data:menu"))
-    implementation(project(":data:my-courses"))
-    implementation(project(":data:auth"))
-
-    // Domain
-    implementation(project(":domain:auth"))
 
     // Features
     implementation(project(":features:courses"))

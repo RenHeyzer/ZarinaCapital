@@ -6,9 +6,7 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.auth.R
 import com.ren.auth.api.presentation.ui.viewmodels.ConfirmEmailViewModel
-import com.ren.auth.api.presentation.ui.viewmodels.SignInViewModel
 import com.ren.auth.databinding.FragmentConfirmEmailBinding
-import com.ren.auth.databinding.FragmentSignInBinding
 import com.ren.presentation.base.BaseFragment
 
 class ConfirmEmailFragment :
