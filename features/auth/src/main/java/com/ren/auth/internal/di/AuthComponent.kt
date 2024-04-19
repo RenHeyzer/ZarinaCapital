@@ -33,7 +33,7 @@ internal interface AuthComponent {
 }
 
 internal val Fragment.authComponent: AuthComponent
-    get() = getComponent(R.id.auth) {
+    get() = getComponent(R.id.auth_graph) {
         DaggerAuthComponent.builder().deps(findComponentDependencies()).build()
     }
 
