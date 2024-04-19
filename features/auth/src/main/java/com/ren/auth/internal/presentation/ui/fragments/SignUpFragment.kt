@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.ren.auth.R
@@ -36,6 +37,7 @@ internal class SignUpFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         signUp()
+        navigateToSignIn()
         subscribeToResult()
     }
 
@@ -48,6 +50,12 @@ internal class SignUpFragment :
                 password = etPassword.trimmedText(),
                 confirmPassword = etConfirmPassword.trimmedText()
             )
+        }
+    }
+
+    private fun navigateToSignIn() {
+        binding.btnSingIn.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_up_to_sign_in)
         }
     }
 
