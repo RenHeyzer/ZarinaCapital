@@ -9,6 +9,18 @@
         android:id="@+id/sign_up"
         android:name="com.ren.auth.internal.presentation.ui.fragments.SignUpFragment"
         android:label="@string/sign_up_screen"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_sign_up_to_signInFragment"
+            app:popUpTo="@id/auth_graph"
+            app:popUpToInclusive="true"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.ren.auth.api.presentation.ui.fragments.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
 
 </navigation>
