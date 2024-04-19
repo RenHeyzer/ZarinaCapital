@@ -3,10 +3,10 @@ package com.ren.auth.internal.presentation.ui.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.ren.auth.entities.SignUpParams
-import com.ren.auth.exceptions.EmptyFieldsException
-import com.ren.auth.exceptions.PasswordMismatchException
-import com.ren.auth.usecases.SignUpUseCase
+import com.ren.auth.internal.domain.entities.SignUpParams
+import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
+import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
+import com.ren.auth.internal.domain.usecases.SignUpUseCase
 import com.ren.di.scopes.ScreenScope
 import com.ren.presentation.base.BaseViewModel
 import com.ren.presentation.utils.ExceptionMessages

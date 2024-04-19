@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ren.auth"
+    namespace = "com.ren.account"
     compileSdk = 34
 
     defaultConfig {
@@ -32,26 +32,14 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
 
     implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.fragment.ktx)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.view.binding.property.delegate.noreflection)
-    implementation(libs.navigation.fragment.ktx)
-    implementation(libs.navigation.ui.ktx)
+    implementation(libs.javax.inject)
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
-
-    implementation(project(":core:di"))
-    implementation(project(":core:theme"))
-    implementation(project(":core:presentation"))
+    implementation(project(":core:data"))
     implementation(project(":forex-api"))
 }
