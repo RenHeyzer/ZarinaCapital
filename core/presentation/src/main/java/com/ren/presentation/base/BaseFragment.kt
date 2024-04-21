@@ -3,6 +3,7 @@ package com.ren.presentation.base
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -55,6 +56,20 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
                         is UIState.Success -> onSuccess(it)
                     }
                 }
+            }
+        }
+    }
+
+    protected open fun <T> LiveData<UIState<T>>.subscribeAsState(
+        onLoading: (UIState.Loading) -> Unit,
+        onError: (UIState.Error) -> Unit,
+        onSuccess: (UIState.Success<T>) -> Unit,
+    ) {
+        observe(viewLifecycleOwner) {
+            when (it) {
+                is UIState.Loading -> onLoading(it)
+                is UIState.Error -> onError(it)
+                is UIState.Success -> onSuccess(it)
             }
         }
     }
