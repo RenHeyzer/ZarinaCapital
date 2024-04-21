@@ -24,5 +24,6 @@
         tools:layout="@layout/fragment_menu" />
 
     <include app:graph="@navigation/auth" />
+    <include app:graph="@navigation/courses_graph" />
 
 </navigation>
