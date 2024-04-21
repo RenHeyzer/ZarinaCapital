@@ -60,6 +60,7 @@ dependencies {
     // Core
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
+    implementation(project(":core:data"))
     implementation(project(":core:di"))
 
     // Api
