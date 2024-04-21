@@ -10,5 +10,7 @@
     <color name="light_grey_b5">#B5B5B5</color>
     <color name="blue">#0075FF</color>
     <color name="transparent_red">#1FCB1B1D</color>
+    <color name="yellow">#FFEA01</color>
+    <color name="dark_yellow">#E7D200</color>
     <color name="mtrl_textinput_default_box_stroke_color">#F5F5F5</color>
 </resources>
