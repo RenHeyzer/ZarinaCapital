@@ -34,9 +34,23 @@ abstract class BaseViewModel : ViewModel() {
         }
     }
 
-                result.onSuccess {
-                    it?.let { data ->
-                        state.value = UIState.Success(data)
+    protected open fun <T> Flow<Either<Throwable, T>>.collectFlowAsState(
+        state: MutableLiveData<UIState<T>>,
+    ) {
+        viewModelScope.launch {
+            this@collectFlowAsState.collect {
+                when (it) {
+                    is Either.Left -> {
+                        it.left?.let { t ->
+                            val message = t.message ?: "Unknown error!"
+                            state.value = UIState.Error(t, message)
+                        }
+                    }
+
+                    is Either.Right -> {
+                        it.right?.let { data ->
+                            state.value = UIState.Success(data)
+                        }
                     }
                 }
             }
