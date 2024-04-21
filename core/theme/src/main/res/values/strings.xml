@@ -26,4 +26,5 @@
     <string name="auth_weak_password_exception_message">Ненадежный пароль. Пожалуйста, используйте более сложный пароль</string>
     <string name="auth_invalid_credentials_exception_message">Недопустимый адрес электронной почты или пароль</string>
     <string name="confirm_email_text">Напишите 4-значный код который мы отправили на ваш E-mail для подтверждения личности</string>
+    <string name="search_courses">Поиск курсов</string>
 </resources>
