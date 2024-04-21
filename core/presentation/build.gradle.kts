@@ -47,5 +47,6 @@ dependencies {
     implementation(libs.javax.inject)
 
     api(project(":core:common"))
+    implementation(project(":core:di"))
     implementation(project(":core:theme"))
 }
