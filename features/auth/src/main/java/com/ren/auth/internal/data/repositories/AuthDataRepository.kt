@@ -1,4 +1,4 @@
-package com.ren.auth.impl
+package com.ren.auth.internal.data.repositories
 
 import com.ren.auth.api.domain.entities.User
 import com.ren.auth.api.domain.repositories.AuthRepository
