@@ -45,8 +45,7 @@ dependencies {
     implementation(libs.fragment.ktx)
     implementation(libs.bundles.lifecycle)
     implementation(libs.view.binding.property.delegate.noreflection)
-    implementation(libs.navigation.fragment.ktx)
-    implementation(libs.navigation.ui.ktx)
+    implementation(libs.bundles.navigation)
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
