@@ -1,29 +1,24 @@
 package com.ren.di
 
-import androidx.annotation.IdRes
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
-import androidx.navigation.navGraphViewModels
 
-class ComponentViewModel : ViewModel() {
+class ComponentViewModel<C>(val component: C) : ViewModel() {
 
-    var component: Any? = null
+    var _component: C? = component
 
     override fun onCleared() {
-        component = null
+        _component = null
     }
 }
 
-fun <T> ViewModelStoreOwner.getComponent(createComponent: () -> T): T {
-    val viewModel = ViewModelProvider(this)[ComponentViewModel::class.java]
-    viewModel.apply {
-        if (component == null) {
-            component = createComponent()
-        }
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    return viewModel.component as T
-}
+//fun <T> ViewModelStoreOwner.getComponent(createComponent: () -> T): T {
+//    val viewModel = ViewModelProvider(this)[ComponentViewModel::class.java]
+//    viewModel.apply {
+//        if (_component == null) {
+//            _component = createComponent()
+//        }
+//    }
+//
+//    @Suppress("UNCHECKED_CAST")
+//    return viewModel.component as T
+//}
