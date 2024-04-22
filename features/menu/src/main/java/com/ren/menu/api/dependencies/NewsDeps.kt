@@ -1,12 +1,12 @@
-package com.ren.auth.api.dependencies
+package com.ren.menu.api.dependencies
 
 import com.ren.common.AppDispatchers
 import com.ren.di.dependencies.FeatureDependencies
-import com.ren.forexapi.api.apiservice.auth.AuthApiService
+import com.ren.forexapi.api.apiservice.news.NewsApiService
 import com.ren.presentation.utils.ExceptionMessages
 
-interface AuthDeps : FeatureDependencies {
+interface NewsDeps : FeatureDependencies {
     val exceptionMessages: ExceptionMessages
     val appDispatchers: AppDispatchers
-    val authApiService: AuthApiService
+    val newsApiService: NewsApiService
 }

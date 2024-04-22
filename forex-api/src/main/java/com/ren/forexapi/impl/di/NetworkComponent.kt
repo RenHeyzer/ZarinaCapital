@@ -1,6 +1,7 @@
 package com.ren.forexapi.impl.di
 
-import com.ren.forexapi.api.auth.AuthApiService
+import com.ren.forexapi.api.apiservice.auth.AuthApiService
+import com.ren.forexapi.api.apiservice.news.NewsApiService
 import com.ren.forexapi.api.di.ForexBaseUrl
 import com.ren.forexapi.api.di.NetworkApi
 import dagger.BindsInstance
@@ -11,6 +12,7 @@ import javax.inject.Singleton
 interface NetworkComponent : NetworkApi {
 
     override val authApiService: AuthApiService
+    override val newsApiService: NewsApiService
 
     @Component.Factory
     interface Factory {

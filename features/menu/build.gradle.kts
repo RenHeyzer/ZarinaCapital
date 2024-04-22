@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -46,7 +47,13 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.view.binding.property.delegate.noreflection)
+    implementation(libs.dagger)
+    implementation(libs.legacy.support.v4)
+    kapt(libs.dagger.compiler)
 
+    implementation(project(":core:di"))
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
+    implementation(project(":forex-api"))
+    implementation(project(":core:data"))
 }

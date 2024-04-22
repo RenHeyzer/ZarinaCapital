@@ -1,7 +1,7 @@
 package com.ren.zarinacapital.di
 
 import android.content.Context
-import com.ren.auth.api.dependencies.AuthDeps
+import com.ren.menu.api.dependencies.NewsDeps
 import com.ren.common.AppDispatchers
 import com.ren.di.dependencies.FeatureDependencies
 import com.ren.di.keys.FeatureDependenciesKey
@@ -16,7 +16,7 @@ object FeatureDepsModule {
 
     @Provides
     @IntoMap
-    @FeatureDependenciesKey(AuthDeps::class)
+    @FeatureDependenciesKey(NewsDeps::class)
     fun provideAuthDeps(
         context: Context,
         appDispatchers: AppDispatchers,
@@ -26,6 +26,21 @@ object FeatureDepsModule {
             .context(context)
             .appDispatchers(appDispatchers)
             .authApiService(networkApi.authApiService)
+            .build()
+    }
+
+    @Provides
+    @IntoMap
+    @FeatureDependenciesKey(NewsDeps::class)
+    fun provideNewsDeps(
+        context: Context,
+        appDispatchers: AppDispatchers,
+        networkApi: NetworkApi,
+    ): FeatureDependencies {
+        return DaggerNewsDepsComponent.builder()
+            .context(context)
+            .appDispatchers(appDispatchers)
+            .newsApiService(networkApi.newsApiService)
             .build()
     }
 }

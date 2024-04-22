@@ -1,21 +1,18 @@
-package com.ren.zarinacapital.di.auth
+package com.ren.zarinacapital.di.news
 
 import android.content.Context
-import com.ren.auth.api.dependencies.AuthDeps
-import com.ren.menu.api.dependencies.NewsDeps
 import com.ren.common.AppDispatchers
-import com.ren.di.scopes.FeatureScope
-import com.ren.forexapi.api.apiservice.auth.AuthApiService
+import com.ren.forexapi.api.apiservice.news.NewsApiService
+import com.ren.menu.api.dependencies.NewsDeps
 import com.ren.presentation.utils.ExceptionMessages
 import dagger.BindsInstance
 import dagger.Component
 
-@[FeatureScope Component]
-interface AuthDepsComponent : AuthDeps {
+interface NewsDepsComponent : NewsDeps {
 
     override val exceptionMessages: ExceptionMessages
     override val appDispatchers: AppDispatchers
-    override val authApiService: AuthApiService
+    override val newsApiService: NewsApiService
 
     @Component.Builder
     interface Builder {
@@ -26,8 +23,8 @@ interface AuthDepsComponent : AuthDeps {
         fun appDispatchers(appDispatchers: AppDispatchers): Builder
 
         @BindsInstance
-        fun authApiService(authApiService: AuthApiService): Builder
+        fun newsApiService(newsApiService: NewsApiService): Builder
 
-        fun build(): AuthDepsComponent
+        fun build(): NewsDepsComponent
     }
 }
