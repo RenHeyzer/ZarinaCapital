@@ -27,15 +27,3 @@ fun <T> ViewModelStoreOwner.getComponent(createComponent: () -> T): T {
     @Suppress("UNCHECKED_CAST")
     return viewModel.component as T
 }
-
-fun <T> Fragment.getComponent(@IdRes navGraphId: Int, createComponent: () -> T): T {
-    val viewModel by navGraphViewModels<ComponentViewModel>(navGraphId)
-    viewModel.apply {
-        if (component == null) {
-            component = createComponent()
-        }
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    return viewModel.component as T
-}
