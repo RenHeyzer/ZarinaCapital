@@ -16,15 +16,7 @@ import dagger.Module
     modules = [AuthModule::class],
     dependencies = [AuthDeps::class]
 )]
-internal interface AuthComponent {
-
-    @Component.Builder
-    interface Builder {
-        fun deps(deps: AuthDeps): Builder
-
-        fun build(): AuthComponent
-    }
-}
+internal interface AuthComponent
 
 @Module
 internal interface AuthModule {
