@@ -1,6 +1,7 @@
 package com.ren.courses.api.presentation.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -26,5 +27,20 @@ class CoursesFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        subscribeToCourses()
+    }
+
+    private fun subscribeToCourses() {
+        viewModel.coursesState.subscribeAsState(
+            onLoading = {
+
+            },
+            onError = {
+                Log.e("courses", it.message, it.throwable)
+            },
+            onSuccess = {
+                Log.e("courses", it.data.toString())
+            }
+        )
     }
 }
