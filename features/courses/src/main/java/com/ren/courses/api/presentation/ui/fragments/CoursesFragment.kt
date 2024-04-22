@@ -7,6 +7,9 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.courses.R
 import com.ren.courses.api.presentation.ui.viewmodels.CoursesViewModel
 import com.ren.courses.databinding.FragmentCoursesBinding
+import com.ren.courses.internal.di.DaggerCoursesFeatureComponent
+import com.ren.di.dependencies.findComponentDependencies
+import com.ren.di.getComponent
 import com.ren.presentation.base.BaseFragment
 
 class CoursesFragment :
