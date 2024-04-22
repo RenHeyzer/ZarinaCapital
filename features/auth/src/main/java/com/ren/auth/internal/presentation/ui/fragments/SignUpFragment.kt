@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.ren.auth.R
 import com.ren.auth.databinding.FragmentSignUpBinding
-import com.ren.auth.exceptions.EmptyFieldsException
-import com.ren.auth.exceptions.PasswordMismatchException
-import com.ren.auth.internal.di.DaggerAuthComponent
+import com.ren.auth.internal.di.authComponent
+import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
+import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
 import com.ren.auth.internal.presentation.ui.viewmodels.SignUpViewModel
-import com.ren.di.dependencies.findComponentDependencies
 import com.ren.di.getComponent
 import com.ren.presentation.base.BaseFragment
 import com.ren.presentation.utils.UIState
@@ -26,9 +26,9 @@ internal class SignUpFragment :
     BaseFragment<FragmentSignUpBinding, SignUpViewModel>(R.layout.fragment_sign_up) {
 
     private val component by lazy {
-        getComponent(R.id.auth) {
-            DaggerAuthComponent.builder().deps(findComponentDependencies()).build()
-        }.signUpComponent().create()
+        getComponent {
+            authComponent.signUpComponent().create()
+        }
     }
 
     override val binding by viewBinding(FragmentSignUpBinding::bind)
@@ -37,6 +37,7 @@ internal class SignUpFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         signUp()
+        navigateToSignIn()
         subscribeToResult()
     }
 
@@ -49,6 +50,12 @@ internal class SignUpFragment :
                 password = etPassword.trimmedText(),
                 confirmPassword = etConfirmPassword.trimmedText()
             )
+        }
+    }
+
+    private fun navigateToSignIn() {
+        binding.btnSingIn.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_up_to_sign_in)
         }
     }
 
@@ -88,6 +95,7 @@ internal class SignUpFragment :
                                 message = state.message
                             )
                         }
+
                         else -> {
                             Log.e("error", state.message, state.throwable)
                         }

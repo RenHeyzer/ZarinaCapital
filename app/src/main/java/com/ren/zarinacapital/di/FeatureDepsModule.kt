@@ -3,9 +3,10 @@ package com.ren.zarinacapital.di
 import android.content.Context
 import com.ren.auth.api.dependencies.AuthDeps
 import com.ren.common.AppDispatchers
-import com.ren.courses.api.dependencies.CoursesDeps
 import com.ren.di.dependencies.FeatureDependencies
 import com.ren.di.keys.FeatureDependenciesKey
+import com.ren.forexapi.api.di.NetworkApi
+import com.ren.zarinacapital.di.auth.DaggerAuthDepsComponent
 import com.ren.forexapi.auth.AuthApiService
 import com.ren.forexapi.courses.CoursesApiService
 import com.ren.zarinacapital.auth.di.DaggerAuthDepsComponent
@@ -23,12 +24,12 @@ object FeatureDepsModule {
     fun provideAuthDeps(
         context: Context,
         appDispatchers: AppDispatchers,
-        authApiService: AuthApiService,
+        networkApi: NetworkApi,
     ): FeatureDependencies {
         return DaggerAuthDepsComponent.builder()
             .context(context)
             .appDispatchers(appDispatchers)
-            .registerApiService(authApiService)
+            .authApiService(networkApi.authApiService)
             .build()
     }
 
@@ -37,11 +38,11 @@ object FeatureDepsModule {
     @FeatureDependenciesKey(CoursesDeps::class)
     fun provideCoursesDeps(
         appDispatchers: AppDispatchers,
-        coursesApiService: CoursesApiService
+        networkApi: NetworkApi,
     ): FeatureDependencies {
         return DaggerCoursesDepsComponent.builder()
             .appDispatchers(appDispatchers)
-            .coursesApiService(coursesApiService)
+            .coursesApiService(networkApi.coursesApiService)
             .build()
     }
 }

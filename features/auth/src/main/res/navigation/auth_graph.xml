@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_graph"
+    app:startDestination="@id/sign_up">
+
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="com.ren.auth.internal.presentation.ui.fragments.SignUpFragment"
+        android:label="@string/sign_up_screen"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_sign_up_to_sign_in"
+            app:popUpTo="@id/auth_graph"
+            app:popUpToInclusive="true"
+            app:destination="@id/sign_in" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sign_in"
+        android:name="com.ren.auth.api.presentation.ui.fragments.SignInFragment"
+        android:label="@string/sign_in_screen"
+        tools:layout="@layout/fragment_sign_in" />
+
+</navigation>

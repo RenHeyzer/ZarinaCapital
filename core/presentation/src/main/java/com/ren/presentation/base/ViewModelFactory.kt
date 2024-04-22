@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.ren.di.scopes.ScreenScope
 import javax.inject.Inject
 import javax.inject.Provider
+import javax.inject.Singleton
 
 @ScreenScope
 class ViewModelFactory @Inject constructor(

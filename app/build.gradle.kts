@@ -18,7 +18,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "FOREX_BASE_URL", "\"http://51.20.10.196/api/v1/\"")
+        buildConfigField("String", "FOREX_BASE_URL", "\"http://16.170.211.115/api/v1/\"")
     }
 
     buildTypes {
@@ -68,12 +68,6 @@ dependencies {
 
     // Data
     implementation(project(":data:courses"))
-    implementation(project(":data:menu"))
-    implementation(project(":data:my-courses"))
-    implementation(project(":data:auth"))
-
-    // Domain
-    implementation(project(":domain:auth"))
 
     // Features
     implementation(project(":features:courses"))
