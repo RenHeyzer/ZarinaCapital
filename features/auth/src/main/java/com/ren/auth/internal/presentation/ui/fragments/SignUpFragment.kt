@@ -8,9 +8,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.ren.auth.R
 import com.ren.auth.databinding.FragmentSignUpBinding
+import com.ren.auth.internal.di.authComponent
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
 import com.ren.auth.internal.presentation.ui.viewmodels.SignUpViewModel
+import com.ren.di.getComponent
 import com.ren.presentation.base.BaseFragment
 import com.ren.presentation.utils.UIState
 import com.ren.presentation.utils.gone
@@ -22,14 +24,14 @@ import com.ren.presentation.utils.visible
 internal class SignUpFragment :
     BaseFragment<FragmentSignUpBinding, SignUpViewModel>(R.layout.fragment_sign_up) {
 
-//    private val component by lazy {
-//        getComponent {
-//            authComponent.signUpComponent().create()
-//        }
-//    }
+    private val component by lazy {
+        getComponent {
+            authComponent.signUpComponent().create()
+        }
+    }
 
     override val binding by viewBinding(FragmentSignUpBinding::bind)
-    override val viewModel by viewModels<SignUpViewModel>()
+    override val viewModel by viewModels<SignUpViewModel> { component.viewModelFactory() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

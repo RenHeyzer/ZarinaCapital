@@ -11,12 +11,11 @@ import com.ren.auth.internal.presentation.ui.viewmodels.SignUpViewModel
 import com.ren.common.Mapper
 import com.ren.presentation.base.ViewModelFactory
 import dagger.Binds
-import dagger.Component
 import dagger.Module
 import dagger.Subcomponent
 import dagger.multibindings.IntoMap
 
-@[ScreenScope Component(modules = [SingUpModule::class])]
+@[ScreenScope Subcomponent(modules = [SingUpModule::class])]
 internal interface SignUpComponent {
 
     fun viewModelFactory(): ViewModelProvider.Factory

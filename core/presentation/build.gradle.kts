@@ -45,7 +45,6 @@ dependencies {
     implementation(libs.bundles.lifecycle)
     implementation(libs.kotlin.coroutines.android)
     implementation(libs.javax.inject)
-    implementation(libs.bundles.navigation)
 
     api(project(":core:common"))
     implementation(project(":core:theme"))
