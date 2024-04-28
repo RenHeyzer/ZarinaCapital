@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
     alias(libs.plugins.navigation.safe.args)
 }
 
@@ -50,10 +51,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.constraintlayout)
 
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-    implementation(libs.dagger.android)
-    kapt(libs.dagger.android.processor)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     implementation(libs.bundles.navigation)
 
@@ -73,4 +72,8 @@ dependencies {
     implementation(project(":features:menu"))
     implementation(project(":features:my-courses"))
     implementation(project(":features:auth"))
+}
+
+kapt {
+    correctErrorTypes = true
 }
