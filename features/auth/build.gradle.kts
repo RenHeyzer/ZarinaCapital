@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -46,8 +47,8 @@ dependencies {
     implementation(libs.bundles.lifecycle)
     implementation(libs.view.binding.property.delegate.noreflection)
     implementation(libs.bundles.navigation)
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     implementation(project(":core:di"))
     implementation(project(":core:theme"))

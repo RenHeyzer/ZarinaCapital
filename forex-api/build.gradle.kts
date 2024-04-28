@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -42,7 +43,7 @@ dependencies {
     implementation(platform(libs.okhttp3.bom))
     implementation(libs.bundles.okhttp3)
     implementation(libs.javax.inject)
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
     implementation(project(":core:common"))
 }
