@@ -8,7 +8,9 @@ import com.ren.auth.R
 import com.ren.auth.api.presentation.ui.viewmodels.SignInViewModel
 import com.ren.auth.databinding.FragmentSignInBinding
 import com.ren.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignInFragment :
     BaseFragment<FragmentSignInBinding, SignInViewModel>(R.layout.fragment_sign_in) {
 
