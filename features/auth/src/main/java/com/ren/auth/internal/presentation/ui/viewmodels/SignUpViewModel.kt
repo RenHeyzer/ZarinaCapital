@@ -7,14 +7,12 @@ import com.ren.auth.internal.domain.entities.SignUpParams
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
 import com.ren.auth.internal.domain.usecases.SignUpUseCase
-import com.ren.di.scopes.ScreenScope
 import com.ren.presentation.base.BaseViewModel
 import com.ren.presentation.utils.ExceptionMessages
 import com.ren.presentation.utils.UIState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@ScreenScope
 internal class SignUpViewModel @Inject constructor(
     private val signUpUseCase: SignUpUseCase,
     private val exceptionMessages: ExceptionMessages
