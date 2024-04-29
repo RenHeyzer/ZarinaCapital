@@ -19,7 +19,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "FOREX_BASE_URL", "\"http://51.20.10.196/api/v1/\"")
+        buildConfigField("String", "FOREX_BASE_URL", "\"http://16.170.211.115/api/v1/\"")
     }
 
     buildTypes {
