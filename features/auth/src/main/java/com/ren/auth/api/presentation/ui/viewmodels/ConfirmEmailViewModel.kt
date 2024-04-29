@@ -1,8 +1,9 @@
 package com.ren.auth.api.presentation.ui.viewmodels
 
-import com.ren.di.scopes.ScreenScope
 import com.ren.presentation.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-@ScreenScope
-class ConfirmEmailViewModel : BaseViewModel() {
+@HiltViewModel
+class ConfirmEmailViewModel @Inject constructor() : BaseViewModel() {
 }
