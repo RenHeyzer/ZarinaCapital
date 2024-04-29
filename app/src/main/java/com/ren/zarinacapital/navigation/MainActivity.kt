@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.courses,
                 R.id.my_courses,
                 R.id.menu,
-                com.ren.auth.R.id.auth
+                com.ren.auth.R.id.auth_graph
             )
         )
 
