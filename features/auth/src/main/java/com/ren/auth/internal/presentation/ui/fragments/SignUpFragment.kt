@@ -7,7 +7,6 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.ren.auth.R
-import com.ren.auth.api.presentation.ui.fragments.AuthFlowFragment
 import com.ren.auth.databinding.FragmentSignUpBinding
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
@@ -19,16 +18,14 @@ import com.ren.presentation.utils.isErrorEnable
 import com.ren.presentation.utils.makeSnackbar
 import com.ren.presentation.utils.trimmedText
 import com.ren.presentation.utils.visible
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 internal class SignUpFragment :
     BaseFragment<FragmentSignUpBinding, SignUpViewModel>(R.layout.fragment_sign_up) {
 
-    private val component by lazy {
-        (requireparentfragment() as AuthFlowFragment).component
-    }
-
     override val binding by viewBinding(FragmentSignUpBinding::bind)
-    override val viewModel by viewModels<SignUpViewModel> { component.viewModelFactory }
+    override val viewModel by viewModels<SignUpViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
