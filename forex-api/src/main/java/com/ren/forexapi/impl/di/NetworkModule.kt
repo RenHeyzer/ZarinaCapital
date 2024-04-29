@@ -3,10 +3,12 @@ package com.ren.forexapi.impl.di
 import com.ren.forexapi.api.di.ForexBaseUrl
 import dagger.Module
 import dagger.Provides
-import javax.inject.Qualifier
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 internal object NetworkModule {
 
     @Provides
