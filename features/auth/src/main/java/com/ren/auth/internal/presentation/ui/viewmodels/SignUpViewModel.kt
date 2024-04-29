@@ -10,9 +10,11 @@ import com.ren.auth.internal.domain.usecases.SignUpUseCase
 import com.ren.presentation.base.BaseViewModel
 import com.ren.presentation.utils.ExceptionMessages
 import com.ren.presentation.utils.UIState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 internal class SignUpViewModel @Inject constructor(
     private val signUpUseCase: SignUpUseCase,
     private val exceptionMessages: ExceptionMessages
