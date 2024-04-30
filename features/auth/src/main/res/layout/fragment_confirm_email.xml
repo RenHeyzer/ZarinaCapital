@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:paddingHorizontal="@dimen/padding_16"
-    tools:context=".api.presentation.ui.fragments.ConfirmEmailFragment">
+    tools:context=".internal.presentation.ui.fragments.ConfirmEmailFragment">
 
     <TextView
         android:id="@+id/tv_confirm_email"

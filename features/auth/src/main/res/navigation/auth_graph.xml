@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/confirm_email"
-        android:name="com.ren.auth.api.presentation.ui.fragments.ConfirmEmailFragment"
+        android:name="com.ren.auth.internal.presentation.ui.fragments.ConfirmEmailFragment"
         android:label="@string/confirm_email_screen"
         tools:layout="@layout/fragment_confirm_email" />
 
