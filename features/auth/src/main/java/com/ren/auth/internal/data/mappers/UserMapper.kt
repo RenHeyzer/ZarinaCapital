@@ -1,6 +1,6 @@
 package com.ren.auth.internal.data.mappers
 
-import com.ren.auth.api.domain.entities.User
+import com.ren.auth.internal.domain.entities.User
 import com.ren.forexapi.api.models.UserDTO
 import javax.inject.Inject
 
