@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -31,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -39,11 +44,14 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.fragment.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.lifecycle.livedata.ktx)
-    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.bundles.lifecycle)
     implementation(libs.view.binding.property.delegate.noreflection)
+    implementation(libs.bundles.navigation)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
+    implementation(project(":core:di"))
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
+    implementation(project(":forex-api"))
 }

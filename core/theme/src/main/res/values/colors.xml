@@ -5,7 +5,10 @@
     <color name="red">#CB1B1D</color>
     <color name="dark_grey">#3F3F3F</color>
     <color name="grey">#777777</color>
-    <color name="light_grey_3">#F3F3F3</color>
-    <color name="light_grey_5">#F5F5F5</color>
+    <color name="light_grey_f3">#F3F3F3</color>
+    <color name="light_grey_f5">#F5F5F5</color>
+    <color name="light_grey_b5">#B5B5B5</color>
     <color name="blue">#0075FF</color>
+    <color name="transparent_red">#1FCB1B1D</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#F5F5F5</color>
 </resources>

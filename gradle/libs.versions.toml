@@ -6,6 +6,7 @@ lifecycle = "2.7.0"
 navigation = "2.7.7"
 org-jetbrains-kotlin-jvm = "1.9.22"
 kotlin-corountines = "1.8.0"
+retrofit = "2.9.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -30,7 +31,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.require = "2.1.4" }
 
 #Inject
-javax-inject = { module = "javax-inject:javax-inject", version.require = "1" }
+javax-inject = { module = "javax.inject:javax.inject", version.require = "1" }
 
 #Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
@@ -46,6 +47,16 @@ navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx",
 
 #ViewBindingPropertyDelegate
 view-binding-property-delegate-noreflection = { group = "com.github.kirich1409", name = "viewbindingpropertydelegate-noreflection", version.require = "1.5.9" }
+
+#Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-convertor-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+#OkHttp
+okhttp3-bom = {group = "com.squareup.okhttp3", name = "okhttp-bom", version.require = "4.12.0"}
+okhttp3 = {group = "com.squareup.okhttp3", name = "okhttp" }
+okhttp3-logging-interceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor" }
+
 junit = { group = "junit", name = "junit", version.ref = "junit-junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit115" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-test-espresso-espresso-core" }
@@ -62,3 +73,4 @@ hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-andr
 [bundles]
 lifecycle = ["lifecycle-runtime-ktx", "lifecycle-livedata-ktx", "lifecycle-viewmodel-ktx", "lifecycle-viewmodel-savedstate"]
 navigation = ["navigation-fragment-ktx", "navigation-ui-ktx"]
+okhttp3 = ["okhttp3", "okhttp3-logging-interceptor"]
