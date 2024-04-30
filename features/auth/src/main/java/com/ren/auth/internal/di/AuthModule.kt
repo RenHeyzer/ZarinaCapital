@@ -1,7 +1,7 @@
 package com.ren.auth.internal.di
 
-import com.ren.auth.api.domain.entities.User
-import com.ren.auth.api.domain.repositories.AuthRepository
+import com.ren.auth.internal.domain.entities.User
+import com.ren.auth.internal.domain.repositories.AuthRepository
 import com.ren.auth.internal.data.mappers.UserMapper
 import com.ren.auth.internal.data.repositories.AuthDataRepository
 import com.ren.auth.internal.domain.entities.SignUpParams

@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:paddingHorizontal="@dimen/padding_16">
+    android:paddingHorizontal="@dimen/padding_16"
+    tools:context=".internal.presentation.ui.fragments.ConfirmEmailFragment">
 
     <TextView
         android:id="@+id/tv_confirm_email"

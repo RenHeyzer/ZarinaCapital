@@ -4,6 +4,7 @@
     <string name="courses_screen">Курсы</string>
     <string name="my_courses_screen">Мои курсы</string>
     <string name="menu_screen">Меню</string>
+    <string name="confirm_email_screen">Подтверждение</string>
     <string name="app_icon_content_description">Значок приложения</string>
     <string name="full_name_hint">ФИО</string>
     <string name="phone_number_prefix">+996</string>

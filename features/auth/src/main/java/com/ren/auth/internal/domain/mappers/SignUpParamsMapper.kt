@@ -1,7 +1,7 @@
 package com.ren.auth.internal.domain.mappers
 
 import com.ren.auth.internal.domain.entities.SignUpParams
-import com.ren.auth.api.domain.entities.User
+import com.ren.auth.internal.domain.entities.User
 import com.ren.common.Mapper
 import javax.inject.Inject
 

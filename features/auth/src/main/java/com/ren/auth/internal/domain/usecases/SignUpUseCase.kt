@@ -2,10 +2,10 @@ package com.ren.auth.internal.domain.usecases
 
 import com.ren.auth.internal.domain.entities.SignUpField
 import com.ren.auth.internal.domain.entities.SignUpParams
-import com.ren.auth.api.domain.entities.User
+import com.ren.auth.internal.domain.entities.User
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
-import com.ren.auth.api.domain.repositories.AuthRepository
+import com.ren.auth.internal.domain.repositories.AuthRepository
 import com.ren.common.Mapper
 import javax.inject.Inject
 
