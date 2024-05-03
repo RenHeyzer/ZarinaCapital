@@ -21,4 +21,9 @@ internal object NetworkModule {
     @Singleton
     fun provideAuthApiService(retrofitClient: RetrofitClient) =
         retrofitClient.authApiService
+
+    @Provides
+    @Singleton
+    fun provideNewsApiService(retrofitClient: RetrofitClient) =
+        retrofitClient.newsApiService
 }

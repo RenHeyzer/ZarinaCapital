@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/auth_graph">
+    app:startDestination="@id/menu">
 
     <fragment
         android:id="@+id/courses"
@@ -17,12 +17,7 @@
         android:label="@string/my_courses_screen"
         tools:layout="@layout/fragment_my_courses" />
 
-    <fragment
-        android:id="@+id/menu"
-        android:name="com.ren.menu.api.presentation.ui.fragments.MenuFragment"
-        android:label="@string/menu_screen"
-        tools:layout="@layout/fragment_menu" />
-
     <include app:graph="@navigation/auth_graph" />
+    <include app:graph="@navigation/menu" />
 
 </navigation>
