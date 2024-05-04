@@ -6,18 +6,13 @@
     app:startDestination="@id/menu">
 
     <fragment
-        android:id="@+id/courses"
-        android:name="com.ren.courses.api.presentation.ui.fragments.CoursesFragment"
-        android:label="@string/courses_screen"
-        tools:layout="@layout/fragment_courses" />
-
-    <fragment
         android:id="@+id/my_courses"
         android:name="com.ren.mycourses.api.presentation.ui.fragments.MyCoursesFragment"
         android:label="@string/my_courses_screen"
         tools:layout="@layout/fragment_my_courses" />
 
     <include app:graph="@navigation/auth_graph" />
+    <include app:graph="@navigation/courses" />
     <include app:graph="@navigation/menu" />
 
 </navigation>

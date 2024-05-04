@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -46,7 +48,13 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.view.binding.property.delegate.noreflection)
+    implementation(libs.hilt.android)
+    implementation(libs.bundles.navigation)
+    kapt(libs.hilt.compiler)
+    implementation(libs.glide)
 
     implementation(project(":core:theme"))
+    implementation(project(":core:data"))
     implementation(project(":core:presentation"))
+    implementation(project(":forex-api"))
 }

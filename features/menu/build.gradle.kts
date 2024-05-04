@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.bundles.navigation)
     kapt(libs.hilt.compiler)
+    implementation(libs.glide)
+
 
     implementation(project(":core:theme"))
     implementation(project(":core:data"))

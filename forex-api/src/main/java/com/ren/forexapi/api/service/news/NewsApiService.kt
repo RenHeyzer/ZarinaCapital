@@ -1,4 +1,4 @@
-package com.ren.forexapi.api.news
+package com.ren.forexapi.api.service.news
 
 import com.ren.forexapi.api.models.ForexResponse
 import com.ren.forexapi.api.models.auth.NewsDTO

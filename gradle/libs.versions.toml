@@ -48,6 +48,11 @@ navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx",
 #ViewBindingPropertyDelegate
 view-binding-property-delegate-noreflection = { group = "com.github.kirich1409", name = "viewbindingpropertydelegate-noreflection", version.require = "1.5.9" }
 
+#Glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.require = "4.15.0" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.require = "4.15.0" }
+
+
 #Retrofit
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-convertor-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }

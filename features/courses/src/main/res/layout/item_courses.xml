@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_5"
+    android:layout_marginHorizontal="@dimen/margin_10"
+    app:cardCornerRadius="@dimen/margin_15">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/im_icon"
+            android:layout_width="match_parent"
+            android:layout_height="130dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:paddingStart="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                tools:text="@string/searchCourses" />
+
+            <RatingBar
+                android:id="@+id/tv_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:rating="3"
+                android:secondaryProgressTint="@color/yellow" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:paddingStart="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="200,000" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

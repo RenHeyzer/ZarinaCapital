@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentNewsBinding
+import com.ren.menu.internal.presentation.ui.news.adapters.NewsAdapter
 import com.ren.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,9 +17,20 @@ internal class NewsFragment :
 
     override val binding: FragmentNewsBinding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewsViewModel by viewModels<NewsViewModel>()
+    private val newsAdapter = NewsAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialize()
+    }
+
+    private fun initialize() {
+        subscribeToNews()
+        binding.rvNews.adapter = newsAdapter
+
+    }
+
+    private fun subscribeToNews() {
         viewModel.newsState.collectUIStateFlow(
             onLoading = { loading ->
                 Log.d("news", loading.toString())
@@ -28,8 +40,7 @@ internal class NewsFragment :
             },
             onSuccess = { success ->
                 success.data?.let {
-                    binding.tvResult.text = it.toString()
-                    Log.d("news", it.toString())
+                    newsAdapter.submitList(it)
                 }
             }
         )

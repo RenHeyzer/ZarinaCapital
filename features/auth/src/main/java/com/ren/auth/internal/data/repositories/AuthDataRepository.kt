@@ -4,7 +4,7 @@ import com.ren.auth.internal.domain.entities.User
 import com.ren.auth.internal.domain.repositories.AuthRepository
 import com.ren.common.AppDispatchers
 import com.ren.common.Mapper
-import com.ren.forexapi.api.auth.AuthApiService
+import com.ren.forexapi.api.service.auth.AuthApiService
 import com.ren.forexapi.api.models.UserDTO
 import com.ren.forexapi.api.models.VerificationCodeDTO
 import kotlinx.coroutines.withContext

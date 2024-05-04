@@ -1,4 +1,4 @@
-package com.ren.forexapi.api.auth
+package com.ren.forexapi.api.service.auth
 
 import com.ren.forexapi.api.models.UserDTO
 import com.ren.forexapi.api.models.VerificationCodeDTO
