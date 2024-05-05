@@ -19,8 +19,8 @@ class CoursesDataRepository @Inject constructor(
         request = {
             coursesApiService.fetchCourses().results
         },
-        map = { news ->
-           news.map(coursesMapper::to)
+        map = { courses ->
+           courses.map(coursesMapper::to)
         }
     )
 }

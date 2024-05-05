@@ -14,5 +14,21 @@
         android:id="@+id/coursesFragment"
         android:name="com.ren.courses.api.presentation.ui.fragments.CoursesFragment"
         android:label="fragment_courses"
-        tools:layout="@layout/fragment_courses" />
+        tools:layout="@layout/fragment_courses" >
+        <action
+            android:id="@+id/action_coursesFragment_to_coursesDetailFragment"
+            app:destination="@id/coursesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coursesDetailFragment"
+        android:name="com.ren.courses.internal.presentation.ui.coursesdetail.fragment.CoursesDetailFragment"
+        android:label="fragment_courses_detail"
+        tools:layout="@layout/fragment_courses_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_coursesDetailFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+    </fragment>
 </navigation>

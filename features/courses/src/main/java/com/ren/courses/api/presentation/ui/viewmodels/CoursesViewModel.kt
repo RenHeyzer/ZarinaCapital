@@ -17,6 +17,7 @@ class CoursesViewModel @Inject constructor(
     val coursesState = _coursesState.asStateFlow()
 
     init {
-        coursesRepository.fetchCourses().collectFlowAsState(_coursesState)
+        coursesRepository.fetchCourses().collectFlowAsState(_coursesState
+        )
     }
 }

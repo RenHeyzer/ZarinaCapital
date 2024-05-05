@@ -1,9 +1,13 @@
+import org.gradle.kotlin.dsl.libs
+import org.jetbrains.kotlin.utils.addToStdlib.safeAs
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.navigation.safe.args)
 }
 
 android {

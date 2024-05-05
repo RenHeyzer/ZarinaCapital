@@ -19,6 +19,55 @@
         <action
             android:id="@+id/action_menuFragment_to_newsFragment"
             app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_paymentHistoryFragment"
+            app:destination="@id/paymentHistoryFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+
+
     </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.ren.menu.internal.presentation.ui.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/paymentHistoryFragment"
+        android:name="com.ren.menu.internal.presentation.ui.paymenthistory.PaymentHistoryFragment"
+        android:label="fragment_payment_history"
+        tools:layout="@layout/fragment_payment_history" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.ren.menu.internal.presentation.ui.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/lessonsFragment"
+        android:name="com.ren.menu.internal.presentation.ui.lessons.LessonsFragment"
+        android:label="fragment_lessons"
+        tools:layout="@layout/fragment_lessons" >
+
+        <action
+            android:id="@+id/action_lessonsFragment_to_attendancesFragment"
+            app:destination="@id/attendancesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendancesFragment"
+        android:name="com.ren.menu.internal.presentation.ui.schedule.AttendancesFragment"
+        android:label="fragment_attendances"
+        tools:layout="@layout/fragment_attendances" >
+        <action
+            android:id="@+id/action_attendancesFragment_to_lessonsFragment"
+            app:destination="@id/lessonsFragment" />
+    </fragment>
+
 
 </navigation>

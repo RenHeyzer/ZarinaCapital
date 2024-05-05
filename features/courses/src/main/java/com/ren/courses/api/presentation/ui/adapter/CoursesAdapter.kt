@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide.init
 import com.ren.courses.databinding.ItemCoursesBinding
 import com.ren.courses.internal.domain.entities.courses.Courses
 
-class CoursesAdapter() :
+class CoursesAdapter(val setItemClickListener: (id: Int) -> Unit) :
     ListAdapter<Courses, CoursesAdapter.CoursesViewHolder>(diffUtil) {
 
     inner class CoursesViewHolder(private val binding: ItemCoursesBinding) :
@@ -20,6 +21,11 @@ class CoursesAdapter() :
             binding.tvPrice.text = item.price
             binding.tvRating.rating = item.rating
             Glide.with(binding.imIcon.context).load(item.image).into(binding.imIcon)
+
+            itemView.setOnClickListener {
+                getItem(adapterPosition)?.apply { setItemClickListener(item.id) }
+
+            }
         }
     }
 

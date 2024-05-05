@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".internal.presentation.ui.coursesdetail.fragment.CoursesDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/im_icon"
+            android:layout_width="match_parent"
+            android:layout_height="130dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_15"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium"
+                tools:text="Форекс курсы" />
+
+            <RatingBar
+                android:id="@+id/tv_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:rating="3"
+                android:secondaryProgressTint="@color/yellow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:drawableStart="@drawable/ph_clock"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/text_size_pre_medium"
+                tools:text="377" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="мин."
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/text_size_small" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_size_1dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/tv_program_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/program_courses"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/rounder_card_view"
+            android:backgroundTint="@color/light_grey_f3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_5"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/courses"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <Spinner
+                android:id="@+id/sp_courses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                tools:listitem="@layout/item_spinner" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/author"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/im_admin"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:theme="@style/ShapeAppearance.Material3.Corner.Full" />
+
+            <TextView
+                android:id="@+id/tv_authors_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_pre_medium"
+                tools:text="Admin" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/reviews"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/all"
+                android:textColor="@color/dark_yellow"
+                android:textSize="@dimen/text_size_medium" />
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="@dimen/view_size_1dp"
+                android:layout_gravity="end|bottom"
+                android:background="@color/dark_yellow" />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/rounder_card_view"
+            android:backgroundTint="@color/light_grey_f3">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/im_user"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:layout_margin="@dimen/margin_10"
+                android:theme="@style/ShapeAppearance.Material3.Corner.Full"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_pre_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/im_user"
+                app:layout_constraintStart_toEndOf="@+id/im_user"
+                app:layout_constraintTop_toTopOf="@+id/im_user"
+                tools:text="Ракымова Аймончок" />
+
+            <TextView
+                android:id="@+id/tv_cread_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_pre_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_name"
+                tools:text="22.02.24" />
+
+            <TextView
+                android:id="@+id/tv_title_reviews"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_pre_medium"
+                app:layout_constraintEnd_toEndOf="@+id/tv_cread_at"
+                app:layout_constraintStart_toStartOf="@+id/tv_user_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                tools:text="“Lorem ipsum dolor sit amet consectetur. Libero vitae morbi facilisi urna integer. Praesent gravida molestie et risus eu diam nulla in at”" />
+
+            <RatingBar
+                android:id="@+id/tv_grade"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:rating="3"
+                android:secondaryProgressTint="@color/yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_reviews" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_15"
+                app:layout_constraintTop_toTopOf="@+id/tv_grade" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/red">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Купить полный курс"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_pre_medium" />
+
+            <TextView
+                android:id="@id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:text="200,000с"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_pre_medium" />
+
+        </Toolbar>
+    </LinearLayout>
+
+</ScrollView>

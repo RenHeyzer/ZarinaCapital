@@ -18,7 +18,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 interface CoursesModule {
 
     @Binds
-    fun bindNewsMapper(mapperImpl: CoursesMapper): Mapper<CoursesDTO, Courses>
+    fun bindCoursesMapper(mapperImpl: CoursesMapper): Mapper<CoursesDTO, Courses>
 
     @Binds
     @ViewModelScoped
