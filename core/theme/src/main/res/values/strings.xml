@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ZarinaCapital</string>
     <string name="sign_up_screen">Регистрация</string>
+    <string name="sign_in_screen">Вход</string>
     <string name="courses_screen">Курсы</string>
     <string name="my_courses_screen">Мои курсы</string>
     <string name="menu_screen">Меню</string>
