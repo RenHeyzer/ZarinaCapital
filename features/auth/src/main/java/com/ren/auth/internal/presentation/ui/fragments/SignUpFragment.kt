@@ -29,6 +29,7 @@ internal class SignUpFragment :
         super.onViewCreated(view, savedInstanceState)
         signUp()
         subscribeToResult()
+        navigateToSignIn()
     }
 
     private fun signUp() = with(binding) {
@@ -92,5 +93,11 @@ internal class SignUpFragment :
                 findNavController().navigate(R.id.confirm_email)
             }
         )
+    }
+
+    private fun navigateToSignIn() {
+        binding.btnSingIn.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_up_to_sign_in)
+        }
     }
 }
