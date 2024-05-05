@@ -73,4 +73,19 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
             }
         }
     }
-}
+
+    protected open fun <T> LiveData<UIState<T>>.subscribeAsState(
+        whileLoading: (Boolean) -> Unit,
+        onLoading: (UIState.Loading) -> Unit,
+        onError: (UIState.Error) -> Unit,
+        onSuccess: (UIState.Success<T>) -> Unit,
+    ) {
+        observe(viewLifecycleOwner) {
+            whileLoading(it is UIState.Loading)
+            when (it) {
+                is UIState.Loading -> onLoading(it)
+                is UIState.Error -> onError(it)
+                is UIState.Success -> onSuccess(it)
+            }
+        }
+    }}
