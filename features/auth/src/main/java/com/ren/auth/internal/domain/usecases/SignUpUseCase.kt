@@ -14,7 +14,7 @@ internal class SignUpUseCase @Inject constructor(
     @JvmSuppressWildcards private val signUpParamsMapper: Mapper<SignUpParams, User>
 ) {
 
-    suspend operator fun invoke(params: SignUpParams) {
+    suspend operator fun invoke(params: SignUpParams) = runCatching {
         params.apply {
             val emptyFields = mapOf(
                 SignUpField.USERNAME to username.first.isEmpty(),
