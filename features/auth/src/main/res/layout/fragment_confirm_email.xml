@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:paddingHorizontal="@dimen/padding_16"
     tools:context=".internal.presentation.ui.fragments.ConfirmEmailFragment">
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/loading"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tv_confirm_email"
@@ -78,6 +83,7 @@
         style="@style/Widget.MaterialButton.Primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:text="@string/next" />
 
     <Space
