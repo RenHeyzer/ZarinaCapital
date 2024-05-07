@@ -1,6 +1,7 @@
 package com.ren.forexapi.api.auth
 
 import com.ren.forexapi.api.models.LoginParamsDTO
+import com.ren.forexapi.api.models.LoginResponse
 import com.ren.forexapi.api.models.UserDTO
 import com.ren.forexapi.api.models.VerificationCodeDTO
 import retrofit2.http.Body
@@ -25,5 +26,5 @@ interface AuthApiService {
     @POST(LOGIN_END_POINT)
     suspend fun login(
         @Body loginParamsDTO: LoginParamsDTO
-    )
+    ): LoginResponse
 }
