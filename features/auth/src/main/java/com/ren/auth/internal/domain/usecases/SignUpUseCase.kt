@@ -1,6 +1,7 @@
 package com.ren.auth.internal.domain.usecases
 
-import com.ren.auth.internal.domain.entities.SignUpField
+import com.ren.auth.internal.domain.entities.AuthFields
+import com.ren.auth.internal.domain.entities.AuthFields.SignUpField
 import com.ren.auth.internal.domain.entities.SignUpParams
 import com.ren.auth.internal.domain.entities.User
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
@@ -16,14 +17,14 @@ internal class SignUpUseCase @Inject constructor(
 
     suspend operator fun invoke(params: SignUpParams) = runCatching {
         params.apply {
-            val emptyFields = mapOf(
+            val emptyFields = mapOf<AuthFields, Boolean>(
                 SignUpField.USERNAME to username.first.isEmpty(),
                 SignUpField.PHONE to phone.first.isEmpty(),
                 SignUpField.EMAIL to email.first.isEmpty(),
                 SignUpField.PASSWORD to password.first.isEmpty(),
                 SignUpField.CONFIRM_PASSWORD to confirmPassword.first.isEmpty()
             )
-            val exceptionMessages = mapOf(
+            val exceptionMessages = mapOf<AuthFields, String?>(
                 SignUpField.USERNAME to if (username.first.isEmpty()) username.second else null,
                 SignUpField.PHONE to if (phone.first.isEmpty()) phone.second else null,
                 SignUpField.EMAIL to if (email.first.isEmpty()) email.second else null,
