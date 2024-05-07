@@ -7,4 +7,5 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.hilt.android) apply false
     alias(libs.plugins.navigation.safe.args) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
 }
