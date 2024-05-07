@@ -26,49 +26,52 @@ internal class SignUpViewModel @Inject constructor(
     fun signUp(
         username: String,
         email: String,
+        prefix: String,
         phone: String,
         password: String,
         confirmPassword: String
     ) {
         viewModelScope.launch {
-            kotlin.runCatching {
-                _resultState.value = UIState.Loading
-                val params = with(exceptionMessages) {
-                    SignUpParams(
-                        username = username to emptyUsernameFieldExceptionMessage,
-                        email = email to emptyEmailFieldExceptionMessage,
-                        phone = phone to emptyPhoneFieldExceptionMessage,
-                        password = password to emptyPasswordFieldExceptionMessage,
-                        confirmPassword = confirmPassword to emptyConfirmPasswordFieldExceptionMessage
-                    )
-                }
-                signUpUseCase(params)
-            }.onSuccess {
-                _resultState.value = UIState.Success()
-            }.onFailure { t ->
-                when (t) {
-                    is EmptyFieldsException -> {
-                        _resultState.value = UIState.Error(
-                            throwable = t,
-                            message = null
-                        )
-                    }
-
-                    is PasswordMismatchException -> {
-                        _resultState.value = UIState.Error(
-                            throwable = t,
-                            message = exceptionMessages.passwordMismatchExceptionMessage
-                        )
-                    }
-
-                    else -> {
-                        _resultState.value = UIState.Error(
-                            throwable = t,
-                            message = t.message ?: "Unknown error!"
-                        )
-                    }
-                }
+            _resultState.value = UIState.Loading
+            val params = with(exceptionMessages) {
+                SignUpParams(
+                    username = username to emptyUsernameFieldExceptionMessage,
+                    email = email to emptyEmailFieldExceptionMessage,
+                    prefix = prefix,
+                    phone = phone to emptyPhoneFieldExceptionMessage,
+                    password = password to emptyPasswordFieldExceptionMessage,
+                    confirmPassword = confirmPassword to emptyConfirmPasswordFieldExceptionMessage
+                )
             }
+            signUpUseCase(params).fold(
+                onSuccess = {
+                    _resultState.value = UIState.Success()
+                },
+                onFailure = { t ->
+                    when (t) {
+                        is EmptyFieldsException -> {
+                            _resultState.value = UIState.Error(
+                                throwable = t,
+                                message = null
+                            )
+                        }
+
+                        is PasswordMismatchException -> {
+                            _resultState.value = UIState.Error(
+                                throwable = t,
+                                message = exceptionMessages.passwordMismatchExceptionMessage
+                            )
+                        }
+
+                        else -> {
+                            _resultState.value = UIState.Error(
+                                throwable = t,
+                                message = t.message ?: "Unknown error!"
+                            )
+                        }
+                    }
+                }
+            )
         }
     }
 }

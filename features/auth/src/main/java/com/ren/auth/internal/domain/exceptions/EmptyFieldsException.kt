@@ -1,8 +1,8 @@
 package com.ren.auth.internal.domain.exceptions
 
-import com.ren.auth.internal.domain.entities.SignUpField
+import com.ren.auth.internal.domain.entities.AuthFields
 
 internal class EmptyFieldsException(
-    val emptyFields: Map<SignUpField, Boolean>,
-    val exceptionMessages: Map<SignUpField, String?>,
+    val emptyFields: Map<AuthFields, Boolean>,
+    val exceptionMessages: Map<AuthFields, String?>,
 ) : Exception()

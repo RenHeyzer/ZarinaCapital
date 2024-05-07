@@ -9,7 +9,7 @@ internal class SignUpParamsMapper @Inject constructor() : Mapper<SignUpParams, U
     override fun to(model: SignUpParams) = User(
         username = model.username.first,
         email = model.email.first,
-        phone = model.phone.first,
+        phone = "${model.prefix}${model.phone.first}",
         password = model.password.first,
     )
 
@@ -17,6 +17,7 @@ internal class SignUpParamsMapper @Inject constructor() : Mapper<SignUpParams, U
     override fun from(model: User) = SignUpParams(
         username = model.username to null,
         email = model.email to null,
+        prefix = "+996",
         phone = model.phone to null,
         password = model.password to null,
         confirmPassword = model.password to null
