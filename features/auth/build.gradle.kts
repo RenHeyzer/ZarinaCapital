@@ -53,5 +53,7 @@ dependencies {
     implementation(project(":core:di"))
     implementation(project(":core:theme"))
     implementation(project(":core:presentation"))
+    implementation(project(":core:data"))
     implementation(project(":forex-api"))
+    implementation(project(":datastore"))
 }
