@@ -88,4 +88,5 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
                 is UIState.Success -> onSuccess(it)
             }
         }
-    }}
+    }
+}
