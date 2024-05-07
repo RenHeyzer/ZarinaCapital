@@ -53,9 +53,15 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 retrofit-convertor-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 
 #OkHttp
-okhttp3-bom = {group = "com.squareup.okhttp3", name = "okhttp-bom", version.require = "4.12.0"}
-okhttp3 = {group = "com.squareup.okhttp3", name = "okhttp" }
-okhttp3-logging-interceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor" }
+okhttp3-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.require = "4.12.0" }
+okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp" }
+okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+
+#DataStore
+preferences-data-store = { module = "androidx.datastore:datastore-preferences", version.require = "1.1.1" }
+
+#Serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.require = "1.6.3" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit-junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit115" }
@@ -66,6 +72,7 @@ android-application = { id = "com.android.application", version.ref = "android-g
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-android" }
 android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin-android" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-android" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 navigation-safe-args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
