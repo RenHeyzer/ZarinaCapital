@@ -37,7 +37,8 @@ internal class SignUpFragment :
             viewModel.signUp(
                 username = etFullName.trimmedText(),
                 email = etEmail.trimmedText(),
-                phone = "${tilPhone.prefixText.toString().trim()}${etPhone.trimmedText()}",
+                prefix = tilPhone.prefixText.toString().trim(),
+                phone = etPhone.trimmedText(),
                 password = etPassword.trimmedText(),
                 confirmPassword = etConfirmPassword.trimmedText()
             )

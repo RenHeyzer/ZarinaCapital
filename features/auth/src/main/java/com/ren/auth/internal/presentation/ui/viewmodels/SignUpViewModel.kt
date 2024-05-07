@@ -26,6 +26,7 @@ internal class SignUpViewModel @Inject constructor(
     fun signUp(
         username: String,
         email: String,
+        prefix: String,
         phone: String,
         password: String,
         confirmPassword: String
@@ -36,6 +37,7 @@ internal class SignUpViewModel @Inject constructor(
                 SignUpParams(
                     username = username to emptyUsernameFieldExceptionMessage,
                     email = email to emptyEmailFieldExceptionMessage,
+                    prefix = prefix,
                     phone = phone to emptyPhoneFieldExceptionMessage,
                     password = password to emptyPasswordFieldExceptionMessage,
                     confirmPassword = confirmPassword to emptyConfirmPasswordFieldExceptionMessage
