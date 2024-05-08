@@ -29,6 +29,7 @@ internal class SignUpFragment :
         super.onViewCreated(view, savedInstanceState)
         signUp()
         subscribeToResult()
+        navigateToSignIn()
     }
 
     private fun signUp() = with(binding) {
@@ -36,7 +37,8 @@ internal class SignUpFragment :
             viewModel.signUp(
                 username = etFullName.trimmedText(),
                 email = etEmail.trimmedText(),
-                phone = "${tilPhone.prefixText.toString().trim()}${etPhone.trimmedText()}",
+                prefix = tilPhone.prefixText.toString().trim(),
+                phone = etPhone.trimmedText(),
                 password = etPassword.trimmedText(),
                 confirmPassword = etConfirmPassword.trimmedText()
             )
@@ -92,5 +94,11 @@ internal class SignUpFragment :
                 findNavController().navigate(R.id.confirm_email)
             }
         )
+    }
+
+    private fun navigateToSignIn() {
+        binding.btnSingIn.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_up_to_sign_in)
+        }
     }
 }

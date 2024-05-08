@@ -1,4 +1,4 @@
-package com.ren.forexapi.impl.di
+package com.ren.forexapi.impl.clients
 
 import com.ren.forexapi.api.service.auth.AuthApiService
 import com.ren.forexapi.api.service.courses.CoursesApiService
@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import java.util.concurrent.TimeUnit
 
-internal class RetrofitClient(
+internal class DefaultRetrofitClient(
     private val baseUrl: String
 ) {
 
@@ -21,9 +21,7 @@ internal class RetrofitClient(
         )
 
     private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(
-            httpLoggingInterceptor
-        )
+        .addInterceptor(httpLoggingInterceptor)
         .connectTimeout(60, TimeUnit.SECONDS)
         .readTimeout(60, TimeUnit.SECONDS)
         .writeTimeout(60, TimeUnit.SECONDS)

@@ -66,6 +66,7 @@ dependencies {
 
     // Data
     implementation(project(":data:courses"))
+    implementation(project(":data:account"))
 
     // Features
     implementation(project(":features:courses"))

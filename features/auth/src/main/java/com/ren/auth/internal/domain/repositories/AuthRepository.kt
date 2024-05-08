@@ -7,4 +7,6 @@ internal interface AuthRepository {
     suspend fun signUp(user: User)
 
     suspend fun confirmEmail(code: Int)
+
+    suspend fun login(email: String, password: String)
 }
