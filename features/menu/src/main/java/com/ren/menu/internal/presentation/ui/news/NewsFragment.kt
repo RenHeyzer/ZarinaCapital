@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentNewsBinding
@@ -17,7 +18,7 @@ internal class NewsFragment :
 
     override val binding: FragmentNewsBinding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewsViewModel by viewModels<NewsViewModel>()
-    private val newsAdapter = NewsAdapter()
+    private val newsAdapter = NewsAdapter(this::setItemClickListener)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +28,6 @@ internal class NewsFragment :
     private fun initialize() {
         subscribeToNews()
         binding.rvNews.adapter = newsAdapter
-
     }
 
     private fun subscribeToNews() {
@@ -43,6 +43,12 @@ internal class NewsFragment :
                     newsAdapter.submitList(it)
                 }
             }
+        )
+    }
+
+    private fun setItemClickListener(id: Int) {
+        findNavController().navigate(
+            NewsFragmentDirections.actionNewsFragmentToNewsDetailFragment2(id)
         )
     }
 }

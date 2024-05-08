@@ -12,7 +12,8 @@ internal class NewsMapper @Inject constructor() : Mapper<NewsDTO, News> {
             id = id,
             title = title,
             image = image,
-            startDatetime = startDatetime
+            startDatetime = startDatetime,
+            description = description
         )
     }
 
@@ -21,7 +22,8 @@ internal class NewsMapper @Inject constructor() : Mapper<NewsDTO, News> {
             id = id,
             title = title,
             image = image,
-            startDatetime = startDatetime
+            startDatetime = startDatetime,
+            description = description
         )
     }
 }

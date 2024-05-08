@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.navigation.safe.args)
 }
 
 android {
@@ -50,6 +51,7 @@ dependencies {
     implementation(libs.view.binding.property.delegate.noreflection)
     implementation(libs.hilt.android)
     implementation(libs.bundles.navigation)
+    implementation(libs.legacy.support.v4)
     kapt(libs.hilt.compiler)
     implementation(libs.glide)
 

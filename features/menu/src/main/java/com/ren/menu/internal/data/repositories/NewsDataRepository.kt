@@ -23,4 +23,13 @@ internal class NewsDataRepository @Inject constructor(
            news.map(newsMapper::to)
         }
     )
+
+    override fun fetchNewsDetail(id:Int) = doRequest(
+        request = {
+            newsApiService.fetchNewsDetail(id)
+        },
+        map = { news ->
+            newsMapper.to(news)
+        }
+    )
 }

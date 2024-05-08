@@ -5,6 +5,7 @@ import com.ren.common.Mappable
 data class News(
     val id: Int,
     val title: String,
+    val description: String,
     val image: String,
     val startDatetime: String
 ) : Mappable

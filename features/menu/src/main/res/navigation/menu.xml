@@ -9,7 +9,12 @@
         android:id="@+id/newsFragment"
         android:name="com.ren.menu.internal.presentation.ui.news.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailFragment2"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/menuFragment"
@@ -67,6 +72,17 @@
         <action
             android:id="@+id/action_attendancesFragment_to_lessonsFragment"
             app:destination="@id/lessonsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.ren.menu.internal.presentation.ui.news.detail.NewsDetailFragment"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail" >
+
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 
 

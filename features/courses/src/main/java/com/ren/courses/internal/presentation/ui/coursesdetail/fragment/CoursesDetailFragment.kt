@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.SpinnerAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -15,12 +16,8 @@ import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.ren.courses.R
-import com.ren.courses.api.presentation.ui.adapter.CoursesAdapter
-import com.ren.courses.api.presentation.ui.viewmodels.CoursesViewModel
-import com.ren.courses.databinding.FragmentCoursesBinding
 import com.ren.courses.databinding.FragmentCoursesDetailBinding
-import com.ren.courses.internal.domain.entities.courses.detail.CoursesDetail
-import com.ren.courses.internal.domain.entities.courses.detail.CoursesLecturesItem
+import com.ren.courses.internal.presentation.ui.coursesdetail.adapter.CoursesSpinnerAdapter
 import com.ren.courses.internal.presentation.ui.coursesdetail.viewmodel.CoursesDetailViewModel
 import com.ren.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,8 +29,8 @@ class CoursesDetailFragment :
     override val binding by viewBinding(FragmentCoursesDetailBinding::bind)
     override val viewModel by viewModels<CoursesDetailViewModel>()
     private val args by navArgs<CoursesDetailFragmentArgs>()
-    private val listCourses = mutableListOf<CoursesLecturesItem>()
 
+    private val spinnerAdapter = CoursesSpinnerAdapter()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
@@ -43,29 +40,37 @@ class CoursesDetailFragment :
         endPoint = args.id
         subscribeToNews()
         setOnClickListener()
-//        spinner()
+        setOnClickListeners()
+        checkVisibleDown()
+        checkVisibleUp()
+        binding.recCourses.adapter = spinnerAdapter
     }
 
-//    private fun spinner() {
-//
-//        val adapter = ArrayAdapter(requireContext(), R.layout.item_spinner, listCourses)
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        binding.spCourses.adapter = adapter
-//
-//        binding.spCourses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-//                val selectedItem = parent.getItemAtPosition(position).toString()
-//                Toast.makeText(requireContext(), "Selected: $selectedItem", Toast.LENGTH_SHORT).show()
-//            }
-//
-//            override fun onNothingSelected(parent: AdapterView<*>) {
-//                // Do nothing
-//            }
-//        }
-//    }
+    private fun checkVisibleDown() {
+        binding.recCourses.visibility = View.VISIBLE
+        binding.imScrollDown.visibility = View.GONE
+        binding.imScrollUp.visibility = View.VISIBLE
+    }
+
+    private fun checkVisibleUp() {
+        binding.recCourses.visibility = View.GONE
+        binding.imScrollDown.visibility = View.VISIBLE
+        binding.imScrollUp.visibility = View.GONE
+
+    }
+
+    private fun setOnClickListeners() {
+        binding.imScrollDown.setOnClickListener {
+            checkVisibleDown()
+        }
+        binding.imScrollUp.setOnClickListener {
+            checkVisibleUp()
+        }
+    }
 
     private fun subscribeToNews() = with(binding) {
-        viewModel.coursesDetailState.collectUIStateFlow(onLoading = { loading ->
+        viewModel.coursesDetailState.collectUIStateFlow(
+            onLoading = { loading ->
             Log.d("courses", loading.toString())
         }, onError = { error ->
             error.message?.let { Log.e("courses", it) }
@@ -90,9 +95,9 @@ class CoursesDetailFragment :
                         Glide.with(imAdmin.context).load(author.avatar).load(imAdmin)
                         tvAuthorsName.text = author.username
                     }
-//                        model.lectures?.map {
-//                            listCourses.add(it)
-//                        }
+                    model.lectures?.let {
+                        spinnerAdapter.submitList(it)
+                    }
                 }
             }
         })

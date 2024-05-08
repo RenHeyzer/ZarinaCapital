@@ -8,6 +8,8 @@ data class NewsDTO(
     val id: Int,
     @SerializedName("title")
     val title: String,
+    @SerializedName("description")
+    val description: String,
     @SerializedName("image")
     val image: String,
     @SerializedName("start_datetime")
