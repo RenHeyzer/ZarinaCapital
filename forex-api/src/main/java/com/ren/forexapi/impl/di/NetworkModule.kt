@@ -35,16 +35,16 @@ internal object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideNewsApiService(retrofitClient: RetrofitClient) =
+    fun provideNewsApiService(retrofitClient: DefaultRetrofitClient) =
         retrofitClient.newsApiService
 
     @Provides
     @Singleton
-    fun provideCoursesApiService(retrofitClient: RetrofitClient) =
+    fun provideCoursesApiService(retrofitClient: DefaultRetrofitClient) =
         retrofitClient.coursesApiService
 
     @Provides
     @Singleton
-    fun provideReviewsApiService(retrofitClient: RetrofitClient) =
+    fun provideReviewsApiService(retrofitClient: DefaultRetrofitClient) =
         retrofitClient.reviewsApiService
 }
