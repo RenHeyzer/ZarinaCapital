@@ -1,6 +1,6 @@
 package com.ren.forexapi.impl.clients
 
-import com.ren.forexapi.api.auth.AuthApiService
+import com.ren.forexapi.api.service.auth.AuthApiService
 import com.ren.forexapi.impl.interceptors.TokenInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
