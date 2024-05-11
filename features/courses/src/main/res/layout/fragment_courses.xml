@@ -18,7 +18,7 @@
         android:fontFamily="@font/inter_regular"
         android:hint="@string/searchCourses"
         android:padding="@dimen/margin_10"
-        android:textColorHint="@color/grey"
+        android:textColorHint="@color/grey_7"
         android:textSize="@dimen/text_size_medium" />
 
     <androidx.recyclerview.widget.RecyclerView

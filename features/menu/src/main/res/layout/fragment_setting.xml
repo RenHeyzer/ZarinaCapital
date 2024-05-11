@@ -36,7 +36,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/view_size_1dp"
-            android:background="@color/grey" />
+            android:background="@color/grey_7" />
 
         <RadioButton
             android:id="@+id/rb_kazak"
@@ -52,7 +52,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/view_size_1dp"
-            android:background="@color/grey" />
+            android:background="@color/grey_7" />
 
         <RadioButton
             android:id="@+id/rb_english"
