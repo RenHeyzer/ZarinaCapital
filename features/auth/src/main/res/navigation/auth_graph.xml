@@ -31,8 +31,8 @@
 
     <fragment
         android:id="@+id/sign_in"
-        android:name="com.ren.auth.api.presentation.ui.fragments.SignInFragment"
-        android:label="@string/sign_in_screen"
+        android:name="com.ren.auth.internal.presentation.ui.fragments.SignInFragment"
+        android:label="@string/sign_in"
         tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_sign_in_to_sign_up"

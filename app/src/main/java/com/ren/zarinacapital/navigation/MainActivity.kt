@@ -1,13 +1,14 @@
 package com.ren.zarinacapital.navigation
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
+import com.ren.presentation.utils.gone
+import com.ren.presentation.utils.visible
 import com.ren.zarinacapital.R
 import com.ren.zarinacapital.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.courses,
                 R.id.my_courses,
                 R.id.menu,
-                com.ren.auth.R.id.auth_graph
+                R.id.auth_flow
             )
         )
 
@@ -44,8 +45,13 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                com.ren.auth.R.id.sign_up -> {
-                    binding.bottomNavigation.visibility = View.GONE
+                R.id.auth_flow -> {
+                    binding.toolbar.gone()
+                    binding.bottomNavigation.gone()
+                }
+                else -> {
+                    binding.toolbar.visible()
+                    binding.bottomNavigation.visible()
                 }
             }
         }
