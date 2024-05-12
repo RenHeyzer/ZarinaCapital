@@ -32,6 +32,4 @@ internal class AuthenticatedRetrofitClient(
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()
-
-    val authApiService: AuthApiService = retrofit.create()
 }
