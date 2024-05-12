@@ -9,8 +9,8 @@ import com.ren.auth.internal.domain.mappers.SignUpParamsMapper
 import com.ren.auth.internal.domain.repositories.AuthRepository
 import com.ren.common.Mapper
 import com.ren.datastore.api.Tokens
-import com.ren.forexapi.api.models.LoginResponse
-import com.ren.forexapi.api.models.UserDTO
+import com.ren.forexapi.api.models.auth.LoginResponse
+import com.ren.forexapi.api.models.auth.UserDTO
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

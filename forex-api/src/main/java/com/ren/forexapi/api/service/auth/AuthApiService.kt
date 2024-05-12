@@ -1,9 +1,9 @@
 package com.ren.forexapi.api.service.auth
 
-import com.ren.forexapi.api.models.LoginParamsDTO
-import com.ren.forexapi.api.models.LoginResponse
-import com.ren.forexapi.api.models.UserDTO
-import com.ren.forexapi.api.models.VerificationCodeDTO
+import com.ren.forexapi.api.models.auth.LoginParamsDTO
+import com.ren.forexapi.api.models.auth.LoginResponse
+import com.ren.forexapi.api.models.auth.UserDTO
+import com.ren.forexapi.api.models.auth.VerificationCodeDTO
 import retrofit2.http.Body
 import retrofit2.http.POST
 

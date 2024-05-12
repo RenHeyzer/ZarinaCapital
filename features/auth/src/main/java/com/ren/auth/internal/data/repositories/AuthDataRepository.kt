@@ -6,10 +6,10 @@ import com.ren.common.AppDispatchers
 import com.ren.common.Mapper
 import com.ren.datastore.api.TokenManager
 import com.ren.datastore.api.Tokens
-import com.ren.forexapi.api.models.LoginParamsDTO
-import com.ren.forexapi.api.models.LoginResponse
-import com.ren.forexapi.api.models.UserDTO
-import com.ren.forexapi.api.models.VerificationCodeDTO
+import com.ren.forexapi.api.models.auth.LoginParamsDTO
+import com.ren.forexapi.api.models.auth.LoginResponse
+import com.ren.forexapi.api.models.auth.UserDTO
+import com.ren.forexapi.api.models.auth.VerificationCodeDTO
 import com.ren.forexapi.api.service.auth.AuthApiService
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
