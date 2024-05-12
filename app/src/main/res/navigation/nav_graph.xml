@@ -3,7 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/menu">
+    app:startDestination="@id/auth_flow">
+
+    <fragment
+        android:id="@+id/auth_flow"
+        android:name="com.ren.auth.api.presentation.ui.fragments.AuthFlowFragment"
+        tools:layout="@layout/fragment_auth_flow">
+        <action
+            android:id="@+id/action_auth_flow_to_courses"
+            app:destination="@id/courses" />
+    </fragment>
 
     <fragment
         android:id="@+id/my_courses"
@@ -11,7 +20,6 @@
         android:label="@string/my_courses_screen"
         tools:layout="@layout/fragment_my_courses" />
 
-    <include app:graph="@navigation/auth_graph" />
     <include app:graph="@navigation/courses" />
     <include app:graph="@navigation/menu" />
 
