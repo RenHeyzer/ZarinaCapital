@@ -47,4 +47,9 @@ internal object NetworkModule {
     @Singleton
     fun provideReviewsApiService(retrofitClient: DefaultRetrofitClient) =
         retrofitClient.reviewsApiService
+
+    @Provides
+    @Singleton
+    fun provideProfileApiService(retrofitClient: AuthenticatedRetrofitClient) =
+        retrofitClient.profileApiService
 }

@@ -1,7 +1,6 @@
 package com.ren.forexapi.impl.interceptors
 
 import com.ren.datastore.api.TokenManager
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor

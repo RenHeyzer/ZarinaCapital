@@ -21,9 +21,10 @@
             android:theme="@style/ShapeAppearance.Material3.Corner.Full" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
             android:backgroundTint="@color/white"
             android:orientation="vertical">
 
@@ -36,15 +37,29 @@
                 android:textSize="@dimen/text_size_medium"
                 tools:text="Ракымова Аймончок" />
 
-            <TextView
-                android:id="@+id/tv_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_size_medium"
-                tools:text="aku.rkrk@gmail.com" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:text="nursultanakmatbekov34@gmail.com" />
+
+                <ImageButton
+                    android:id="@+id/im_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/lucide_pen"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_phone"
@@ -56,14 +71,6 @@
                 tools:text="+996 705 245 490" />
 
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/im_change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/lucide_pen"
-            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 
