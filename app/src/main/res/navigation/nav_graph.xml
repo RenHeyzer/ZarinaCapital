@@ -11,7 +11,9 @@
         tools:layout="@layout/fragment_auth_flow">
         <action
             android:id="@+id/action_auth_flow_to_courses"
-            app:destination="@id/courses" />
+            app:destination="@id/courses"
+            app:popUpTo="@id/nav_graph.xml"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
