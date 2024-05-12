@@ -1,4 +1,4 @@
-package com.ren.auth.api.presentation.ui.fragments
+package com.ren.auth.internal.presentation.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.auth.R
 import com.ren.auth.api.presentation.SignInRouter
-import com.ren.auth.api.presentation.ui.viewmodels.SignInViewModel
 import com.ren.auth.databinding.FragmentSignInBinding
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
+import com.ren.auth.internal.presentation.ui.viewmodels.SignInViewModel
 import com.ren.presentation.base.BaseFragment
 import com.ren.presentation.utils.isErrorEnable
 import com.ren.presentation.utils.trimmedText
@@ -21,6 +21,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 internal class SignInFragment :
     BaseFragment<FragmentSignInBinding, SignInViewModel>(R.layout.fragment_sign_in) {
+
+    @Inject
+    lateinit var signInRouter: SignInRouter
 
     override val binding by viewBinding(FragmentSignInBinding::bind)
     override val viewModel by viewModels<SignInViewModel>()
@@ -69,6 +72,7 @@ internal class SignInFragment :
             },
             onSuccess = {
                 Log.d("login", "success")
+                signInRouter.navigateToCourses()
             }
         )
     }

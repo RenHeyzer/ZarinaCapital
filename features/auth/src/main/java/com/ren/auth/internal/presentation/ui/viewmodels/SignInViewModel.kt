@@ -1,4 +1,4 @@
-package com.ren.auth.api.presentation.ui.viewmodels
+package com.ren.auth.internal.presentation.ui.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
