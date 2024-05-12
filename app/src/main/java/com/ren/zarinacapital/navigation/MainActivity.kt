@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.ren.presentation.utils.gone
+import com.ren.presentation.utils.visible
 import com.ren.zarinacapital.R
 import com.ren.zarinacapital.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.auth_flow -> {
                     binding.toolbar.gone()
                     binding.bottomNavigation.gone()
+                }
+                else -> {
+                    binding.toolbar.visible()
+                    binding.bottomNavigation.visible()
                 }
             }
         }
