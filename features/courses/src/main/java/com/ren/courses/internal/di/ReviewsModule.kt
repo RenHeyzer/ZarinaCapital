@@ -1,18 +1,12 @@
 package com.ren.courses.internal.di
 
 import com.ren.common.Mapper
-import com.ren.courses.internal.data.mappers.CoursesMapper
 import com.ren.courses.internal.data.mappers.ReviewsMapper
 import com.ren.courses.internal.data.mappers.ReviewsUserMapper
-import com.ren.courses.internal.data.repositories.CoursesDataRepository
 import com.ren.courses.internal.data.repositories.ReviewsDataRepository
-import com.ren.courses.internal.domain.entities.courses.Courses
 import com.ren.courses.internal.domain.entities.reviews.Reviews
 import com.ren.courses.internal.domain.entities.reviews.ReviewsUser
-import com.ren.courses.internal.domain.repositories.CoursesRepository
 import com.ren.courses.internal.domain.repositories.ReviewsRepository
-import com.ren.forexapi.api.models.auth.NewsDTO
-import com.ren.forexapi.api.models.courses.CoursesDTO
 import com.ren.forexapi.api.models.reviews.ReviewsDTO
 import com.ren.forexapi.api.models.reviews.ReviewsUserDTO
 import dagger.Binds

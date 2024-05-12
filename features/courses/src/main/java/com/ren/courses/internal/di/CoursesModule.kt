@@ -5,7 +5,6 @@ import com.ren.courses.internal.data.mappers.CoursesMapper
 import com.ren.courses.internal.data.repositories.CoursesDataRepository
 import com.ren.courses.internal.domain.entities.courses.Courses
 import com.ren.courses.internal.domain.repositories.CoursesRepository
-import com.ren.forexapi.api.models.auth.NewsDTO
 import com.ren.forexapi.api.models.courses.CoursesDTO
 import dagger.Binds
 import dagger.Module
