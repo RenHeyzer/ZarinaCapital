@@ -1,4 +1,4 @@
-package com.ren.forexapi.api.models.auth
+package com.ren.forexapi.api.models.news
 
 import com.google.gson.annotations.SerializedName
 import com.ren.common.Mappable

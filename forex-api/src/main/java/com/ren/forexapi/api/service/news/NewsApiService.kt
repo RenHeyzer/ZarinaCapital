@@ -1,7 +1,7 @@
 package com.ren.forexapi.api.service.news
 
 import com.ren.forexapi.api.models.ForexResponse
-import com.ren.forexapi.api.models.auth.NewsDTO
+import com.ren.forexapi.api.models.news.NewsDTO
 import retrofit2.http.GET
 import retrofit2.http.Path
 
