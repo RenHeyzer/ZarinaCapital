@@ -52,8 +52,8 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.view.binding.property.delegate.noreflection)
-    implementation(libs.hilt.android)
     implementation(libs.bundles.navigation)
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.glide)
 

@@ -2,12 +2,15 @@ package com.ren.menu.internal.di
 
 import com.ren.common.Mapper
 import com.ren.forexapi.api.models.news.NewsDTO
+import com.ren.forexapi.api.models.profile.PUTProfileDTO
 import com.ren.forexapi.api.models.profile.ProfileDTO
 import com.ren.menu.internal.data.mappers.NewsMapper
+import com.ren.menu.internal.data.mappers.PUTProfileMapper
 import com.ren.menu.internal.data.mappers.ProfileMapper
 import com.ren.menu.internal.data.repositories.NewsDataRepository
 import com.ren.menu.internal.data.repositories.ProfileDataRepository
 import com.ren.menu.internal.domain.entities.news.News
+import com.ren.menu.internal.domain.entities.profile.PUTProfile
 import com.ren.menu.internal.domain.entities.profile.Profile
 import com.ren.menu.internal.domain.repositories.NewsRepository
 import com.ren.menu.internal.domain.repositories.ProfileRepository
@@ -23,6 +26,8 @@ internal interface ProfileModule {
 
     @Binds
     fun bindProfileMapper(mapperImpl: ProfileMapper): Mapper<ProfileDTO, Profile>
+    @Binds
+    fun bindPUTProfileMapper(mapperImpl: PUTProfileMapper): Mapper<PUTProfileDTO, PUTProfile>
 
     @Binds
     @ViewModelScoped

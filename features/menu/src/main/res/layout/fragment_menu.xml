@@ -14,9 +14,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/im_profile"
-            app:srcCompat="@drawable/ic_launcher_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
             android:layout_margin="@dimen/margin_15"
             android:theme="@style/ShapeAppearance.Material3.Corner.Full" />
 
@@ -44,7 +43,8 @@
 
                 <TextView
                     android:id="@+id/tv_email"
-                    android:layout_width="230dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_10"
                     android:fontFamily="@font/inter_regular"
@@ -54,8 +54,8 @@
 
                 <ImageButton
                     android:id="@+id/im_change"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_gravity="center"
                     android:background="@drawable/lucide_pen"/>
 

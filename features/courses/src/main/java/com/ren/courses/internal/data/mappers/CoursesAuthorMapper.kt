@@ -5,6 +5,7 @@ import com.ren.courses.internal.domain.entities.courses.Courses
 import com.ren.courses.internal.domain.entities.courses.detail.CoursesAuthor
 import com.ren.forexapi.api.models.courses.CoursesDTO
 import com.ren.forexapi.api.models.courses.detail.CoursesAuthorDTO
+import com.ren.forexapi.api.models.profile.ProfileDTO
 import javax.inject.Inject
 
 class CoursesAuthorMapper @Inject constructor() : Mapper<CoursesAuthorDTO, CoursesAuthor> {

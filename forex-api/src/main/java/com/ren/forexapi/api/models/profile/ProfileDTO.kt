@@ -7,7 +7,7 @@ data class ProfileDTO (
     @SerializedName("user")
     val user: Int,
     @SerializedName("avatar")
-    val avatar: String,
+    val avatar: String? = null,
     @SerializedName("username")
     val username: String,
     @SerializedName("phone")

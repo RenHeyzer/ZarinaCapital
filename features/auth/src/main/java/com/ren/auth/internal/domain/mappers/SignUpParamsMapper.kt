@@ -3,6 +3,7 @@ package com.ren.auth.internal.domain.mappers
 import com.ren.auth.internal.domain.entities.SignUpParams
 import com.ren.auth.internal.domain.entities.User
 import com.ren.common.Mapper
+import com.ren.forexapi.api.models.profile.ProfileDTO
 import javax.inject.Inject
 
 internal class SignUpParamsMapper @Inject constructor() : Mapper<SignUpParams, User> {

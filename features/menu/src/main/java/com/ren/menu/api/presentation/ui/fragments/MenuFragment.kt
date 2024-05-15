@@ -34,7 +34,9 @@ class MenuFragment :
                 error.message?.let { Log.e("profile", it) }
             }, onSuccess = { success ->
                 success.data?.let { model ->
-                    Glide.with(binding.imProfile.context).load(model.avatar).into(binding.imProfile)
+                    Glide.with(binding.imProfile.context).load(model.avatar)
+                        .fallback(com.ren.theme.R.drawable.avatar_placeholder)
+                        .into(binding.imProfile)
                     binding.tvName.text = model.username
                     binding.tvEmail.text = model.email
                     binding.tvPhone.text = model.phone
@@ -57,6 +59,12 @@ class MenuFragment :
         }
         tvSchedule.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_lessonsFragment)
+        }
+        tvRules.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_rulesFragment2)
+        }
+        tvChangePassword.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_editPasswordFragment)
         }
     }
 }

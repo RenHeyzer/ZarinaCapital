@@ -3,6 +3,7 @@ package com.ren.auth.internal.data.mappers
 import com.ren.common.Mapper
 import com.ren.datastore.api.Tokens
 import com.ren.forexapi.api.models.auth.LoginResponse
+import com.ren.forexapi.api.models.profile.ProfileDTO
 import javax.inject.Inject
 
 class TokensMapper @Inject constructor() : Mapper<LoginResponse, Tokens> {

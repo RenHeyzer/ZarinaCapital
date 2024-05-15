@@ -2,6 +2,7 @@ package com.ren.auth.internal.data.mappers
 
 import com.ren.auth.internal.domain.entities.User
 import com.ren.forexapi.api.models.auth.UserDTO
+import com.ren.forexapi.api.models.profile.ProfileDTO
 import javax.inject.Inject
 
 internal class UserMapper @Inject constructor() :
