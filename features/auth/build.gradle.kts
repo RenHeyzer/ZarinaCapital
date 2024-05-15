@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.view.binding.property.delegate.noreflection)
     implementation(libs.bundles.navigation)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.ui.text.android)
     kapt(libs.hilt.compiler)
 
     implementation(project(":core:di"))
