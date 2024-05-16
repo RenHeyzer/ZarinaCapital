@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/attendancesFragment"
-        android:name="com.ren.menu.internal.presentation.ui.schedule.AttendancesFragment"
+        android:name="com.ren.menu.internal.presentation.ui.attandences.AttendancesFragment"
         android:label="@string/schedule"
         tools:layout="@layout/fragment_attendances" >
         <action

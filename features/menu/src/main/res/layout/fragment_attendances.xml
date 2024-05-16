@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".internal.presentation.ui.schedule.AttendancesFragment">
+    tools:context=".internal.presentation.ui.attandences.AttendancesFragment">
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -101,7 +101,7 @@
                 android:layout_height="@dimen/margin_20" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/tv_attendances"
+                android:id="@+id/rec_attendances"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_10"
@@ -127,18 +127,28 @@
                     android:layout_marginStart="@dimen/margin_25" />
 
                 <Space
-                    android:layout_width="@dimen/space_155"
+                    android:layout_width="130dp"
                     android:layout_height="wrap_content"/>
+
                 <TextView
                     android:id="@+id/tv_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:fontFamily="@font/inter_regular"
+                    tools:text="10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/margin_25"
                     android:fontFamily="@font/inter_regular"
-                    android:padding="@dimen/margin_5"
-                    tools:text="1 посещений"
+                    android:text="посещений"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_pre_medium"
+                    android:textSize="@dimen/text_size_medium"
                     android:textStyle="bold" />
 
             </LinearLayout>

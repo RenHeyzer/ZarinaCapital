@@ -67,4 +67,9 @@ internal object NetworkModule {
     @Singleton
     fun providesChangePasswordApiService(retrofitClient: AuthenticatedRetrofitClient) =
         retrofitClient.changePasswordApiService
+
+    @Provides
+    @Singleton
+    fun provideAttandencesApiService(retrofitClient: AuthenticatedRetrofitClient)=
+        retrofitClient.attandencesApiService
 }

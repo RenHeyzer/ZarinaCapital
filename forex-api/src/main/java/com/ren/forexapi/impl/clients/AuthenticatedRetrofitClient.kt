@@ -1,6 +1,7 @@
 package com.ren.forexapi.impl.clients
 
 import com.ren.forexapi.api.models.changepassword.ChangePasswordDTO
+import com.ren.forexapi.api.service.attandences.AttandencesApiService
 import com.ren.forexapi.api.service.auth.AuthApiService
 import com.ren.forexapi.api.service.changepassword.ChangePasswordApiService
 import com.ren.forexapi.api.service.profile.ProfileApiService
@@ -40,5 +41,7 @@ internal class AuthenticatedRetrofitClient(
     val profileApiService: ProfileApiService = retrofit.create()
 
     val changePasswordApiService: ChangePasswordApiService = retrofit.create()
+
+    val attandencesApiService: AttandencesApiService = retrofit.create()
 
 }

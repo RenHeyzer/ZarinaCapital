@@ -1,36 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:orientation="horizontal"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="@dimen/margin_5">
 
     <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_regular"
-        android:padding="@dimen/margin_5"
-        android:layout_marginStart="@dimen/margin_10"
+        android:text="Урок N."
         android:textColor="@color/black"
-        android:textSize="@dimen/text_size_pre_medium"
-        tools:text="Урок N.1" />
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_lesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_regular"
-        android:padding="@dimen/margin_5"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tv_attandences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginEnd="@dimen/margin_10"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/margin_5"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_pre_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="1" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_size_1dp"
-        android:layout_gravity="bottom"
         android:layout_marginHorizontal="@dimen/margin_10"
-        android:background="@color/dark_grey" />
+        android:background="@color/dark_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
