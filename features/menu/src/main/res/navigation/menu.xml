@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.ren.menu.internal.presentation.ui.news.NewsFragment"
-        android:label="fragment_news"
+        android:label="@string/news_screen"
         tools:layout="@layout/fragment_news" >
 
         <action
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.ren.menu.api.presentation.ui.fragments.MenuFragment"
-        android:label="fragment_menu"
+        android:label="@string/menu_screen"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuFragment_to_newsFragment"
@@ -48,7 +48,7 @@
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.ren.menu.internal.presentation.ui.setting.SettingFragment"
-        android:label="fragment_setting"
+        android:label="@string/settings_screen"
         tools:layout="@layout/fragment_setting" >
         <action
             android:id="@+id/action_settingFragment_to_deleteAccountFragment"
@@ -57,17 +57,17 @@
     <fragment
         android:id="@+id/paymentHistoryFragment"
         android:name="com.ren.menu.internal.presentation.ui.paymenthistory.PaymentHistoryFragment"
-        android:label="fragment_payment_history"
+        android:label="@string/payment_history_screen"
         tools:layout="@layout/fragment_payment_history" />
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.ren.menu.internal.presentation.ui.profile.EditProfileFragment"
-        android:label="fragment_edit_profile"
+        android:label="@string/edit_profile_screen"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/lessonsFragment"
         android:name="com.ren.menu.internal.presentation.ui.lessons.LessonsFragment"
-        android:label="fragment_lessons"
+        android:label="@string/schedule"
         tools:layout="@layout/fragment_lessons" >
 
         <action
@@ -80,7 +80,7 @@
     <fragment
         android:id="@+id/attendancesFragment"
         android:name="com.ren.menu.internal.presentation.ui.schedule.AttendancesFragment"
-        android:label="fragment_attendances"
+        android:label="@string/schedule"
         tools:layout="@layout/fragment_attendances" >
         <action
             android:id="@+id/action_attendancesFragment_to_lessonsFragment"
@@ -89,7 +89,7 @@
     <fragment
         android:id="@+id/newsDetailFragment"
         android:name="com.ren.menu.internal.presentation.ui.news.detail.NewsDetailFragment"
-        android:label="fragment_news_detail"
+        android:label="@string/news_screen"
         tools:layout="@layout/fragment_news_detail" >
 
 
@@ -100,22 +100,22 @@
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.ren.menu.internal.presentation.ui.rules.RulesFragment"
-        android:label="fragment_rules"
+        android:label="@string/rules"
         tools:layout="@layout/fragment_rules" />
     <fragment
         android:id="@+id/deleteAccountFragment"
         android:name="com.ren.menu.internal.presentation.ui.deleteaccount.DeleteAccountFragment"
-        android:label="fragment_delete_account"
+        android:label="@string/delete_account"
         tools:layout="@layout/fragment_delete_account" />
     <fragment
         android:id="@+id/editPasswordFragment"
         android:name="com.ren.menu.internal.presentation.ui.editpassword.EditPasswordFragment"
-        android:label="fragment_edit_password"
+        android:label="@string/change_password_screen"
         tools:layout="@layout/fragment_edit_password" />
     <fragment
         android:id="@+id/lessonsDetailFragment"
         android:name="com.ren.menu.internal.presentation.ui.lessons.detail.LessonsDetailFragment"
-        android:label="fragment_lessons_detail"
+        android:label="@string/lesson_screen"
         tools:layout="@layout/fragment_lessons_detail" >
         <argument
             android:name="idlessons"
