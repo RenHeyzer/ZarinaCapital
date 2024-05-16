@@ -1,8 +1,9 @@
 package com.ren.zarinacapital.navigation
 
-import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -21,6 +22,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val viewModel by viewModels<MainViewModel>()
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val sharedPreferenceLanguages: SharedPreferenceLanguages by lazy {
@@ -36,7 +38,20 @@ class MainActivity : AppCompatActivity() {
 
         setLocale(currentLanguage)
         setupNavController()
+        redirectToAuthOrCourses()
+    }
 
+    private fun redirectToAuthOrCourses() {
+        val graphInflater = navController.navInflater
+        val navGraph = graphInflater.inflate(R.navigation.nav_graph)
+        viewModel.tokenState.observe(this) { token ->
+            Log.d("token", token.toString())
+            navGraph.setStartDestination(
+                if (token.isNullOrEmpty()) R.id.auth_flow
+                else R.id.courses
+            )
+            navController.graph = navGraph
+        }
     }
 
     private fun setLocale(language: String) {
@@ -45,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
         sharedPreferenceLanguages.saveLanguage(language)
     }
-    
+
 
     private fun setupNavController() {
         val navHostFragment =
