@@ -46,6 +46,7 @@ internal class EditProfileFragment :
             viewModel.updateProfile(
                 data = PUTProfile(
                     username = etName.text.toString().trim(),
+                    prefix = tilPhone.prefixText.toString().trim(),
                     phone = etNumber.text.toString().trim(),
                     email = etEmail.text.toString().trim()
                 )
