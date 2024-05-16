@@ -4,6 +4,7 @@ import com.ren.common.Mappable
 
 data class PUTProfile(
     val username: String,
+    val prefix: String,
     val phone: String,
     val email: String
 ):Mappable
