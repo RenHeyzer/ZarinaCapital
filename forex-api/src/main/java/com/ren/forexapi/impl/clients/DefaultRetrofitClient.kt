@@ -2,8 +2,10 @@ package com.ren.forexapi.impl.clients
 
 import com.ren.forexapi.api.service.auth.AuthApiService
 import com.ren.forexapi.api.service.courses.CoursesApiService
+import com.ren.forexapi.api.service.lessons.LessonsApiService
 import com.ren.forexapi.api.service.news.NewsApiService
 import com.ren.forexapi.api.service.raviews.ReviewsApiService
+import com.ren.forexapi.api.service.schedule.ScheduleApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -40,4 +42,8 @@ internal class DefaultRetrofitClient(
     val coursesApiService: CoursesApiService = retrofit.create()
 
     val reviewsApiService: ReviewsApiService = retrofit.create()
+
+    val schedulesApiService: ScheduleApiService = retrofit.create()
+
+    val lessonsApiService: LessonsApiService = retrofit.create()
 }

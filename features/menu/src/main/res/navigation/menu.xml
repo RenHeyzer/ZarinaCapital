@@ -36,6 +36,12 @@
         <action
             android:id="@+id/action_menuFragment_to_lessonsFragment"
             app:destination="@id/lessonsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_rulesFragment2"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_editPasswordFragment"
+            app:destination="@id/editPasswordFragment" />
 
 
     </fragment>
@@ -43,7 +49,11 @@
         android:id="@+id/settingFragment"
         android:name="com.ren.menu.internal.presentation.ui.setting.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_deleteAccountFragment"
+            app:destination="@id/deleteAccountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/paymentHistoryFragment"
         android:name="com.ren.menu.internal.presentation.ui.paymenthistory.PaymentHistoryFragment"
@@ -63,6 +73,9 @@
         <action
             android:id="@+id/action_lessonsFragment_to_attendancesFragment"
             app:destination="@id/attendancesFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_lessonsDetailFragment"
+            app:destination="@id/lessonsDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/attendancesFragment"
@@ -83,6 +96,33 @@
         <argument
             android:name="id"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.ren.menu.internal.presentation.ui.rules.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/deleteAccountFragment"
+        android:name="com.ren.menu.internal.presentation.ui.deleteaccount.DeleteAccountFragment"
+        android:label="fragment_delete_account"
+        tools:layout="@layout/fragment_delete_account" />
+    <fragment
+        android:id="@+id/editPasswordFragment"
+        android:name="com.ren.menu.internal.presentation.ui.editpassword.EditPasswordFragment"
+        android:label="fragment_edit_password"
+        tools:layout="@layout/fragment_edit_password" />
+    <fragment
+        android:id="@+id/lessonsDetailFragment"
+        android:name="com.ren.menu.internal.presentation.ui.lessons.detail.LessonsDetailFragment"
+        android:label="fragment_lessons_detail"
+        tools:layout="@layout/fragment_lessons_detail" >
+        <argument
+            android:name="idlessons"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_lessonsDetailFragment_to_attendancesFragment"
+            app:destination="@id/attendancesFragment" />
     </fragment>
 
 

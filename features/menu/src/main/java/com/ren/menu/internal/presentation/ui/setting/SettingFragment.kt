@@ -32,7 +32,7 @@ class SettingFragment :
 
     private fun setOnClickListeners() = with(binding) {
         btnDelete.setOnClickListener {
-//            findNavController().navigate(R.id.action_settingFragment_to_deleteAccountFragment)
+            findNavController().navigate(R.id.action_settingFragment_to_deleteAccountFragment)
         }
     }
 
