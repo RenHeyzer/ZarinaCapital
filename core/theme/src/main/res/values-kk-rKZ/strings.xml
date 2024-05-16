@@ -8,6 +8,14 @@
     <string name="my_courses_screen">Менің курстарым</string>
     <string name="menu_screen">Мәзір</string>
     <string name="confirm_email_screen">Растау</string>
+    <string name="course_screen">Курс</string>
+    <string name="news_screen">Жаңалықтар</string>
+    <string name="settings_screen">Параметрлер</string>
+    <string name="edit_profile_screen">Профильді өзгерту</string>
+    <string name="reviews_screen">Пікірлер</string>
+    <string name="change_password_screen">Кұпия сөзді өзгерту</string>
+    <string name="lesson_screen">Сабақ</string>
+    <string name="payment_history_screen">Төлем тарихы</string>
     <string name="app_icon_content_description">Қолданба белгішесі</string>
     <string name="full_name_hint">Толық аты</string>
     <string name="phone_number_prefix">+7</string>
@@ -37,12 +45,11 @@
     <string name="or">немесе</string>
     <string name="forgot_your_password">Құпия сөзіңізді ұмыттыңыз ба?</string>
     <string name="courses">Курстар</string>
-    <string name="my_courses">Менің курстарым</string>
     <string name="menu">Мәзір</string>
     <string name="deadline">Мерзімі</string>
     <string name="myProfile">Менің профилім</string>
     <string name="paymenHistory">Төлем тарихы</string>
-    <string name="schedule">Журнал </string>
+    <string name="schedule">Журнал</string>
     <string name="changePassword">Құпия сөзді өзгерту</string>
     <string name="setting">Параметрлер</string>
     <string name="news">Жаңалықтар</string>
@@ -78,5 +85,4 @@
     <string name="author">Курс авторы</string>
     <string name="reviews">Пікірлер</string>
     <string name="all">Барлығы</string>
-    >
 </resources>

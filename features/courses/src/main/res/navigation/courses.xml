@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/reviewsFragment"
         android:name="com.ren.courses.internal.presentation.ui.reviews.fragment.ReviewsFragment"
-        android:label="fragment_reviews"
+        android:label="@string/reviews_screen"
         tools:layout="@layout/fragment_reviews" />
     <fragment
         android:id="@+id/coursesFragment"
         android:name="com.ren.courses.api.presentation.ui.fragments.CoursesFragment"
-        android:label="fragment_courses"
+        android:label="@string/courses_screen"
         tools:layout="@layout/fragment_courses" >
         <action
             android:id="@+id/action_coursesFragment_to_coursesDetailFragment"
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/coursesDetailFragment"
         android:name="com.ren.courses.internal.presentation.ui.coursesdetail.fragment.CoursesDetailFragment"
-        android:label="fragment_courses_detail"
+        android:label="@string/course_screen"
         tools:layout="@layout/fragment_courses_detail" >
         <argument
             android:name="id"

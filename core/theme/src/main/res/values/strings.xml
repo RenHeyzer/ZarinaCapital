@@ -6,6 +6,14 @@
     <string name="my_courses_screen">Мои курсы</string>
     <string name="menu_screen">Меню</string>
     <string name="confirm_email_screen">Подтверждение</string>
+    <string name="course_screen">Курс</string>
+    <string name="news_screen">Новости</string>
+    <string name="settings_screen">Настройки</string>
+    <string name="edit_profile_screen">Редактировать профиль</string>
+    <string name="reviews_screen">Отзывы</string>
+    <string name="change_password_screen">Изменение пароля</string>
+    <string name="lesson_screen">Урок</string>
+    <string name="payment_history_screen">История оплаты</string>
     <string name="app_icon_content_description">Значок приложения</string>
     <string name="full_name_hint">ФИО</string>
     <string name="phone_number_prefix">+996</string>
@@ -35,7 +43,6 @@
     <string name="or">или</string>
     <string name="forgot_your_password">Забыли пароль?</string>
     <string name="courses">Курсы</string>
-    <string name="my_courses">Мои курсы</string>
     <string name="menu">Меню</string>
     <string name="deadline">Дедлайн</string>
     <string name="myProfile">Мой профиль</string>

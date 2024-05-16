@@ -7,6 +7,14 @@
     <string name="my_courses_screen">My courses</string>
     <string name="menu_screen">Menu</string>
     <string name="confirm_email_screen">Confirmation</string>
+    <string name="course_screen">Course</string>
+    <string name="news_screen">News</string>
+    <string name="settings_screen">Settings</string>
+    <string name="edit_profile_screen">Edit profile</string>
+    <string name="reviews_screen">Reviews</string>
+    <string name="change_password_screen">Change password</string>
+    <string name="lesson_screen">Lesson</string>
+    <string name="payment_history_screen">Payment history</string>
     <string name="app_icon_content_description">Application icon</string>
     <string name="full_name_hint">Full name</string>
     <string name="phone_number_prefix">+996</string>
@@ -36,7 +44,6 @@
     <string name="or">or</string>
     <string name="forgot_your_password">Forgot your password?</string>
     <string name="courses">Courses</string>
-    <string name="my_courses">My coursers</string>
     <string name="menu">Menu</string>
     <string name="deadline">deadline</string>
     <string name="myProfile">My profile</string>
