@@ -1,10 +1,9 @@
 package com.ren.menu.internal.presentation.ui.setting
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
-import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentSettingBinding
