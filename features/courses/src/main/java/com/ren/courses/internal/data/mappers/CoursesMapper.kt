@@ -3,6 +3,7 @@ package com.ren.courses.internal.data.mappers
 import com.ren.common.Mapper
 import com.ren.courses.internal.domain.entities.courses.Courses
 import com.ren.forexapi.api.models.courses.CoursesDTO
+import com.ren.forexapi.api.models.profile.ProfileDTO
 import javax.inject.Inject
 
 class CoursesMapper @Inject constructor() : Mapper<CoursesDTO,Courses > {

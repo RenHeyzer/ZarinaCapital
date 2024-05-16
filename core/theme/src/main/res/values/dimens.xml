@@ -33,4 +33,5 @@
     <dimen name="dp50">50dp</dimen>
     <dimen name="margin_12">12dp</dimen>
     <dimen name="space_height_62">62dp</dimen>
+    <dimen name="avatar_size">120dp</dimen>
 </resources>

@@ -82,7 +82,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/text_size_medium"
-                    tools:text="Февраль 2024" />
+                    android:text="Февраль 2024" />
 
                 <Space
                     android:layout_width="@dimen/space_80"

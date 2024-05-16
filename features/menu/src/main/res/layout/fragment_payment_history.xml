@@ -6,11 +6,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".internal.presentation.ui.paymenthistory.PaymentHistoryFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rec_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_payment_history"/>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rec_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        tools:listitem="@layout/item_payment_history"/>-->
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        android:backgroundTint="@color/light_grey_f3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:text="Форекс - оплата за курс" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/margin_10"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            android:text="200,000c" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:text="оплата по переводу" />
+
+    </androidx.cardview.widget.CardView>
 </FrameLayout>

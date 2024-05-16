@@ -2,6 +2,7 @@ package com.ren.menu.internal.data.mappers
 
 import com.ren.common.Mapper
 import com.ren.forexapi.api.models.news.NewsDTO
+import com.ren.forexapi.api.models.profile.ProfileDTO
 import com.ren.menu.internal.domain.entities.news.News
 import javax.inject.Inject
 
