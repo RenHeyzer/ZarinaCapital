@@ -1,5 +1,5 @@
 [versions]
-android-gradle-plugin = "8.4.0"
+android-gradle-plugin = "8.2.2"
 hilt-android = "2.51"
 kotlin-android = "1.9.22"
 lifecycle = "2.7.0"
