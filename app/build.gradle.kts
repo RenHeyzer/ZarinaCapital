@@ -73,6 +73,9 @@ dependencies {
     implementation(project(":features:menu"))
     implementation(project(":features:my-courses"))
     implementation(project(":features:auth"))
+
+    // Tokens DataStore
+    implementation(project(":datastore"))
 }
 
 kapt {
