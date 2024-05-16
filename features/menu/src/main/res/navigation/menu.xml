@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_lessonsFragment_to_attendancesFragment"
             app:destination="@id/attendancesFragment" />
+        <action
+            android:id="@+id/action_lessonsFragment_to_lessonsDetailFragment"
+            app:destination="@id/lessonsDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/attendancesFragment"
@@ -109,6 +112,18 @@
         android:name="com.ren.menu.internal.presentation.ui.editpassword.EditPasswordFragment"
         android:label="fragment_edit_password"
         tools:layout="@layout/fragment_edit_password" />
+    <fragment
+        android:id="@+id/lessonsDetailFragment"
+        android:name="com.ren.menu.internal.presentation.ui.lessons.detail.LessonsDetailFragment"
+        android:label="fragment_lessons_detail"
+        tools:layout="@layout/fragment_lessons_detail" >
+        <argument
+            android:name="idlessons"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_lessonsDetailFragment_to_attendancesFragment"
+            app:destination="@id/attendancesFragment" />
+    </fragment>
 
 
 </navigation>

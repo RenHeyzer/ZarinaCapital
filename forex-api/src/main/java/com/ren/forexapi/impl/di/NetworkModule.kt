@@ -52,4 +52,14 @@ internal object NetworkModule {
     @Singleton
     fun provideProfileApiService(retrofitClient: AuthenticatedRetrofitClient) =
         retrofitClient.profileApiService
+
+    @Provides
+    @Singleton
+    fun providesSchedulesApiService(retrofitClient: DefaultRetrofitClient) =
+        retrofitClient.schedulesApiService
+
+    @Provides
+    @Singleton
+    fun providesLessonsApiService(retrofitClient: DefaultRetrofitClient) =
+        retrofitClient.lessonsApiService
 }

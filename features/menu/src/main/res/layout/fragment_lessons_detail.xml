@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".internal.presentation.ui.lessons.detail.LessonsDetailFragment">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/rounder_button"
+        android:backgroundTint="@color/light_grey_f3"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_5">
+
+        <RadioButton
+            android:id="@+id/rb_lessons"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounder_button_white"
+            android:button="@null"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:text="@string/lesson"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_pre_medium" />
+
+        <RadioButton
+            android:id="@+id/rb_visit"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:padding="@dimen/margin_10"
+            android:text="@string/visit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_pre_medium" />
+
+    </RadioGroup>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@drawable/ic_launcher_background"
+        android:theme="@style/ShapeAppearance.Material3.Corner.Large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_20"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            android:text="Урок N." />
+        <TextView
+            android:id="@+id/tv_lesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="1" />
+
+        <Space
+            android:layout_width="@dimen/space_100"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_pre_medium"
+            android:textStyle="bold"
+            tools:text="12:00" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_5"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_pre_medium" />
+
+        <TextView
+            android:id="@+id/tv_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:padding="@dimen/margin_5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_pre_medium"
+            android:textStyle="bold"
+            tools:text="12:00" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:fontFamily="@font/inter_regular"
+        android:paddingStart="@dimen/margin_5"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        tools:text="Танысу" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_30"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_20"
+        android:background="@color/transparent_red">
+
+        <View
+            android:id="@+id/view_red"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginVertical="@dimen/margin_10"
+            android:background="@color/red"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_dz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@+id/view_red"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="ДЗ N." />
+
+        <TextView
+            android:id="@+id/tv_dzz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@+id/tv_dz"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/dark_grey"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="15:00" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:text="@string/deadline"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toStartOf="@+id/tv_time"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:layout_marginStart="@dimen/margin_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_red"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:text="1.Собрать разные материалы \n2.Сделать интервью \n3.Оправить в формате PNG" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/im_home_works"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@drawable/ic_launcher_background"
+            android:theme="@style/ShapeAppearance.Material3.Corner.Small"
+            app:layout_constraintStart_toEndOf="@+id/view_red"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/im_home_works"
+            app:layout_constraintTop_toTopOf="@+id/im_home_works"
+            tools:text="2019-05-06 19.26.56.JPG" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+            android:layout_marginStart="@dimen/margin_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/im_home_works"
+            app:layout_constraintTop_toTopOf="@+id/im_home_works"
+            tools:text="2019-05-06 19.26.56.JPG" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/im_home_works"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:text="288 кб" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
