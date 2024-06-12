@@ -39,6 +39,41 @@
             app:destination="@id/sign_up"
             app:popUpTo="@id/auth_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_sign_in_to_emailConfirmFragment"
+            app:destination="@id/emailConfirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.ren.auth.internal.presentation.ui.fragments.ResetPasswordFragment"
+        android:label="fragment_reset_passowrd"
+        tools:layout="@layout/fragment_reset_passowrd" >
+        <argument
+            android:name="code"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_sign_in"
+            app:destination="@id/sign_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailConfirmFragment"
+        android:name="com.ren.auth.internal.presentation.ui.fragments.EmailConfirmFragment"
+        android:label="fragment_email_confirm"
+        tools:layout="@layout/fragment_email_confirm" >
+        <action
+            android:id="@+id/action_emailConfirmFragment_to_resetPasswordCodeFragment"
+            app:destination="@id/resetPasswordCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordCodeFragment"
+        android:name="com.ren.auth.internal.presentation.ui.fragments.ResetPasswordCodeFragment"
+        android:label="fragment_reset_password_code"
+        tools:layout="@layout/fragment_reset_password_code" >
+        <action
+            android:id="@+id/action_resetPasswordCodeFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
     </fragment>
 
 </navigation>
