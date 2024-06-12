@@ -33,6 +33,7 @@ internal class SignInFragment :
         login()
         subscribeToResult()
         navigateToSignUp()
+        navigateToResetPassword()
     }
 
     private fun login() = with(binding) {
@@ -80,6 +81,12 @@ internal class SignInFragment :
     private fun navigateToSignUp() {
         binding.btnSingUp.setOnClickListener {
             findNavController().navigate(R.id.action_sign_in_to_sign_up)
+        }
+    }
+
+    private fun navigateToResetPassword() {
+        binding.tvForgotYourPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_in_to_emailConfirmFragment)
         }
     }
 }
