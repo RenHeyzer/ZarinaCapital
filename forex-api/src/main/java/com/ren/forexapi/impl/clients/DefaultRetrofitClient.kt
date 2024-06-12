@@ -5,6 +5,7 @@ import com.ren.forexapi.api.service.courses.CoursesApiService
 import com.ren.forexapi.api.service.lessons.LessonsApiService
 import com.ren.forexapi.api.service.news.NewsApiService
 import com.ren.forexapi.api.service.raviews.ReviewsApiService
+import com.ren.forexapi.api.service.reset.ResetPasswordApiService
 import com.ren.forexapi.api.service.schedule.ScheduleApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -46,4 +47,6 @@ internal class DefaultRetrofitClient(
     val schedulesApiService: ScheduleApiService = retrofit.create()
 
     val lessonsApiService: LessonsApiService = retrofit.create()
+
+    val resetPasswordApiService: ResetPasswordApiService = retrofit.create()
 }
