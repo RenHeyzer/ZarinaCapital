@@ -52,40 +52,19 @@ internal class SignUpFragment :
             },
             onError = { state ->
                 loading.gone()
-                when (state.throwable) {
-                    is EmptyFieldsException -> {
-                        val emptyFields = (state.throwable as EmptyFieldsException).emptyFields
-                        val exceptionMessages =
-                            (state.throwable as EmptyFieldsException).exceptionMessages
-
-                        val fields = listOf(
-                            tilFullName,
-                            tilPhone,
-                            tilEmail,
-                            tilPassword,
-                            tilConfirmPassword
-                        )
-                        emptyFields.keys.forEachIndexed { index, field ->
-                            fields[index].isErrorEnable(
-                                isEnabled = emptyFields[field] == true,
-                                message = exceptionMessages[field]
-                            )
-                        }
-                    }
-
-                    is PasswordMismatchException -> {
-                        tilPassword.isErrorEnable(
+                val fields = mapOf(
+                    FULL_NAME_KEY to tilFullName,
+                    PHONE_KEY to tilPhone,
+                    EMAIL_KEY to tilEmail,
+                    PASSWORD_KEY to tilPassword,
+                    CONFIRM_PASSWORD_KEY to tilConfirmPassword,
+                )
+                state.errorList?.let {errorList ->
+                    errorList.forEach {
+                        fields[it]?.isErrorEnable(
                             isEnabled = true,
                             message = state.message
                         )
-                        tilConfirmPassword.isErrorEnable(
-                            isEnabled = true,
-                            message = state.message
-                        )
-                    }
-
-                    else -> {
-                        Log.e("error", state.message, state.throwable)
                     }
                 }
             },
@@ -100,5 +79,13 @@ internal class SignUpFragment :
         binding.btnSingIn.setOnClickListener {
             findNavController().navigate(R.id.action_sign_up_to_sign_in)
         }
+    }
+
+    companion object{
+        const val FULL_NAME_KEY = "full name"
+        const val PHONE_KEY = "phone"
+        const val EMAIL_KEY ="email"
+        const val PASSWORD_KEY ="password"
+        const val CONFIRM_PASSWORD_KEY = "confirm password"
     }
 }

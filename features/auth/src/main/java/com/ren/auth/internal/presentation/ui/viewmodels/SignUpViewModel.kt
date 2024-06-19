@@ -7,6 +7,7 @@ import com.ren.auth.internal.domain.entities.SignUpParams
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
 import com.ren.auth.internal.domain.usecases.SignUpUseCase
+import com.ren.auth.internal.presentation.ui.fragments.SignUpFragment
 import com.ren.presentation.base.BaseViewModel
 import com.ren.presentation.utils.ExceptionMessages
 import com.ren.presentation.utils.UIState
@@ -32,46 +33,61 @@ internal class SignUpViewModel @Inject constructor(
         confirmPassword: String
     ) {
         viewModelScope.launch {
-            _resultState.value = UIState.Loading
-            val params = with(exceptionMessages) {
-                SignUpParams(
-                    username = username to emptyUsernameFieldExceptionMessage,
-                    email = email to emptyEmailFieldExceptionMessage,
-                    prefix = prefix,
-                    phone = phone to emptyPhoneFieldExceptionMessage,
-                    password = password to emptyPasswordFieldExceptionMessage,
-                    confirmPassword = confirmPassword to emptyConfirmPasswordFieldExceptionMessage
-                )
+            val errorList = mutableListOf<String>()
+            if (username.isEmpty()) {
+                errorList.add(SignUpFragment.FULL_NAME_KEY)
             }
-            signUpUseCase(params).fold(
-                onSuccess = {
-                    _resultState.value = UIState.Success()
-                },
-                onFailure = { t ->
-                    when (t) {
-                        is EmptyFieldsException -> {
-                            _resultState.value = UIState.Error(
-                                throwable = t,
-                                message = null
-                            )
-                        }
+            if (email.isEmpty()) {
+                errorList.add(SignUpFragment.EMAIL_KEY)
+            }
+            if (phone.isEmpty()) {
+                errorList.add(SignUpFragment.PHONE_KEY)
+            }
+            if (password.isEmpty()) {
+                errorList.add(SignUpFragment.PASSWORD_KEY)
+            }
+            if (confirmPassword.isEmpty()) {
+                errorList.add(SignUpFragment.CONFIRM_PASSWORD_KEY)
+            }
 
-                        is PasswordMismatchException -> {
-                            _resultState.value = UIState.Error(
-                                throwable = t,
-                                message = exceptionMessages.passwordMismatchExceptionMessage
-                            )
-                        }
-
-                        else -> {
-                            _resultState.value = UIState.Error(
-                                throwable = t,
-                                message = t.message ?: "Unknown error!"
-                            )
-                        }
+            if (errorList.isNotEmpty()) {
+                _resultState.value = UIState.Error(
+                    throwable = Throwable("Заполните это поле"),
+                    errorList = errorList,
+                    message = "Заполните это поле"
+                )
+            }else {
+                if (confirmPassword == password) {
+                    _resultState.value = UIState.Loading
+                    val params = with(exceptionMessages) {
+                        SignUpParams(
+                            username = username to emptyUsernameFieldExceptionMessage,
+                            email = email to emptyEmailFieldExceptionMessage,
+                            prefix = prefix,
+                            phone = phone to emptyPhoneFieldExceptionMessage,
+                            password = password to emptyPasswordFieldExceptionMessage,
+                            confirmPassword = confirmPassword to emptyConfirmPasswordFieldExceptionMessage
+                        )
                     }
+                    signUpUseCase(params).fold(
+                        onSuccess = {
+                            _resultState.value = UIState.Success()
+                        },
+                        onFailure = { t ->
+
+                        }
+                    )
+                }else {
+                    _resultState.value = UIState.Error(
+                        throwable = Throwable("Пароли не совподают"),
+                        errorList = listOf(
+                            SignUpFragment.PASSWORD_KEY,
+                            SignUpFragment.CONFIRM_PASSWORD_KEY,
+                        ),
+                        message = "Пароли не совподают"
+                    )
                 }
-            )
+            }
         }
     }
 }
