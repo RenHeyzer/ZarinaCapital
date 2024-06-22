@@ -3,6 +3,8 @@ package com.ren.auth.internal.presentation.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -33,7 +35,18 @@ internal class SignUpFragment :
     }
 
     private fun signUp() = with(binding) {
+        val etList = listOf(
+            tilPassword,
+            tilEmail,
+            tilEmail,
+            tilPhone,
+            tilFullName,
+            tilConfirmPassword,
+        )
         btnSingUp.setOnClickListener {
+            etList.forEach {
+                it.error = null
+            }
             viewModel.signUp(
                 username = etFullName.trimmedText(),
                 email = etEmail.trimmedText(),
@@ -59,13 +72,15 @@ internal class SignUpFragment :
                     PASSWORD_KEY to tilPassword,
                     CONFIRM_PASSWORD_KEY to tilConfirmPassword,
                 )
-                state.errorList?.let {errorList ->
-                    errorList.forEach {
+                if (state.errorList != null) {
+                    state.errorList?.forEach {
                         fields[it]?.isErrorEnable(
                             isEnabled = true,
                             message = state.message
                         )
                     }
+                }else {
+                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
                 }
             },
             onSuccess = {

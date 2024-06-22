@@ -37,6 +37,10 @@ internal class SignInFragment :
 
     private fun login() = with(binding) {
         btnSingIn.setOnClickListener {
+            val errorList = mutableListOf(tilPassword, tilEmail)
+            errorList.forEach {
+                it.error = null
+            }
             viewModel.login(
                 email = etEmail.trimmedText(),
                 password = etPassword.trimmedText()
@@ -55,7 +59,7 @@ internal class SignInFragment :
                     EMAIL_KEY to tilEmail,
                     PASSWORD_KEY to tilPassword,
                 )
-                error.errorList?.let { map->
+                error.errorList?.let { map ->
                     map.forEach {
                         fields[it]?.isErrorEnable(
                             isEnabled = true,

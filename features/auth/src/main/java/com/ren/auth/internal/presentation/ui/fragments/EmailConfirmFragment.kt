@@ -3,6 +3,7 @@ package com.ren.auth.internal.presentation.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -11,6 +12,7 @@ import com.ren.auth.databinding.FragmentEmailConfirmBinding
 import com.ren.auth.internal.presentation.ui.viewmodels.EmailConfirmViewModel
 import com.ren.presentation.base.BaseFragment
 import com.ren.presentation.utils.UIState
+import com.ren.presentation.utils.isErrorEnable
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -33,11 +35,23 @@ class EmailConfirmFragment :
         }
     }
 
-    private fun setupSubscribes() {
-        viewModel.resultState.observe(viewLifecycleOwner) {uiState ->
-            when(uiState) {
+    private fun setupSubscribes() = with (binding){
+        viewModel.resultState.observe(viewLifecycleOwner) {state ->
+            when(state) {
                 is UIState.Error -> {
-                    Log.e("result", "setupSubscribes: ${uiState.message}")
+                    val fields = mapOf(
+                        EMAIL_KEY to confirmEmail,
+                    )
+                    if (state.errorList != null) {
+                        state.errorList?.forEach {
+                            fields[it]?.isErrorEnable(
+                                isEnabled = true,
+                                message = state.message
+                            )
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                    }
                 }
                 UIState.Loading -> {
 
@@ -47,5 +61,9 @@ class EmailConfirmFragment :
                 }
             }
         }
+    }
+
+    companion object {
+        const val EMAIL_KEY = "email key"
     }
 }

@@ -21,37 +21,50 @@ internal class SignInViewModel @Inject constructor(
 
     private val _resultState = MutableLiveData<UIState<Nothing>>()
     val resultState: LiveData<UIState<Nothing>> = _resultState
+    private var isError = false
 
     fun login(email: String, password: String) {
         viewModelScope.launch {
             val errorList = mutableListOf<String>()
-            if (email.isEmpty()){
+
+            if (email.isEmpty()) {
                 errorList.add(SignInFragment.EMAIL_KEY)
+            } else if (!email.contains("@")) {
+                isError = true
+                _resultState.value = UIState.Error(
+                    throwable = Throwable("Введите корректный email"),
+                    errorList = listOf(SignInFragment.EMAIL_KEY),
+                    message = "Введите корректный email"
+                )
             }
-            if (password.isEmpty()){
+
+            if (password.isEmpty()) {
                 errorList.add(SignInFragment.PASSWORD_KEY)
             }
+
             if (errorList.isEmpty()) {
-                val params = with(exceptionMessages) {
-                    LoginParams(
-                        email = email to emptyEmailFieldExceptionMessage,
-                        password = password to emptyPasswordFieldExceptionMessage
-                    )
-                }
-                loginUseCase(params).fold(
-                    onSuccess = {
-                        _resultState.value = UIState.Success()
-                    },
-                    onFailure = { exception ->
-                        errorList.add(SignInFragment.PASSWORD_KEY)
-                        errorList.add(SignInFragment.EMAIL_KEY)
-                        _resultState.value = UIState.Error(
-                            throwable = Throwable("Неверный пароль или email"),
-                            errorList = errorList,
-                            message = "Неверный пароль или email"
+                if (!isError) {
+                    val params = with(exceptionMessages) {
+                        LoginParams(
+                            email = email to emptyEmailFieldExceptionMessage,
+                            password = password to emptyPasswordFieldExceptionMessage
                         )
                     }
-                )
+                    loginUseCase(params).fold(
+                        onSuccess = {
+                            _resultState.value = UIState.Success()
+                        },
+                        onFailure = { exception ->
+                            errorList.add(SignInFragment.PASSWORD_KEY)
+                            errorList.add(SignInFragment.EMAIL_KEY)
+                            _resultState.value = UIState.Error(
+                                throwable = Throwable("Неверный пароль или email"),
+                                errorList = errorList,
+                                message = "Неверный пароль или email"
+                            )
+                        }
+                    )
+                }
             } else {
                 _resultState.value = UIState.Error(
                     throwable = Throwable("Заполните это поле"),

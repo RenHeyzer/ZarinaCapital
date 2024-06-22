@@ -3,6 +3,7 @@ package com.ren.auth.internal.presentation.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -10,8 +11,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.auth.R
 import com.ren.auth.databinding.FragmentResetPassowrdBinding
 import com.ren.auth.internal.presentation.ui.viewmodels.ResetPasswordViewModel
-import com.ren.auth.internal.presentation.ui.viewmodels.SignUpViewModel
 import com.ren.presentation.base.BaseFragment
+import com.ren.presentation.utils.isErrorEnable
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,36 +28,53 @@ internal class ResetPasswordFragment :
         resetPassword()
     }
 
-    private fun getArgs() {
+    private fun getArgs() = with(binding) {
         binding.btnResetPassword.setOnClickListener {
+            val errorList = mutableListOf(newPassword, confirmNewPassword)
+            errorList.forEach {
+                it.error = null
+            }
             val args: ResetPasswordFragmentArgs by navArgs()
-            val newPassword = binding.etNewPassword.text.toString().trim()
-            val confirmNewPassword = binding.etConfirmNewPassword.text.toString().trim()
-            if (newPassword.equals(confirmNewPassword)) {
-                args.code?.let { code ->
-                    viewModel.resetPassword(code, newPassword)
-                    Log.e("rest", "$code $newPassword " )
-                }
-            } else {
-                binding.etNewPassword.error = "Разные пароли"
-                binding.etConfirmNewPassword.error = "Разные пароли"
-                Log.e("password", "difference password")
+            val newPassword = etNewPassword.text.toString().trim()
+            val confirmNewPassword = etConfirmNewPassword.text.toString().trim()
+
+            args.code?.let { code ->
+                viewModel.resetPassword(code, newPassword, confirmNewPassword)
             }
         }
     }
 
-    private fun resetPassword() {
+    private fun resetPassword() = with(binding) {
         viewModel.resultState.subscribeAsState(
             whileLoading = {},
             onLoading = {
 
             },
-            onError = {
-                Log.e("error", it.toString())
+            onError = { state ->
+                Log.e("getArgs", "getArgs: ", )
+                val fields = mapOf(
+                    PASSWORD_KEY to newPassword,
+                    CONFIRM_PASSWORD_KEY to confirmNewPassword,
+                )
+                if (state.errorList != null) {
+                    state.errorList?.forEach {
+                        fields[it]?.isErrorEnable(
+                            isEnabled = true,
+                            message = state.message
+                        )
+                    }
+                } else {
+                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                }
             },
             onSuccess = {
                 findNavController().navigate(R.id.action_resetPasswordFragment_to_sign_in)
             },
         )
+    }
+
+    companion object {
+        const val PASSWORD_KEY = "password key"
+        const val CONFIRM_PASSWORD_KEY = "confirm password key"
     }
 }
