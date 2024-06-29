@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="4dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_front_title"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_lock"
+            app:tint="@color/dark_grey" />
+
+        <TextView
+            android:id="@+id/tv_course_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_title"
+            tools:text="1.1 text" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_course_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center"
+        android:drawableStart="@drawable/ic_clock"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/text_size_title"
+        tools:text="1.1 text" />
+</FrameLayout>

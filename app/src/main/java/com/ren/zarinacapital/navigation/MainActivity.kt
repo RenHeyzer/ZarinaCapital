@@ -85,6 +85,11 @@ class MainActivity : AppCompatActivity() {
                     binding.bottomNavigation.gone()
                 }
 
+                com.ren.courses.R.id.videoPlayerFragment -> {
+                    binding.toolbar.gone()
+                    binding.bottomNavigation.gone()
+                }
+
                 else -> {
                     binding.toolbar.visible()
                     binding.bottomNavigation.visible()

@@ -57,6 +57,14 @@ dependencies {
     kapt(libs.hilt.compiler)
     implementation(libs.glide)
 
+    // adapterDelegate
+    val adapterDelegateVer = ("4.3.2")
+    implementation ("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegateVer")
+    implementation ("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterDelegateVer")
+
+    // player view
+    implementation ("com.google.android.exoplayer:exoplayer:2.19.1")
+
     implementation(project(":core:theme"))
     implementation(project(":core:data"))
     implementation(project(":core:presentation"))
