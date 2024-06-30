@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="4dp"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/courses"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_very_large" />
+
+        <TextView
+            android:id="@+id/tv_spinner_lectures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/lectures"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_title" />
+
+        <TextView
+            android:id="@+id/tv_spinner_title_course_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="4dp"
+            android:text="@string/buy_the_course_to_watch"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_title" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ic_spinner_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center|end"
+        android:src="@drawable/ic_arrow_down" />
+</FrameLayout>
