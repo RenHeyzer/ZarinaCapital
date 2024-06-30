@@ -1,11 +1,16 @@
 package com.ren.auth.internal.presentation.ui.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.google.android.material.textfield.TextInputLayout
 import com.ren.auth.R
 import com.ren.auth.databinding.FragmentSignUpBinding
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
@@ -27,13 +32,42 @@ internal class SignUpFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupTextWatchers()
         signUp()
         subscribeToResult()
         navigateToSignIn()
     }
 
+    private fun setupTextWatchers() = with(binding) {
+        etFullName.addTextChangedListener(createTextWatcher(tilFullName))
+        etEmail.addTextChangedListener(createTextWatcher(tilEmail))
+        etPhone.addTextChangedListener(createTextWatcher(tilPhone))
+        etPassword.addTextChangedListener(createTextWatcher(tilPassword))
+        etConfirmPassword.addTextChangedListener(createTextWatcher(tilConfirmPassword))
+    }
+
+    private fun createTextWatcher(textInputLayout: TextInputLayout): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                textInputLayout.error = null
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        }
+    }
+
     private fun signUp() = with(binding) {
+        val etList = listOf(
+            tilPassword,
+            tilEmail,
+            tilPhone,
+            tilFullName,
+            tilConfirmPassword,
+        )
         btnSingUp.setOnClickListener {
+            etList.forEach {
+                it.error = null
+            }
             viewModel.signUp(
                 username = etFullName.trimmedText(),
                 email = etEmail.trimmedText(),
@@ -52,41 +86,22 @@ internal class SignUpFragment :
             },
             onError = { state ->
                 loading.gone()
-                when (state.throwable) {
-                    is EmptyFieldsException -> {
-                        val emptyFields = (state.throwable as EmptyFieldsException).emptyFields
-                        val exceptionMessages =
-                            (state.throwable as EmptyFieldsException).exceptionMessages
-
-                        val fields = listOf(
-                            tilFullName,
-                            tilPhone,
-                            tilEmail,
-                            tilPassword,
-                            tilConfirmPassword
-                        )
-                        emptyFields.keys.forEachIndexed { index, field ->
-                            fields[index].isErrorEnable(
-                                isEnabled = emptyFields[field] == true,
-                                message = exceptionMessages[field]
-                            )
-                        }
-                    }
-
-                    is PasswordMismatchException -> {
-                        tilPassword.isErrorEnable(
-                            isEnabled = true,
-                            message = state.message
-                        )
-                        tilConfirmPassword.isErrorEnable(
+                val fields = mapOf(
+                    FULL_NAME_KEY to tilFullName,
+                    PHONE_KEY to tilPhone,
+                    EMAIL_KEY to tilEmail,
+                    PASSWORD_KEY to tilPassword,
+                    CONFIRM_PASSWORD_KEY to tilConfirmPassword,
+                )
+                if (state.errorList != null) {
+                    state.errorList!!.forEach {
+                        fields[it]?.isErrorEnable(
                             isEnabled = true,
                             message = state.message
                         )
                     }
-
-                    else -> {
-                        Log.e("error", state.message, state.throwable)
-                    }
+                } else {
+                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
                 }
             },
             onSuccess = {
@@ -100,5 +115,13 @@ internal class SignUpFragment :
         binding.btnSingIn.setOnClickListener {
             findNavController().navigate(R.id.action_sign_up_to_sign_in)
         }
+    }
+
+    companion object {
+        const val FULL_NAME_KEY = "full name"
+        const val PHONE_KEY = "phone"
+        const val EMAIL_KEY = "email"
+        const val PASSWORD_KEY = "password"
+        const val CONFIRM_PASSWORD_KEY = "confirm password"
     }
 }

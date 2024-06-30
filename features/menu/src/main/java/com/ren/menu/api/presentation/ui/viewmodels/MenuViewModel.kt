@@ -19,4 +19,7 @@ class MenuViewModel @Inject constructor(
     init {
         profileRepository.fetchProfile().collectFlowAsState(_profileState)
     }
+    fun updateProfile(){
+        profileRepository.fetchProfile().collectFlowAsState(_profileState)
+    }
 }

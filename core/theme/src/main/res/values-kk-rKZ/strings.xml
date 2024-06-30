@@ -66,6 +66,7 @@
     <string name="exercise">Тапсырмалар</string>
     <string name="searchCourses">Курстарды іздеу</string>
     <string name="new_password">Жаңа құпия сөз</string>
+    <string name="confirm_passowrd">Сырсөздү ырастоо</string>
     <string name="repeat_password">Құпия сөзді қайталаңыз</string>
     <string name="old_password">Ескі құпия сөз</string>
     <string name="password">Құпия сөз</string>

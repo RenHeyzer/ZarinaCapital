@@ -1,12 +1,8 @@
 package com.ren.menu.internal.presentation.ui.news.detail
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -15,6 +11,9 @@ import com.ren.menu.R
 import com.ren.menu.databinding.FragmentNewsDetailBinding
 import com.ren.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @AndroidEntryPoint
 class NewsDetailFragment :
@@ -42,10 +41,23 @@ class NewsDetailFragment :
                 error.message?.let { Log.e("courses", it) }
             }, onSuccess = { success ->
                 success.data?.let { model ->
-                    Glide.with(binding.imIcon.context).load(model.image).into(binding.imIcon)
-                    binding.tvData.text = model.startDatetime
+                    val originalFormat = SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.getDefault())
+                    // Желаемый формат даты для tvData "d MMMM"
+                    val dateFormat = SimpleDateFormat("d MMMM", Locale("ru"))
+                    // Желаемый формат времени для tvTime "HH:mm"
+                    val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+                    val date: Date = originalFormat.parse(model.startDatetime)
+
+                    // Форматирование даты
+                    val formattedDate: String = dateFormat.format(date)
+                    // Форматирование времени
+                    val formattedTime: String = timeFormat.format(date)
+
+                    binding.tvData.text = formattedDate
+                    binding.tvTime.text = formattedTime
                     binding.tvName.text = model.title
                     binding.tvRules.text = model.description
+                    Glide.with(binding.imIcon.context).load(model.image).into(binding.imIcon)
                 }
             })
     }

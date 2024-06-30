@@ -52,9 +52,10 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.bundles.navigation)
     implementation(libs.legacy.support.v4)
+    implementation(libs.play.services.basement)
     kapt(libs.hilt.compiler)
     implementation(libs.glide)
-
+    implementation(libs.imagepicker)
 
     implementation(project(":core:theme"))
     implementation(project(":core:data"))

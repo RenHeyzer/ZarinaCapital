@@ -29,7 +29,7 @@ class DeleteAccountFragment  :
 
     private fun setOnClickListeners() {
         binding.btnDelete.setOnClickListener {
-            findNavController().navigateUp()
+
         }
     }
 

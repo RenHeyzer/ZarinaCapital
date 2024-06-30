@@ -119,6 +119,7 @@
         <item name="placeholderTextColor">@color/dark_grey</item>
     </style>
 
+
     <style name="Widget.TextInputEditText.OutlinedBox.Overlay" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

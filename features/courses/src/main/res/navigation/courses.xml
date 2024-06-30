@@ -30,5 +30,19 @@
         <action
             android:id="@+id/action_coursesDetailFragment_to_reviewsFragment"
             app:destination="@id/reviewsFragment" />
+        <action
+            android:id="@+id/action_coursesDetailFragment_to_videoPlayerFragment"
+            app:destination="@id/videoPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayerFragment"
+        android:name="com.ren.courses.internal.presentation.ui.coursesdetail.fragment.VideoPlayerFragment"
+        android:label="fragment_video_player"
+        tools:layout="@layout/fragment_video_player" >
+        <argument
+            android:name="video"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
 </navigation>

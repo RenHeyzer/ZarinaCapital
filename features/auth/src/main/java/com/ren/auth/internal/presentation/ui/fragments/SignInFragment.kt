@@ -10,7 +10,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.auth.R
 import com.ren.auth.api.presentation.SignInRouter
 import com.ren.auth.databinding.FragmentSignInBinding
-import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.presentation.ui.viewmodels.SignInViewModel
 import com.ren.presentation.base.BaseFragment
 import com.ren.presentation.utils.isErrorEnable
@@ -33,10 +32,15 @@ internal class SignInFragment :
         login()
         subscribeToResult()
         navigateToSignUp()
+        navigateToResetPassword()
     }
 
     private fun login() = with(binding) {
         btnSingIn.setOnClickListener {
+            val errorList = mutableListOf(tilPassword, tilEmail)
+            errorList.forEach {
+                it.error = null
+            }
             viewModel.login(
                 email = etEmail.trimmedText(),
                 password = etPassword.trimmedText()
@@ -51,27 +55,20 @@ internal class SignInFragment :
             },
             onLoading = { loading -> Log.d("login", loading.toString()) },
             onError = { error ->
-                if (error.throwable is EmptyFieldsException) {
-                    val emptyFields = (error.throwable as EmptyFieldsException).emptyFields
-                    val exceptionMessages =
-                        (error.throwable as EmptyFieldsException).exceptionMessages
-
-                    val fields = listOf(
-                        tilEmail,
-                        tilPassword,
-                    )
-                    emptyFields.keys.forEachIndexed { index, field ->
-                        fields[index].isErrorEnable(
-                            isEnabled = emptyFields[field] == true,
-                            message = exceptionMessages[field]
+                val fields = mapOf(
+                    EMAIL_KEY to tilEmail,
+                    PASSWORD_KEY to tilPassword,
+                )
+                error.errorList?.let { map ->
+                    map.forEach {
+                        fields[it]?.isErrorEnable(
+                            isEnabled = true,
+                            message = error.message
                         )
                     }
-                } else {
-                    Log.e("error", error.message, error.throwable)
                 }
             },
             onSuccess = {
-                Log.d("login", "success")
                 signInRouter.navigateToCourses()
             }
         )
@@ -81,5 +78,16 @@ internal class SignInFragment :
         binding.btnSingUp.setOnClickListener {
             findNavController().navigate(R.id.action_sign_in_to_sign_up)
         }
+    }
+
+    private fun navigateToResetPassword() {
+        binding.tvForgotYourPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_in_to_emailConfirmFragment)
+        }
+    }
+
+    companion object {
+        const val PASSWORD_KEY = "password"
+        const val EMAIL_KEY = "email"
     }
 }

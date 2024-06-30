@@ -1,6 +1,7 @@
 package com.ren.forexapi.impl.clients
 
 import com.ren.forexapi.api.service.auth.AuthApiService
+import com.ren.forexapi.api.service.changepassword.ChangePasswordApiService
 import com.ren.forexapi.api.service.profile.ProfileApiService
 import com.ren.forexapi.api.service.raviews.ReviewsApiService
 import com.ren.forexapi.impl.interceptors.TokenInterceptor
@@ -36,5 +37,7 @@ internal class AuthenticatedRetrofitClient(
         .build()
 
     val profileApiService: ProfileApiService = retrofit.create()
+
+    val changePassword: ChangePasswordApiService = retrofit.create()
 
 }

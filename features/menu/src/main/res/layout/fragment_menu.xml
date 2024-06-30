@@ -1,227 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefreshLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     tools:context=".api.presentation.ui.fragments.MenuFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/im_profile"
-            android:layout_width="@dimen/avatar_size"
-            android:layout_height="@dimen/avatar_size"
-            android:layout_margin="@dimen/margin_15"
-            android:theme="@style/ShapeAppearance.Material3.Corner.Full" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_20"
-            android:layout_marginEnd="@dimen/margin_20"
-            android:backgroundTint="@color/white"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_bold"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium"
-                tools:text="Ракымова Аймончок" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/im_profile"
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:layout_margin="@dimen/margin_15"
+                android:theme="@style/ShapeAppearance.Material3.Corner.Full" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_email"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_10"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:text="Ракымова Аймончок" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/text_size_medium"
+                        tools:text="nursultanakmatbekov34@gmail.com" />
+
+                    <ImageButton
+                        android:id="@+id/im_change"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/lucide_pen"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/text_size_medium"
-                    tools:text="nursultanakmatbekov34@gmail.com" />
-
-                <ImageButton
-                    android:id="@+id/im_change"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/lucide_pen"/>
+                    tools:text="+996 705 245 490" />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_size_medium"
-                tools:text="+996 705 245 490" />
-
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/myProfile"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_medium" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_15"
+            android:background="@color/light_grey_f3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_grey_f3"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_5">
+
+                <TextView
+                    android:id="@+id/tv_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/bi_wallet"
+                    android:drawableEnd="@drawable/arrow_left"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/paymenHistory"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_size_1dp"
+                    android:background="@color/dark_grey" />
+
+                <TextView
+                    android:id="@+id/tv_schedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/material"
+                    android:drawableEnd="@drawable/arrow_left"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/schedule"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_size_1dp"
+                    android:background="@color/dark_grey" />
+
+                <TextView
+                    android:id="@+id/tv_changePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/mdi_lock_outline"
+                    android:drawableEnd="@drawable/arrow_left"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="10dp"
+                    android:text="@string/changePassword"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_size_1dp"
+                    android:background="@color/dark_grey" />
+
+                <TextView
+                    android:id="@+id/tv_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icons_setting"
+                    android:drawableEnd="@drawable/arrow_left"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="10dp"
+                    android:text="@string/setting"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/menu"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/text_size_medium" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_15"
+            android:background="@color/light_grey_f3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_grey_f3"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_5">
+
+                <TextView
+                    android:id="@+id/tv_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/circum_view"
+                    android:drawableEnd="@drawable/arrow_left"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/news"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_size_1dp"
+                    android:background="@color/dark_grey" />
+
+                <TextView
+                    android:id="@+id/tv_rules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/circum_view"
+                    android:drawableEnd="@drawable/arrow_left"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/rules"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
-        android:fontFamily="@font/inter_regular"
-        android:text="@string/myProfile"
-        android:textColor="@color/dark_grey"
-        android:textSize="@dimen/text_size_medium" />
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_15"
-        android:background="@color/light_grey_f3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/light_grey_f3"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_5">
-
-            <TextView
-                android:id="@+id/tv_history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/bi_wallet"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawablePadding="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:padding="@dimen/margin_10"
-                android:text="@string/paymenHistory"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_size_1dp"
-                android:background="@color/dark_grey" />
-
-            <TextView
-                android:id="@+id/tv_schedule"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/material"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawablePadding="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:padding="@dimen/margin_10"
-                android:text="@string/schedule"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_size_1dp"
-                android:background="@color/dark_grey" />
-
-            <TextView
-                android:id="@+id/tv_changePassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/mdi_lock_outline"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawablePadding="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:padding="10dp"
-                android:text="@string/changePassword"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_size_1dp"
-                android:background="@color/dark_grey" />
-
-            <TextView
-                android:id="@+id/tv_settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/icons_setting"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawablePadding="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:padding="10dp"
-                android:text="@string/setting"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
-        android:fontFamily="@font/inter_regular"
-        android:text="@string/menu"
-        android:textColor="@color/dark_grey"
-        android:textSize="@dimen/text_size_medium" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_15"
-        android:background="@color/light_grey_f3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/light_grey_f3"
-            android:orientation="vertical"
-            android:padding="@dimen/margin_5">
-
-            <TextView
-                android:id="@+id/tv_news"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/circum_view"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawablePadding="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:padding="@dimen/margin_10"
-                android:text="@string/news"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_size_1dp"
-                android:background="@color/dark_grey" />
-
-            <TextView
-                android:id="@+id/tv_rules"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/circum_view"
-                android:drawableEnd="@drawable/arrow_left"
-                android:drawablePadding="@dimen/margin_10"
-                android:fontFamily="@font/inter_regular"
-                android:padding="@dimen/margin_10"
-                android:text="@string/rules"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_medium" />
-
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-</LinearLayout>

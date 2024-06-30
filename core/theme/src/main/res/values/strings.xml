@@ -64,6 +64,7 @@
     <string name="exercise">Задания</string>
     <string name="searchCourses">Поиск курсов</string>
     <string name="new_password">Новый пароль</string>
+    <string name="confirm_passowrd">Подтверждение пароля</string>
     <string name="repeat_password">Повторите пароль</string>
     <string name="old_password">Старый пароль</string>
     <string name="password">Пароль</string>

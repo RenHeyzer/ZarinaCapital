@@ -65,6 +65,7 @@
     <string name="exercise">Tasks</string>
     <string name="searchCourses">Search courses</string>
     <string name="new_password">New Password</string>
+    <string name="confirm_passowrd">Confirm password</string>
     <string name="repeat_password">Repeat password</string>
     <string name="old_password">Old Password</string>
     <string name="password">Password</string>
