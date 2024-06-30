@@ -17,55 +17,50 @@ class ResetPasswordViewModel @Inject constructor(private val resetPasswordReposi
 
     private var _resultState = MutableLiveData<UIState<Nothing>>()
     val resultState: LiveData<UIState<Nothing>> = _resultState
-    private var isError = false
+
+    private var _passwordError = MutableLiveData<String?>()
+    val passwordError: LiveData<String?> = _passwordError
+
+    private var _confirmPasswordError = MutableLiveData<String?>()
+    val confirmPasswordError: LiveData<String?> = _confirmPasswordError
 
     fun resetPassword(code: String, newPassword: String, confirmNewPassword: String) {
         viewModelScope.launch {
-            val errorList = mutableListOf<String>()
+            var isValid = true
 
             if (newPassword.isEmpty()) {
-                errorList.add(ResetPasswordFragment.PASSWORD_KEY)
+                _passwordError.value = "Пароль не может быть пустым"
+                isValid = false
             } else if (newPassword.length < 8) {
-                isError = true
-                _resultState.value = UIState.Error(
-                    throwable = Throwable("Пароль должен состоять больше 8-х символов"),
-                    errorList = listOf(ResetPasswordFragment.PASSWORD_KEY),
-                    message = "Пароль должен состоять больше 8-х символов"
-                )
-            }
-            if (confirmNewPassword.isEmpty()) {
-                errorList.add(ResetPasswordFragment.CONFIRM_PASSWORD_KEY)
-            }
-            if (errorList.isEmpty() && newPassword == confirmNewPassword) {
-                if (!isError) {
-                    runCatching {
-                        resetPasswordRepository.resetPasswordWithCode(
-                            code = code,
-                            newPassword = newPassword
-                        )
-                    }.fold(
-                        onFailure = { error ->
-                            _resultState.value = UIState.Error(error)
-                        },
-                        onSuccess = {
-                            _resultState.value = UIState.Success()
-                        },
-                    )
-                } else {
-                    _resultState.value = UIState.Error(
-                        throwable = Throwable("Заполните это поле"),
-                        errorList = errorList,
-                        message = "Заполните это поле"
-                    )
-                }
+                _passwordError.value = "Пароль должен состоять больше 8-х символов"
+                isValid = false
             } else {
-                _resultState.value = UIState.Error(
-                    throwable = Throwable("Пороли не совподают"),
-                    errorList = listOf(
-                        ResetPasswordFragment.PASSWORD_KEY,
-                        ResetPasswordFragment.CONFIRM_PASSWORD_KEY
-                    ),
-                    message = "Пороли не совподают"
+                _passwordError.value = null
+            }
+
+            if (confirmNewPassword.isEmpty()) {
+                _confirmPasswordError.value = "Подтверждение пароля не может быть пустым"
+                isValid = false
+            } else if (newPassword != confirmNewPassword) {
+                _confirmPasswordError.value = "Пароли не совпадают"
+                isValid = false
+            } else {
+                _confirmPasswordError.value = null
+            }
+
+            if (isValid) {
+                runCatching {
+                    resetPasswordRepository.resetPasswordWithCode(
+                        code = code,
+                        newPassword = newPassword
+                    )
+                }.fold(
+                    onFailure = { error ->
+                        _resultState.value = UIState.Error(error)
+                    },
+                    onSuccess = {
+                        _resultState.value = UIState.Success()
+                    },
                 )
             }
         }

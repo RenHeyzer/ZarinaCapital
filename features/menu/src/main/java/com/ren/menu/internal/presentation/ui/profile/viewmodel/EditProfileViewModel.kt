@@ -11,20 +11,23 @@ import com.ren.presentation.utils.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 @HiltViewModel
-internal class EditProfileViewModel @Inject constructor(
-    private val profileRepository: ProfileRepository,
+internal class  EditProfileViewModel @Inject constructor(
+    private val profileRepository: ProfileRepository
 ) : BaseViewModel() {
 
-    private val _resultState = MutableLiveData<UIState<Nothing>>()
-    val resultState: LiveData<UIState<Nothing>> = _resultState
+    private val _resultState = MutableLiveData<UIState<Unit>>()
+    val resultState: LiveData<UIState<Unit>> = _resultState
 
     fun updateProfile(data: PUTProfile) {
         viewModelScope.launch {
-            profileRepository.putProfile(
-                data
-            )
+            _resultState.value = UIState.Loading
+            try {
+                profileRepository.putProfile(data)
+                _resultState.value = UIState.Success(Unit)
+            } catch (e: Exception) {
+                _resultState.value = UIState.Error(e)
+            }
         }
     }
 }

@@ -30,6 +30,7 @@ internal class ResetPasswordFragment :
 
     private fun getArgs() = with(binding) {
         binding.btnResetPassword.setOnClickListener {
+            // очищает ошибки в edit text'ax
             val errorList = mutableListOf(newPassword, confirmNewPassword)
             errorList.forEach {
                 it.error = null
@@ -51,7 +52,7 @@ internal class ResetPasswordFragment :
 
             },
             onError = { state ->
-                Log.e("getArgs", "getArgs: ", )
+                // обработка ошибок
                 val fields = mapOf(
                     PASSWORD_KEY to newPassword,
                     CONFIRM_PASSWORD_KEY to confirmNewPassword,

@@ -1,6 +1,7 @@
 package com.ren.forexapi.impl.di
 
 import com.ren.forexapi.api.di.ForexBaseUrl
+import com.ren.forexapi.api.service.changepassword.ChangePasswordApiService
 import com.ren.forexapi.impl.clients.AuthenticatedRetrofitClient
 import com.ren.forexapi.impl.clients.DefaultRetrofitClient
 import com.ren.forexapi.impl.interceptors.TokenInterceptor
@@ -67,4 +68,9 @@ internal object NetworkModule {
     @Singleton
     fun provideResetPasswordApiService(retrofitClient: DefaultRetrofitClient) =
         retrofitClient.resetPasswordApiService
+
+    @Provides
+    @Singleton
+    fun provideChangePasswordApiService(retrofitClient: AuthenticatedRetrofitClient) =
+        retrofitClient.changePassword
 }

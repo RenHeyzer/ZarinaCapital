@@ -10,8 +10,6 @@ import com.ren.courses.R
 import com.ren.courses.api.presentation.ui.adapter.CoursesAdapter
 import com.ren.courses.api.presentation.ui.viewmodels.CoursesViewModel
 import com.ren.courses.databinding.FragmentCoursesBinding
-import com.ren.courses.internal.domain.entities.courses.Courses
-import com.ren.forexapi.api.models.courses.CoursesDTO
 import com.ren.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 

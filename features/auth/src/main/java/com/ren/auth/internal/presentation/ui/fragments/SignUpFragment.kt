@@ -1,6 +1,8 @@
 package com.ren.auth.internal.presentation.ui.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -8,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.google.android.material.textfield.TextInputLayout
 import com.ren.auth.R
 import com.ren.auth.databinding.FragmentSignUpBinding
 import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
@@ -29,15 +32,33 @@ internal class SignUpFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupTextWatchers()
         signUp()
         subscribeToResult()
         navigateToSignIn()
     }
 
+    private fun setupTextWatchers() = with(binding) {
+        etFullName.addTextChangedListener(createTextWatcher(tilFullName))
+        etEmail.addTextChangedListener(createTextWatcher(tilEmail))
+        etPhone.addTextChangedListener(createTextWatcher(tilPhone))
+        etPassword.addTextChangedListener(createTextWatcher(tilPassword))
+        etConfirmPassword.addTextChangedListener(createTextWatcher(tilConfirmPassword))
+    }
+
+    private fun createTextWatcher(textInputLayout: TextInputLayout): TextWatcher {
+        return object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                textInputLayout.error = null
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        }
+    }
+
     private fun signUp() = with(binding) {
         val etList = listOf(
             tilPassword,
-            tilEmail,
             tilEmail,
             tilPhone,
             tilFullName,
@@ -73,13 +94,13 @@ internal class SignUpFragment :
                     CONFIRM_PASSWORD_KEY to tilConfirmPassword,
                 )
                 if (state.errorList != null) {
-                    state.errorList?.forEach {
+                    state.errorList!!.forEach {
                         fields[it]?.isErrorEnable(
                             isEnabled = true,
                             message = state.message
                         )
                     }
-                }else {
+                } else {
                     Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
                 }
             },
@@ -96,11 +117,11 @@ internal class SignUpFragment :
         }
     }
 
-    companion object{
+    companion object {
         const val FULL_NAME_KEY = "full name"
         const val PHONE_KEY = "phone"
-        const val EMAIL_KEY ="email"
-        const val PASSWORD_KEY ="password"
+        const val EMAIL_KEY = "email"
+        const val PASSWORD_KEY = "password"
         const val CONFIRM_PASSWORD_KEY = "confirm password"
     }
 }

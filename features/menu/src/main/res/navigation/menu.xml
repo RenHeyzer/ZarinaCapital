@@ -63,7 +63,11 @@
         android:id="@+id/editProfileFragment"
         android:name="com.ren.menu.internal.presentation.ui.profile.EditProfileFragment"
         android:label="@string/edit_profile_screen"
-        tools:layout="@layout/fragment_edit_profile" />
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lessonsFragment"
         android:name="com.ren.menu.internal.presentation.ui.lessons.LessonsFragment"
@@ -111,7 +115,11 @@
         android:id="@+id/editPasswordFragment"
         android:name="com.ren.menu.internal.presentation.ui.editpassword.EditPasswordFragment"
         android:label="@string/change_password_screen"
-        tools:layout="@layout/fragment_edit_password" />
+        tools:layout="@layout/fragment_edit_password" >
+        <action
+            android:id="@+id/action_editPasswordFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lessonsDetailFragment"
         android:name="com.ren.menu.internal.presentation.ui.lessons.detail.LessonsDetailFragment"
