@@ -67,6 +67,11 @@
         <action
             android:id="@+id/action_editProfileFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <argument
+            android:name="profile"
+            app:argType="com.ren.menu.internal.domain.entities.profile.Profile"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/lessonsFragment"

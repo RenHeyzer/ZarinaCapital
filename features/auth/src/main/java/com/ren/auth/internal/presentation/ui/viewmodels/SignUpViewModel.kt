@@ -5,10 +5,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ren.auth.internal.domain.entities.SignUpParams
 import com.ren.auth.internal.domain.usecases.SignUpUseCase
-import com.ren.auth.internal.presentation.ui.fragments.SignUpFragment
 import com.ren.presentation.base.BaseViewModel
+import com.ren.presentation.utils.CONFIRM_PASSWORD_KEY
+import com.ren.presentation.utils.EMAIL_KEY
 import com.ren.presentation.utils.ExceptionMessages
+import com.ren.presentation.utils.NUMBER_KEY
+import com.ren.presentation.utils.PASSWORD_KEY
 import com.ren.presentation.utils.UIState
+import com.ren.presentation.utils.USERNAME_KEY
+import com.ren.presentation.utils.emailValid
+import com.ren.presentation.utils.numberValid
+import com.ren.presentation.utils.passwordValid
+import com.ren.presentation.utils.usernameValid
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -32,58 +40,31 @@ internal class SignUpViewModel @Inject constructor(
         confirmPassword: String
     ) {
         viewModelScope.launch {
-            val errorList = mutableListOf<String>()
+            val errorList = mutableMapOf<String, String>()
+            val usernameError = usernameValid.isValid(username)
+            val emailError = emailValid.isValid(email)
+            val numberError = numberValid.isValid(phone)
+            val passwordError = passwordValid.isValid(password)
 
-            errorList.clear()
-
-            if (username.isEmpty()) {
-                errorList.add(SignUpFragment.FULL_NAME_KEY)
-            } else if (username.length < 3) {
-                setError(
-                    "Имя пользователя должно состоять больше 3-х символов",
-                    listOf(SignUpFragment.FULL_NAME_KEY)
-                )
+            if (usernameError != null) {
+                errorList.put(USERNAME_KEY, usernameError)
             }
-
-            if (email.isEmpty()) {
-                errorList.add(SignUpFragment.EMAIL_KEY)
-            } else if (!email.contains("@")) {
-                setError("Введите корректный email", listOf(SignUpFragment.EMAIL_KEY))
+            if (emailError != null) {
+                errorList.put(EMAIL_KEY, emailError)
             }
-
-            if (phone.isEmpty()) {
-                errorList.add(SignUpFragment.PHONE_KEY)
-            } else if (phone.length < 9) {
-                setError("Введите корректный номер телефона", listOf(SignUpFragment.PHONE_KEY))
+            if (numberError != null) {
+                errorList.put(NUMBER_KEY, numberError)
             }
-
-            if (password.isEmpty()) {
-                errorList.add(SignUpFragment.PASSWORD_KEY)
-            } else if (password.length < 8) {
-                setError(
-                    "Пароль должен состоять больше 8-х символов",
-                    listOf(SignUpFragment.PASSWORD_KEY)
-                )
+            if (passwordError != null) {
+                errorList.put(PASSWORD_KEY, passwordError)
             }
-
-            if (confirmPassword.isEmpty()) {
-                errorList.add(SignUpFragment.CONFIRM_PASSWORD_KEY)
+            if (password != confirmPassword) {
+                errorList.put(PASSWORD_KEY, "Password missmatch")
+                errorList.put(CONFIRM_PASSWORD_KEY, "Password missmatch")
             }
-
             if (errorList.isNotEmpty()) {
                 _resultState.value = UIState.Error(
-                    throwable = Throwable("Заполните это поле"),
-                    errorList = errorList,
-                    message = "Заполните это поле"
-                )
-            } else if (confirmPassword != password) {
-                _resultState.value = UIState.Error(
-                    throwable = Throwable("Пароли не совпадают"),
-                    errorList = listOf(
-                        SignUpFragment.PASSWORD_KEY,
-                        SignUpFragment.CONFIRM_PASSWORD_KEY,
-                    ),
-                    message = "Пароли не совпадают"
+                    errorList = errorList
                 )
             } else {
                 _resultState.value = UIState.Loading
@@ -108,14 +89,5 @@ internal class SignUpViewModel @Inject constructor(
                 )
             }
         }
-    }
-
-    private fun setError(message: String, errorsList: List<String>) {
-        isHasError = true
-        _resultState.value = UIState.Error(
-            throwable = Throwable(message),
-            errorList = errorsList,
-            message = message
-        )
     }
 }

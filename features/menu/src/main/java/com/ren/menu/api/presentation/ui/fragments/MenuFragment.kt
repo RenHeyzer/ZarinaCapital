@@ -3,7 +3,6 @@ package com.ren.menu.api.presentation.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -11,13 +10,13 @@ import com.bumptech.glide.Glide
 import com.ren.menu.R
 import com.ren.menu.api.presentation.ui.viewmodels.MenuViewModel
 import com.ren.menu.databinding.FragmentMenuBinding
-import com.ren.menu.internal.domain.entities.profile.PUTProfile
 import com.ren.menu.internal.domain.entities.profile.Profile
 import com.ren.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.fragment_menu) {
+class
+MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.fragment_menu) {
 
     override val binding by viewBinding(FragmentMenuBinding::bind)
     override val viewModel by viewModels<MenuViewModel>()
@@ -36,7 +35,7 @@ class MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.f
         }
     }
 
-    private fun subscribeToProfile() {
+    private fun subscribeToProfile() = with(binding) {
         viewModel.profileState.collectUIStateFlow(
             onLoading = { loading ->
                 Log.d("MenuFragment", "Loading profile state: $loading")
@@ -47,14 +46,17 @@ class MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.f
             onSuccess = { success ->
                 success.data?.let { profile ->
                     loadProfileData(profile)
-                    Log.d("MenuFragment", "Profile loaded successfully: ${profile.avatar}")
+                    imChange.setOnClickListener {
+                        findNavController().navigate(
+                            MenuFragmentDirections.actionMenuFragmentToEditProfileFragment(profile)
+                        )
+                    }
                 }
             }
         )
     }
 
     private fun loadProfileData(profile: Profile) {
-        Log.d("MenuFragment", "Loading profile data: $profile")
         Glide.with(binding.imProfile)
             .load("file:///storage/emulated/0/Android/data/com.ren.zarinacapital/files/DCIM/IMG_20240629_165908437.jpg")
             .fallback(R.drawable.ic_launcher_background)
@@ -70,7 +72,6 @@ class MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.f
             tvNews.setOnClickListener { navigateTo(R.id.action_menuFragment_to_newsFragment) }
             tvSettings.setOnClickListener { navigateTo(R.id.action_menuFragment_to_settingFragment) }
             tvHistory.setOnClickListener { navigateTo(R.id.action_menuFragment_to_paymentHistoryFragment) }
-            imChange.setOnClickListener { navigateTo(R.id.action_menuFragment_to_editProfileFragment) }
             tvSchedule.setOnClickListener { navigateTo(R.id.action_menuFragment_to_lessonsFragment) }
             tvRules.setOnClickListener { navigateTo(R.id.action_menuFragment_to_rulesFragment2) }
             tvChangePassword.setOnClickListener { navigateTo(R.id.action_menuFragment_to_editPasswordFragment) }

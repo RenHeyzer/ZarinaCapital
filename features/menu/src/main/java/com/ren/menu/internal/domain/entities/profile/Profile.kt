@@ -1,6 +1,7 @@
 package com.ren.menu.internal.domain.entities.profile
 
 import com.ren.common.Mappable
+import java.io.Serializable
 
 data class Profile(
     val user: Int,
@@ -8,4 +9,4 @@ data class Profile(
     val username: String,
     val phone: String,
     val email: String
-):Mappable
+):Mappable, Serializable

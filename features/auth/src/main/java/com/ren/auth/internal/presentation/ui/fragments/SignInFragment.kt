@@ -12,6 +12,8 @@ import com.ren.auth.api.presentation.SignInRouter
 import com.ren.auth.databinding.FragmentSignInBinding
 import com.ren.auth.internal.presentation.ui.viewmodels.SignInViewModel
 import com.ren.presentation.base.BaseFragment
+import com.ren.presentation.utils.EMAIL_KEY
+import com.ren.presentation.utils.PASSWORD_KEY
 import com.ren.presentation.utils.isErrorEnable
 import com.ren.presentation.utils.trimmedText
 import dagger.hilt.android.AndroidEntryPoint
@@ -61,9 +63,9 @@ internal class SignInFragment :
                 )
                 error.errorList?.let { map ->
                     map.forEach {
-                        fields[it]?.isErrorEnable(
+                        fields[it.key]?.isErrorEnable(
                             isEnabled = true,
-                            message = error.message
+                            message = it.value
                         )
                     }
                 }
@@ -84,10 +86,5 @@ internal class SignInFragment :
         binding.tvForgotYourPassword.setOnClickListener {
             findNavController().navigate(R.id.action_sign_in_to_emailConfirmFragment)
         }
-    }
-
-    companion object {
-        const val PASSWORD_KEY = "password"
-        const val EMAIL_KEY = "email"
     }
 }

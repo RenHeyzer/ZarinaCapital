@@ -11,6 +11,7 @@ import com.ren.auth.R
 import com.ren.auth.databinding.FragmentEmailConfirmBinding
 import com.ren.auth.internal.presentation.ui.viewmodels.EmailConfirmViewModel
 import com.ren.presentation.base.BaseFragment
+import com.ren.presentation.utils.EMAIL_KEY
 import com.ren.presentation.utils.UIState
 import com.ren.presentation.utils.isErrorEnable
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,9 +45,9 @@ class EmailConfirmFragment :
                     )
                     if (state.errorList != null) {
                         state.errorList?.forEach {
-                            fields[it]?.isErrorEnable(
+                            fields[it.key]?.isErrorEnable(
                                 isEnabled = true,
-                                message = state.message
+                                message = it.value
                             )
                         }
                     } else {
@@ -61,9 +62,5 @@ class EmailConfirmFragment :
                 }
             }
         }
-    }
-
-    companion object {
-        const val EMAIL_KEY = "email key"
     }
 }

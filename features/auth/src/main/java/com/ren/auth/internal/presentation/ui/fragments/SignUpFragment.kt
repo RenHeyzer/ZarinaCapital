@@ -17,6 +17,11 @@ import com.ren.auth.internal.domain.exceptions.EmptyFieldsException
 import com.ren.auth.internal.domain.exceptions.PasswordMismatchException
 import com.ren.auth.internal.presentation.ui.viewmodels.SignUpViewModel
 import com.ren.presentation.base.BaseFragment
+import com.ren.presentation.utils.CONFIRM_PASSWORD_KEY
+import com.ren.presentation.utils.EMAIL_KEY
+import com.ren.presentation.utils.NUMBER_KEY
+import com.ren.presentation.utils.PASSWORD_KEY
+import com.ren.presentation.utils.USERNAME_KEY
 import com.ren.presentation.utils.gone
 import com.ren.presentation.utils.isErrorEnable
 import com.ren.presentation.utils.trimmedText
@@ -87,17 +92,17 @@ internal class SignUpFragment :
             onError = { state ->
                 loading.gone()
                 val fields = mapOf(
-                    FULL_NAME_KEY to tilFullName,
-                    PHONE_KEY to tilPhone,
+                    USERNAME_KEY to tilFullName,
+                    NUMBER_KEY to tilPhone,
                     EMAIL_KEY to tilEmail,
                     PASSWORD_KEY to tilPassword,
                     CONFIRM_PASSWORD_KEY to tilConfirmPassword,
                 )
                 if (state.errorList != null) {
                     state.errorList!!.forEach {
-                        fields[it]?.isErrorEnable(
+                        fields[it.key]?.isErrorEnable(
                             isEnabled = true,
-                            message = state.message
+                            message = it.value
                         )
                     }
                 } else {
@@ -115,13 +120,5 @@ internal class SignUpFragment :
         binding.btnSingIn.setOnClickListener {
             findNavController().navigate(R.id.action_sign_up_to_sign_in)
         }
-    }
-
-    companion object {
-        const val FULL_NAME_KEY = "full name"
-        const val PHONE_KEY = "phone"
-        const val EMAIL_KEY = "email"
-        const val PASSWORD_KEY = "password"
-        const val CONFIRM_PASSWORD_KEY = "confirm password"
     }
 }

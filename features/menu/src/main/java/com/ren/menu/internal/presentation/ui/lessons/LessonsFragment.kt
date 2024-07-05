@@ -27,7 +27,8 @@ class LessonsFragment:
         initialize()
     }
 
-    private fun initialize() {
+    private fun initialize() = with(binding) {
+        clSchedule.setDate(120210L)
         subscribeToLessons()
         binding.recSchedule.adapter = lessonsAdapter
     }
@@ -56,7 +57,6 @@ class LessonsFragment:
 
     private fun setOnItemClickListener(id:Int){
         findNavController().navigate(
-        LessonsFragmentDirections.actionLessonsFragmentToLessonsDetailFragment(id)
-        )
+        LessonsFragmentDirections.actionLessonsFragmentToLessonsDetailFragment(id))
     }
 }

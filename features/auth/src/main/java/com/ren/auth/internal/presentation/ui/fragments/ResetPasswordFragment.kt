@@ -12,6 +12,8 @@ import com.ren.auth.R
 import com.ren.auth.databinding.FragmentResetPassowrdBinding
 import com.ren.auth.internal.presentation.ui.viewmodels.ResetPasswordViewModel
 import com.ren.presentation.base.BaseFragment
+import com.ren.presentation.utils.CONFIRM_PASSWORD_KEY
+import com.ren.presentation.utils.PASSWORD_KEY
 import com.ren.presentation.utils.isErrorEnable
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,9 +61,9 @@ internal class ResetPasswordFragment :
                 )
                 if (state.errorList != null) {
                     state.errorList?.forEach {
-                        fields[it]?.isErrorEnable(
+                        fields[it.key]?.isErrorEnable(
                             isEnabled = true,
-                            message = state.message
+                            message = it.value
                         )
                     }
                 } else {
@@ -72,10 +74,5 @@ internal class ResetPasswordFragment :
                 findNavController().navigate(R.id.action_resetPasswordFragment_to_sign_in)
             },
         )
-    }
-
-    companion object {
-        const val PASSWORD_KEY = "password key"
-        const val CONFIRM_PASSWORD_KEY = "confirm password key"
     }
 }

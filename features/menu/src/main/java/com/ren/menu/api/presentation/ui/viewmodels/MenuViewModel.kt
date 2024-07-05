@@ -1,4 +1,5 @@
 package com.ren.menu.api.presentation.ui.viewmodels
+
 import com.ren.menu.internal.domain.entities.profile.Profile
 import com.ren.menu.internal.domain.repositories.ProfileRepository
 import com.ren.presentation.base.BaseViewModel

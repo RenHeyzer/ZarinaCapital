@@ -21,6 +21,8 @@ class VideoPlayerFragment : Fragment(R.layout.fragment_video_player) {
         activity?.let {
             it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
         }
+        binding.root.setShowNextButton(false)
+        binding.root.setShowPreviousButton(false)
         getArgs()
     }
 
