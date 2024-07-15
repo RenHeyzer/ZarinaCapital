@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".internal.presentation.ui.lessons.detail.LessonsDetailFragment">
+    tools:context=".internal.presentation.ui.forex_course.exercise.LessonsDetailFragment">
 
     <RadioGroup
         android:layout_width="match_parent"

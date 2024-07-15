@@ -1,4 +1,4 @@
-package com.ren.menu.internal.presentation.ui.lessons.detail
+package com.ren.menu.internal.presentation.ui.forex_course.detail
 
 import com.ren.menu.internal.domain.entities.lessons.Lessons
 import com.ren.menu.internal.domain.repositories.LessonsRepository
@@ -18,6 +18,6 @@ class LessonsDetailViewModel @Inject constructor(
     val lessonsState = _lessonsState.asStateFlow()
 
     init {
-        lessonsRepository.fetchLessons(LessonsDetailFragment.endPoint).collectFlowAsState(_lessonsState)
+//        lessonsRepository.fetchLessons(LessonsDetailFragment.endPoint).collectFlowAsState(_lessonsState)
     }
 }

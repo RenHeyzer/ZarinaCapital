@@ -13,7 +13,7 @@ import com.ren.menu.internal.domain.repositories.LessonsRepository
 import com.ren.menu.internal.domain.repositories.NewsRepository
 import javax.inject.Inject
 
-internal class LessonsDataRepository @Inject constructor(
+class LessonsDataRepository @Inject constructor(
     private val appDispatchers: AppDispatchers,
     private val lessonsMapper: Mapper<LessonsDTO, Lessons>,
     private val lessonsApiService: LessonsApiService

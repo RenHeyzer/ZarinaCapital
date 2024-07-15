@@ -52,6 +52,7 @@ val numberValid = object : BaseValidation {
 
 const val EMAIL_KEY = "email"
 const val PASSWORD_KEY = "password"
+const val OLD_PASSWORD = "oldPassword"
 const val CONFIRM_PASSWORD_KEY = "confirmPassword"
 const val USERNAME_KEY = "username"
 const val NUMBER_KEY = "number"

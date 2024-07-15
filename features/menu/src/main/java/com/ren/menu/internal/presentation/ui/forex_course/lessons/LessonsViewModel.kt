@@ -1,8 +1,6 @@
-package com.ren.menu.internal.presentation.ui.lessons
+package com.ren.menu.internal.presentation.ui.forex_course.lessons
 
-import com.ren.menu.internal.domain.entities.news.News
 import com.ren.menu.internal.domain.entities.schedule.Schedule
-import com.ren.menu.internal.domain.repositories.NewsRepository
 import com.ren.menu.internal.domain.repositories.ScheduleRepository
 import com.ren.presentation.base.BaseViewModel
 import com.ren.presentation.utils.UIState

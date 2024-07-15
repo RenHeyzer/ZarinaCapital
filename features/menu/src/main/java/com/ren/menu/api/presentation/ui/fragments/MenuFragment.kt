@@ -72,7 +72,7 @@ MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.fragmen
             tvNews.setOnClickListener { navigateTo(R.id.action_menuFragment_to_newsFragment) }
             tvSettings.setOnClickListener { navigateTo(R.id.action_menuFragment_to_settingFragment) }
             tvHistory.setOnClickListener { navigateTo(R.id.action_menuFragment_to_paymentHistoryFragment) }
-            tvSchedule.setOnClickListener { navigateTo(R.id.action_menuFragment_to_lessonsFragment) }
+            tvSchedule.setOnClickListener { navigateTo(R.id.action_menuFragment_to_forexCourseFragment) }
             tvRules.setOnClickListener { navigateTo(R.id.action_menuFragment_to_rulesFragment2) }
             tvChangePassword.setOnClickListener { navigateTo(R.id.action_menuFragment_to_editPasswordFragment) }
         }

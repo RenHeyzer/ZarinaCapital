@@ -1,18 +1,14 @@
-package com.ren.menu.internal.presentation.ui.lessons.adapter
+package com.ren.menu.internal.presentation.ui.forex_course.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.ren.menu.databinding.ItemLessonsBinding
-import com.ren.menu.databinding.ItemNewsBinding
-import com.ren.menu.internal.domain.entities.news.News
 import com.ren.menu.internal.domain.entities.schedule.Schedule
-import com.ren.menu.internal.presentation.ui.news.adapters.NewsAdapter
 
-class LessonsAdapter(val setItemClickListener: (id: Int) -> Unit) :
+class LessonsAdapter :
     ListAdapter<Schedule, LessonsAdapter.LessonsViewHolder>(diffUtil) {
 
     inner class LessonsViewHolder(private val binding: ItemLessonsBinding) :
@@ -24,11 +20,6 @@ class LessonsAdapter(val setItemClickListener: (id: Int) -> Unit) :
                 binding.tvName.text = it.name
                 binding.tvStartTime.text = it.startTime
                 binding.tvEndTime.text = it.endTime
-                item.lessons.map {itemLessons->
-                    itemView.setOnClickListener {
-                        getItem(adapterPosition)?.apply { setItemClickListener(itemLessons.id) }
-                    }
-                }
             }
         }
     }

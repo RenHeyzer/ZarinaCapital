@@ -5,54 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".internal.presentation.ui.lessons.LessonsFragment">
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_20"
-        android:layout_marginTop="@dimen/margin_10"
-        android:background="@drawable/rounder_button"
-        android:backgroundTint="@color/light_grey_f3"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="@dimen/margin_5">
-
-        <RadioButton
-            android:id="@+id/rb_lessons"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounder_button_white"
-            android:button="@null"
-            android:fontFamily="@font/inter_medium"
-            android:gravity="center"
-            android:padding="@dimen/margin_10"
-            android:text="@string/lesson"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_pre_medium" />
-
-        <RadioButton
-            android:id="@+id/rb_visit"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:button="@null"
-            android:fontFamily="@font/inter_medium"
-            android:gravity="center"
-            android:padding="@dimen/margin_10"
-            android:text="@string/visit"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_pre_medium" />
-
-    </RadioGroup>
+    tools:context=".internal.presentation.ui.forex_course.lessons.LessonsFragment">
 
     <CalendarView
         android:id="@+id/cl_schedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_20"
-        android:layout_marginTop="@dimen/margin_15"
         android:background="@drawable/rounder_button"
         android:backgroundTint="@color/light_grey_f3" />
 
@@ -60,8 +18,6 @@
         android:id="@+id/rec_schedule"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/margin_5"
-        android:layout_marginTop="@dimen/margin_15"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_lessons" />
 </LinearLayout>

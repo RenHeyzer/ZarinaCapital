@@ -9,7 +9,7 @@
         android:id="@+id/newsFragment"
         android:name="com.ren.menu.internal.presentation.ui.news.NewsFragment"
         android:label="@string/news_screen"
-        tools:layout="@layout/fragment_news" >
+        tools:layout="@layout/fragment_news">
 
         <action
             android:id="@+id/action_newsFragment_to_newsDetailFragment2"
@@ -20,7 +20,7 @@
         android:id="@+id/menuFragment"
         android:name="com.ren.menu.api.presentation.ui.fragments.MenuFragment"
         android:label="@string/menu_screen"
-        tools:layout="@layout/fragment_menu" >
+        tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menuFragment_to_newsFragment"
             app:destination="@id/newsFragment" />
@@ -34,14 +34,14 @@
             android:id="@+id/action_menuFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
         <action
-            android:id="@+id/action_menuFragment_to_lessonsFragment"
-            app:destination="@id/lessonsFragment" />
-        <action
             android:id="@+id/action_menuFragment_to_rulesFragment2"
             app:destination="@id/rulesFragment" />
         <action
             android:id="@+id/action_menuFragment_to_editPasswordFragment"
             app:destination="@id/editPasswordFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_forexCourseFragment"
+            app:destination="@id/forexCourseFragment" />
 
 
     </fragment>
@@ -49,7 +49,7 @@
         android:id="@+id/settingFragment"
         android:name="com.ren.menu.internal.presentation.ui.setting.SettingFragment"
         android:label="@string/settings_screen"
-        tools:layout="@layout/fragment_setting" >
+        tools:layout="@layout/fragment_setting">
         <action
             android:id="@+id/action_settingFragment_to_deleteAccountFragment"
             app:destination="@id/deleteAccountFragment" />
@@ -63,21 +63,21 @@
         android:id="@+id/editProfileFragment"
         android:name="com.ren.menu.internal.presentation.ui.profile.EditProfileFragment"
         android:label="@string/edit_profile_screen"
-        tools:layout="@layout/fragment_edit_profile" >
+        tools:layout="@layout/fragment_edit_profile">
         <action
             android:id="@+id/action_editProfileFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
         <argument
             android:name="profile"
+            android:defaultValue="@null"
             app:argType="com.ren.menu.internal.domain.entities.profile.Profile"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/lessonsFragment"
-        android:name="com.ren.menu.internal.presentation.ui.lessons.LessonsFragment"
+        android:name="com.ren.menu.internal.presentation.ui.forex_course.lessons.LessonsFragment"
         android:label="@string/schedule"
-        tools:layout="@layout/fragment_lessons" >
+        tools:layout="@layout/fragment_lessons">
 
         <action
             android:id="@+id/action_lessonsFragment_to_attendancesFragment"
@@ -90,7 +90,7 @@
         android:id="@+id/attendancesFragment"
         android:name="com.ren.menu.internal.presentation.ui.schedule.AttendancesFragment"
         android:label="@string/schedule"
-        tools:layout="@layout/fragment_attendances" >
+        tools:layout="@layout/fragment_attendances">
         <action
             android:id="@+id/action_attendancesFragment_to_lessonsFragment"
             app:destination="@id/lessonsFragment" />
@@ -99,8 +99,7 @@
         android:id="@+id/newsDetailFragment"
         android:name="com.ren.menu.internal.presentation.ui.news.detail.NewsDetailFragment"
         android:label="@string/news_screen"
-        tools:layout="@layout/fragment_news_detail" >
-
+        tools:layout="@layout/fragment_news_detail">
 
         <argument
             android:name="id"
@@ -120,16 +119,16 @@
         android:id="@+id/editPasswordFragment"
         android:name="com.ren.menu.internal.presentation.ui.editpassword.EditPasswordFragment"
         android:label="@string/change_password_screen"
-        tools:layout="@layout/fragment_edit_password" >
+        tools:layout="@layout/fragment_edit_password">
         <action
             android:id="@+id/action_editPasswordFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/lessonsDetailFragment"
-        android:name="com.ren.menu.internal.presentation.ui.lessons.detail.LessonsDetailFragment"
+        android:name="com.ren.menu.internal.presentation.ui.forex_course.exercise.LessonsDetailFragment"
         android:label="@string/lesson_screen"
-        tools:layout="@layout/fragment_lessons_detail" >
+        tools:layout="@layout/fragment_lessons_detail">
         <argument
             android:name="idlessons"
             app:argType="integer" />
@@ -138,5 +137,10 @@
             app:destination="@id/attendancesFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/forexCourseFragment"
+        android:name="com.ren.menu.internal.presentation.ui.forex_course.ForexCourseFragment"
+        android:label="@string/forex_course"
+        tools:layout="@layout/fragment_forex_course" />
 
 </navigation>

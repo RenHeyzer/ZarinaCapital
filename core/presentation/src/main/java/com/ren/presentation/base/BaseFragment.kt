@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel?>(
     @LayoutRes private val contentLayoutId: Int,
 ) : Fragment(contentLayoutId) {
 

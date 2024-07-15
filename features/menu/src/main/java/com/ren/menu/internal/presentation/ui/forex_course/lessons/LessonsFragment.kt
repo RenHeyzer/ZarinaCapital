@@ -1,4 +1,4 @@
-package com.ren.menu.internal.presentation.ui.lessons
+package com.ren.menu.internal.presentation.ui.forex_course.lessons
 
 import android.os.Bundle
 import android.util.Log
@@ -8,22 +8,20 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentLessonsBinding
-import com.ren.menu.internal.presentation.ui.lessons.adapter.LessonsAdapter
-import com.ren.menu.internal.presentation.ui.news.adapters.NewsAdapter
+import com.ren.menu.internal.presentation.ui.forex_course.adapter.LessonsAdapter
 import com.ren.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LessonsFragment:
+class LessonsFragment :
     BaseFragment<FragmentLessonsBinding, LessonsViewModel>(R.layout.fragment_lessons) {
 
     override val binding by viewBinding(FragmentLessonsBinding::bind)
     override val viewModel by viewModels<LessonsViewModel>()
-    private val lessonsAdapter = LessonsAdapter(this::setOnItemClickListener)
+    private val lessonsAdapter = LessonsAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setOnClickListener()
         initialize()
     }
 
@@ -36,10 +34,10 @@ class LessonsFragment:
     private fun subscribeToLessons() {
         viewModel.scheduleState.collectUIStateFlow(
             onLoading = { loading ->
-                Log.d("news", loading.toString())
+                Log.d("lesson", loading.toString())
             },
             onError = { error ->
-                error.message?.let { Log.e("news", it) }
+                error.message?.let { Log.e("lesson", it) }
             },
             onSuccess = { success ->
                 success.data?.let {
@@ -47,16 +45,5 @@ class LessonsFragment:
                 }
             }
         )
-    }
-
-    private fun setOnClickListener() = with(binding){
-        rbVisit.setOnClickListener {
-            findNavController().navigate(R.id.action_lessonsFragment_to_attendancesFragment)
-        }
-    }
-
-    private fun setOnItemClickListener(id:Int){
-        findNavController().navigate(
-        LessonsFragmentDirections.actionLessonsFragmentToLessonsDetailFragment(id))
     }
 }

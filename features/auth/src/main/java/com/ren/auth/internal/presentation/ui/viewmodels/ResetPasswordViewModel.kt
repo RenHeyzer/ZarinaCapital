@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ren.auth.internal.domain.repositories.ResetPasswordRepository
 import com.ren.presentation.base.BaseViewModel
+import com.ren.presentation.utils.CONFIRM_PASSWORD_KEY
 import com.ren.presentation.utils.PASSWORD_KEY
 import com.ren.presentation.utils.UIState
 import com.ren.presentation.utils.passwordValid
@@ -30,7 +31,7 @@ class ResetPasswordViewModel @Inject constructor(private val resetPasswordReposi
 
             if (newPassword != confirmNewPassword) {
                 errorList.put(PASSWORD_KEY, "Password missmatch")
-                errorList.put(PASSWORD_KEY, "Password missmatch")
+                errorList.put(CONFIRM_PASSWORD_KEY, "Password missmatch")
             }
 
             if (errorList.isNotEmpty()) {
